@@ -10,26 +10,11 @@ import java.util.List;
 public class Input {
 
     private List<Passenger> passengers;
-    private List<GetOff> getOffs;
     private List<Commodity> commodities;
-    private List<Deliver> delivers;
     private List<Taxi> taxis;
 
     private List<Point> points;
-
     private double[][] distanceMat;
-
-    public Point getPassenger(int index){
-        return passengers.get(index);
-    }
-
-    public Point getCommodity(int index){
-        return commodities.get(index);
-    }
-
-    public Point getTaxi(int index){
-        return taxis.get(index);
-    }
 
     public List<Passenger> getPassengers() {
         return passengers;
@@ -41,39 +26,6 @@ public class Input {
 
     public List<Taxi> getTaxis() {
         return taxis;
-    }
-
-    public double[][] getDistanceMat() {
-        return this.distanceMat;
-    }
-
-    public void addPassenger(Passenger passenger){
-        this.passengers.add(passenger);
-    }
-
-    public void addCommodity(Commodity commodity){
-        this.commodities.add(commodity);
-    }
-
-    public void addTaxi(Taxi taxi){
-        this.taxis.add(taxi);
-    }
-
-    public double[][] createDistanceMatrix(){
-        List<Point> points = new ArrayList<>();
-        points.addAll(passengers);
-        points.addAll(commodities);
-        points.addAll(getOffs);
-        points.addAll(delivers);
-        points.addAll(taxis);
-        int n = points.size();
-        for(int i = 0 ; i < n - 1 ; i ++){
-            for(int j = i + 1 ; j < n ; j ++){
-                distanceMat[i][j] = distanceMat[j][i] = points.get(i).distance(points.get(j));
-            }
-        }
-
-        return distanceMat;
     }
 
     public void setPassengers(List<Passenger> passengers) {
@@ -88,46 +40,60 @@ public class Input {
         this.taxis = taxis;
     }
 
-    public List<GetOff> getGetOff() {
-        return getOffs;
+    public double[][] getDistanceMat() {
+        if(distanceMat == null)
+            createDistanceMatrix();
+        return this.distanceMat;
     }
 
-    public void setGetOff(List<GetOff> getOff) {
-        this.getOffs = getOff;
+    public double distance(int i, int j){
+        if(distanceMat == null)
+            createDistanceMatrix();
+        return distanceMat[i][j];
     }
 
-    public List<Deliver> getDeliver() {
-        return delivers;
-    }
+    private double[][] createDistanceMatrix(){
+        if(points == null || points.isEmpty())
+            initPoints();
 
-    public void setDeliver(List<Deliver> deliver) {
-        this.delivers = deliver;
-    }
-
-    public Point getPoint(int index){
-        if(points == null || points.isEmpty()){
-            points = new ArrayList<>();
-            points.addAll(passengers);
-            points.addAll(commodities);
-            points.addAll(getOffs);
-            points.addAll(delivers);
-            points.addAll(taxis);
+        int n = points.size();
+        distanceMat = new double[n][n];
+        for(int i = 0 ; i < n - 1 ; i ++){
+            for(int j = i + 1 ; j < n ; j ++){
+                distanceMat[i][j] = distanceMat[j][i] = points.get(i).distance(points.get(j));
+            }
         }
 
+        return distanceMat;
+    }
+
+    public Point point(int index){
+        if(points == null || points.isEmpty())
+            initPoints();
         return points.get(index);
     }
 
-    public List<Point> getAllPoints(){
-        if(points == null || points.isEmpty()){
-            points = new ArrayList<>();
-            points.addAll(passengers);
-            points.addAll(commodities);
-            points.addAll(getOffs);
-            points.addAll(delivers);
-            points.addAll(taxis);
+    private void initPoints(){
+        List<Point> getIn = new ArrayList<>();
+        List<Point> getOff = new ArrayList<>();
+        List<Point> pickup = new ArrayList<>();
+        List<Point> deliver = new ArrayList<>();
+
+        for(Passenger p : passengers){
+            getIn.add(p.getGetIn());
+            getOff.add(p.getGetOff());
         }
 
-        return points;
+        for(Commodity c : commodities){
+            pickup.add(c.getPickup());
+            deliver.add(c.getDeliver());
+        }
+
+        points = new ArrayList<>();
+        points.addAll(getIn);
+        points.addAll(pickup);
+        points.addAll(getOff);
+        points.addAll(deliver);
     }
 
     @Override

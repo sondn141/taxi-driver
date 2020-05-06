@@ -35,9 +35,7 @@ public class Writer {
 
     public static void write(Input input, String path){
         List<Passenger> passengers = input.getPassengers();
-        List<GetOff> getOffs = input.getGetOff();
         List<Commodity> commodities = input.getCommodities();
-        List<Deliver> delivers = input.getDeliver();
         List<Taxi> taxies = input.getTaxis();
 
         StringBuilder strBuilder = new StringBuilder();
@@ -46,24 +44,26 @@ public class Writer {
 
         for(int i = 0 ; i < passengers.size() ; i ++){
             strBuilder.append(String.join(" ",
-                    String.valueOf(passengers.get(i).getX()),
-                    String.valueOf(passengers.get(i).getY()),
-                    String.valueOf(getOffs.get(i).getX()),
-                    String.valueOf(delivers.get(i).getY()))).append("\n");
+                    String.valueOf(passengers.get(i).getGetIn().getX()),
+                    String.valueOf(passengers.get(i).getGetIn().getY()),
+                    String.valueOf(passengers.get(i).getGetOff().getY()),
+                    String.valueOf(passengers.get(i).getGetOff().getY()))).append("\n");
         }
 
         for(int i = 0 ; i < commodities.size() ; i ++){
             strBuilder.append(String.join(" ",
-                    String.valueOf(commodities.get(i).getX()),
-                    String.valueOf(commodities.get(i).getY()),
-                    String.valueOf(delivers.get(i).getX()),
-                    String.valueOf(delivers.get(i).getY()),
+                    String.valueOf(commodities.get(i).getPickup().getX()),
+                    String.valueOf(commodities.get(i).getPickup().getY()),
+                    String.valueOf(commodities.get(i).getDeliver().getX()),
+                    String.valueOf(commodities.get(i).getDeliver().getY()),
                     String.valueOf(commodities.get(i).getWeight()))).append("\n");
         }
 
         for(Taxi t : taxies){
             strBuilder.append(String.join(" ",
-                    String.valueOf(t.getX()), String.valueOf(t.getY()), String.valueOf(t.getCap()))).append("\n");
+                    String.valueOf(t.startPoint().getX()),
+                    String.valueOf(t.startPoint().getY()),
+                    String.valueOf(t.getCap()))).append("\n");
         }
 
         String data = strBuilder.toString();

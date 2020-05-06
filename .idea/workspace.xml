@@ -5,30 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bb9ff6bb-3181-48ac-9f0e-f11b9a3b621d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/algorithm/Solution.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/common/datastructure/Commodity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/common/datastructure/Deliver.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/common/datastructure/GetOff.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/common/datastructure/Passenger.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/common/datastructure/Point.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/common/datastructure/Taxi.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/common/utils/CollectionUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/common/utils/RandomUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/data/Generate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/data/Generator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/common/datastructure/Entity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/test.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/algorithm/Input.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/algorithm/Input.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/algorithm/Output.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/algorithm/Solver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/algorithm/Solver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/algorithm/dp/DPSolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/algorithm/dp/DPSolver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/algorithm/ls/LSSolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/algorithm/ls/LSSolver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/common/config/Const.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/common/config/Const.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/common/exception/CommonException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/common/exception/ExMessages.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/common/io/Reader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/data/Reader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/common/io/Writer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/data/Writer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/worker/Worker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/worker/Worker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/common/datastructure/Commodity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/common/datastructure/Commodity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/common/datastructure/Deliver.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/common/datastructure/GetOff.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/common/datastructure/Passenger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/common/datastructure/Passenger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/common/datastructure/Taxi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/common/datastructure/Taxi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/data/Reader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/data/Reader.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -41,10 +26,22 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/algorithm/Solution.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/data/Reader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" column="40" lean-forward="true" selection-start-line="18" selection-start-column="40" selection-end-line="18" selection-end-column="40" />
+            <state relative-caret-position="323">
+              <caret line="48" column="44" selection-start-line="48" selection-start-column="44" selection-end-line="48" selection-end-column="44" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/algorithm/Input.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="80" column="39" lean-forward="true" selection-start-line="80" selection-start-column="39" selection-end-line="80" selection-end-column="39" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -53,13 +50,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/common/utils/RandomUtils.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/common/datastructure/Commodity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="102" lean-forward="true" selection-start-line="16" selection-start-column="102" selection-end-line="16" selection-end-column="102" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="357">
+              <caret line="27" column="8" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/common/datastructure/Entity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="25" lean-forward="true" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -98,24 +101,25 @@
         <option value="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/algorithm/dp/DPSolver.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/common/config/Const.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/common/datastructure/Station.java" />
-        <option value="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/algorithm/Solver.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/data/Generator.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/worker/Worker.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/algorithm/Output.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/common/datastructure/Point.java" />
-        <option value="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/common/datastructure/Taxi.java" />
-        <option value="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/common/datastructure/Passenger.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/common/datastructure/GetOff.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/common/datastructure/Deliver.java" />
-        <option value="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/common/datastructure/Commodity.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/data/Writer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/data/Reader.java" />
-        <option value="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/algorithm/Input.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/algorithm/Solution.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/common/utils/RandomUtils.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/common/utils/CollectionUtils.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/data/Generate.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/worker/Worker.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/algorithm/Solver.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/common/datastructure/Passenger.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/common/datastructure/Taxi.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/data/Reader.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/algorithm/Input.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/common/datastructure/Entity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/common/datastructure/Commodity.java" />
       </list>
     </option>
   </component>
@@ -138,8 +142,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -151,6 +153,11 @@
               <item name="eduhustsoict" type="b2602c69:ProjectViewProjectNode" />
               <item name="taxi-driver" type="462c0819:PsiDirectoryNode" />
               <item name="data" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="eduhustsoict" type="b2602c69:ProjectViewProjectNode" />
+              <item name="taxi-driver" type="462c0819:PsiDirectoryNode" />
+              <item name="docs" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="eduhustsoict" type="b2602c69:ProjectViewProjectNode" />
@@ -256,6 +263,19 @@
               <item name="soict" type="462c0819:PsiDirectoryNode" />
               <item name="cbls" type="462c0819:PsiDirectoryNode" />
               <item name="common" type="462c0819:PsiDirectoryNode" />
+              <item name="datastructure" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="eduhustsoict" type="b2602c69:ProjectViewProjectNode" />
+              <item name="taxi-driver" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="edu" type="462c0819:PsiDirectoryNode" />
+              <item name="hust" type="462c0819:PsiDirectoryNode" />
+              <item name="soict" type="462c0819:PsiDirectoryNode" />
+              <item name="cbls" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
               <item name="exception" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -319,10 +339,12 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1588583304083" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1588747361606" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -399,7 +421,7 @@
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26618704" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26950747" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -413,7 +435,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Log Analyzer" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.3297414" />
+      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.32937366" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="10" />
       <window_info anchor="bottom" id="SOQL Query" order="11" />
@@ -530,16 +552,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/common/exception/ExMessages.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="54" lean-forward="true" selection-start-line="7" selection-start-column="54" selection-end-line="7" selection-end-column="54" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/data/test.txt" />
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
@@ -555,23 +567,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/worker/Worker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="14" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/common/datastructure/Taxi.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="14" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/common/datastructure/Point.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -579,32 +574,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/common/datastructure/Passenger.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="14" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
-          <folding>
-            <element signature="e#142#143#0" expanded="true" />
-            <element signature="e#176#177#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/common/datastructure/Deliver.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="14" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
-          <folding>
-            <element signature="e#138#139#0" expanded="true" />
-            <element signature="e#172#173#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/common/datastructure/Commodity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="14" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
         </state>
       </provider>
     </entry>
@@ -612,16 +585,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="37" selection-start-line="5" selection-start-column="37" selection-end-line="5" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/algorithm/Solver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="29" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -666,28 +629,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/data/Reader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="41" column="30" lean-forward="true" selection-start-line="41" selection-start-column="30" selection-end-line="41" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/algorithm/Input.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="44" column="32" selection-start-line="44" selection-start-column="32" selection-end-line="44" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1019#1020#0" expanded="true" />
-            <element signature="e#1042#1043#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/common/utils/CollectionUtils.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -702,10 +643,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/algorithm/Solution.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/common/utils/RandomUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="40" lean-forward="true" selection-start-line="18" selection-start-column="40" selection-end-line="18" selection-end-column="40" />
+        <state relative-caret-position="272">
+          <caret line="16" column="102" selection-start-line="16" selection-start-column="102" selection-end-line="16" selection-end-column="102" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -714,26 +655,114 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/data/Generate.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="46" selection-start-line="16" selection-start-column="46" selection-end-line="16" selection-end-column="46" />
+        <state relative-caret-position="449">
+          <caret line="258" lean-forward="true" selection-start-line="258" selection-end-line="258" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#genPassengers#0;class#Generate#0" />
-            <element signature="method#genGetOff#0;class#Generate#0" />
-            <element signature="method#genCommodities#0;class#Generate#0" />
-            <element signature="method#genDeliver#0;class#Generate#0" />
-            <element signature="method#genTaxies#0;class#Generate#0" />
+            <element signature="e#2120#2916#0" />
+            <element signature="e#2921#3692#0" />
+            <element signature="e#3697#4535#0" />
+            <element signature="e#4540#5318#0" />
+            <element signature="e#5323#6126#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/common/utils/RandomUtils.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/worker/Worker.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="102" lean-forward="true" selection-start-line="16" selection-start-column="102" selection-end-line="16" selection-end-column="102" />
+        <state relative-caret-position="289">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/common/exception/ExMessages.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="49" lean-forward="true" selection-start-line="7" selection-start-column="49" selection-end-line="7" selection-end-column="49" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/algorithm/Solver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="46" selection-start-line="23" selection-start-column="46" selection-end-line="23" selection-end-column="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/common/datastructure/Passenger.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="29" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
+          <folding>
+            <element signature="e#231#232#0" expanded="true" />
+            <element signature="e#259#260#0" expanded="true" />
+            <element signature="e#291#292#0" expanded="true" />
+            <element signature="e#320#321#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/common/datastructure/Taxi.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="27" lean-forward="true" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
+          <folding>
+            <element signature="e#311#312#0" expanded="true" />
+            <element signature="e#339#340#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/algorithm/Solution.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="40" selection-start-line="18" selection-start-column="40" selection-end-line="18" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/data/Reader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="48" column="44" selection-start-line="48" selection-start-column="44" selection-end-line="48" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/common/datastructure/Entity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="25" lean-forward="true" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/algorithm/Input.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="80" column="39" lean-forward="true" selection-start-line="80" selection-start-column="39" selection-end-line="80" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/common/datastructure/Commodity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="27" column="8" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="20" />
         </state>
       </provider>
     </entry>
