@@ -20,10 +20,10 @@ public abstract class Solver{
     }
 
     public void run(){
-        Solution solution = solve(this.input);
+        Solution solution = solve();
         Writer.write(solution, props.getProperty(Const.OUTPUT_FILE_PATH));
     }
 
-    public abstract Solution solve(Input data);
+    protected abstract Solution solve();
 
 }

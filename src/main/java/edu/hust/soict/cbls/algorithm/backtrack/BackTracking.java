@@ -1,17 +1,16 @@
-package edu.hust.soict.cbls.algorithm.dp;
+package edu.hust.soict.cbls.algorithm.backtrack;
 
-import edu.hust.soict.cbls.algorithm.Input;
 import edu.hust.soict.cbls.algorithm.Solution;
 import edu.hust.soict.cbls.algorithm.Solver;
 import edu.hust.soict.cbls.common.config.Properties;
 
-public class DPSolver extends Solver {
-    public DPSolver(Properties props) {
+public class BackTracking extends Solver {
+    public BackTracking(Properties props) {
         super(props);
     }
 
     @Override
-    public Solution solve(Input data) {
+    protected Solution solve() {
         return null;
     }
 }

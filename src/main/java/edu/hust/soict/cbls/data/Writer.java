@@ -18,7 +18,7 @@ public class Writer {
     private static final Logger logger = LoggerFactory.getLogger(Writer.class);
 
     public static void write(Solution solution, String path){
-        List<List<Integer>> routes = solution.getRoute();
+        List<List<Integer>> routes = solution.convert();
         StringBuilder strBuilder = new StringBuilder();
         for(List<Integer> route : routes){
             List<String> routeStr = route.stream().map(String::valueOf).collect(Collectors.toList());
