@@ -36,19 +36,18 @@ public class Reader{
                 ));
             }
 
+            String[] station = reader.readLine().split(" ");
+            Taxi.setStation(new Point(Double.valueOf(station[0]), Double.valueOf(station[1])));
             List<Taxi> taxies = new ArrayList<>();
             for(int i = 0 ; i < k ; i ++){
-                String[] tData = reader.readLine().split(" ");
-                taxies.add(new Taxi(
-                        new Point(Double.valueOf(tData[0]), Double.valueOf(tData[1])),
-                        Double.valueOf(tData[2]))
-                );
+                double cap = Double.valueOf(reader.readLine());
+                taxies.add(new Taxi(cap));
             }
 
             // Init input data
             input.setPassengers(passengers);
             input.setCommodities(commodities);
-            input.setTaxis(taxies);
+            input.setTaxies(taxies);
 
             return input;
         } catch (IOException e) {

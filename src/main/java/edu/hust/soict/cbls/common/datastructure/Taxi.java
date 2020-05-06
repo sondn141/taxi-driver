@@ -4,13 +4,16 @@ public class Taxi implements Entity{
     private static Point station;
     private double cap;
 
-    public Taxi(Point stt, double cap) {
-        station = stt;
+    public Taxi(double cap) {
         this.cap = cap;
     }
 
     public double getCap(){
         return this.cap;
+    }
+
+    public static void setStation(Point stt){
+        station = stt;
     }
 
     public static Point station(){

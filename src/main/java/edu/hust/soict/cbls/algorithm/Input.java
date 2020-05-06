@@ -36,8 +36,16 @@ public class Input {
         this.commodities = commodities;
     }
 
-    public void setTaxis(List<Taxi> taxis) {
+    public void setTaxies(List<Taxi> taxis) {
         this.taxis = taxis;
+    }
+
+    public void setTaxi(Taxi t, int index){
+        taxis.set(index, t);
+    }
+
+    public Taxi getTaxi(int index){
+        return taxis.get(index);
     }
 
     public double[][] getDistanceMat() {

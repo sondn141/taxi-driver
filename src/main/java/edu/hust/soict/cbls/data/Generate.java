@@ -77,7 +77,7 @@ public class Generate {
         this.input = new Input();
         input.setPassengers(genPassengers());
         input.setCommodities(genCommodities());
-        input.setTaxis(genTaxies());
+        input.setTaxies(genTaxies());
 
         validate(input);
         return this;
@@ -156,6 +156,7 @@ public class Generate {
     private List<Taxi> genTaxies(){
         List<Taxi> taxies = new ArrayList<>();
         Point station = new Point(RandomUtils.randUniform(0.0, 1000.0), RandomUtils.randUniform(0.0, 1000.0));
+        Taxi.setStation(station);
         switch (pLocation){
             case NORMAL: {
                 for(int i = 0 ; i < K ; i ++){
@@ -167,7 +168,7 @@ public class Generate {
 
             case UNIFORM:{
                 for(int i = 0 ; i < K ; i ++){
-                    taxies.add(new Taxi(station, RandomUtils.randUniform(10.0, 100.0)));
+                    taxies.add(new Taxi(RandomUtils.randUniform(10.0, 100.0)));
                 }
 
                 break;
@@ -188,8 +189,17 @@ public class Generate {
         return taxies;
     }
 
+    @SuppressWarnings("OptionalGetWithoutIsPresent")
     private Input validate(Input input){
+        double maxW = input.getCommodities().stream().mapToDouble(Commodity::getWeight).max().getAsDouble();
+        double maxC = input.getTaxis().stream().mapToDouble(Taxi::getCap).max().getAsDouble();
 
+        if(maxC < maxW){
+            double newW = RandomUtils.rd.nextDouble() * maxC + maxW;
+            int chosenTaxi = RandomUtils.rd.nextInt(input.getTaxis().size());
+
+            input.setTaxi(new Taxi(newW), chosenTaxi);
+        }
         return input;
     }
 
