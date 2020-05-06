@@ -1,29 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/common/io/Reader.java" line="8" mnemonic="0" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/data/Reader.java" line="11" mnemonic="0" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bb9ff6bb-3181-48ac-9f0e-f11b9a3b621d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/data/test.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/algorithm/Input.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/algorithm/Output.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/algorithm/Solver.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/algorithm/dp/DPSolver.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/algorithm/ls/LSSolver.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/common/config/Const.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/common/config/Properties.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/common/config/SubProperties.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/common/exception/CommonException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/common/io/Reader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/common/io/Writer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/common/utils/StringUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/worker/Worker.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/config.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/log4j.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/algorithm/Solution.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/common/datastructure/Commodity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/common/datastructure/Deliver.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/common/datastructure/GetOff.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/common/datastructure/Passenger.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/common/datastructure/Point.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/common/datastructure/Taxi.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/common/utils/CollectionUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/common/utils/RandomUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/data/Generate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/data/Generator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/test.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/algorithm/Input.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/algorithm/Input.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/algorithm/Output.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/algorithm/Solver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/algorithm/Solver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/algorithm/dp/DPSolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/algorithm/dp/DPSolver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/algorithm/ls/LSSolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/algorithm/ls/LSSolver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/common/config/Const.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/common/config/Const.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/common/exception/CommonException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/common/exception/ExMessages.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/common/io/Reader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/data/Reader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/common/io/Writer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/data/Writer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/worker/Worker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/worker/Worker.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -34,12 +39,12 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/algorithm/Solver.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/algorithm/Solution.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="500">
-              <caret line="32" column="72" lean-forward="true" selection-start-line="32" selection-start-column="72" selection-end-line="32" selection-end-column="72" />
+            <state relative-caret-position="306">
+              <caret line="18" column="40" lean-forward="true" selection-start-line="18" selection-start-column="40" selection-end-line="18" selection-end-column="40" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -48,37 +53,13 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/algorithm/dp/DPSolver.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/common/utils/RandomUtils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="8" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/algorithm/Output.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/algorithm/Input.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="18" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/common/config/Const.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="67" selection-start-line="6" selection-start-column="67" selection-end-line="6" selection-end-column="67" />
+            <state relative-caret-position="272">
+              <caret line="16" column="102" lean-forward="true" selection-start-line="16" selection-start-column="102" selection-end-line="16" selection-end-column="102" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -92,6 +73,16 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>Station</find>
+      <find>getOff</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>Taxi</replace>
+      <replace>get</replace>
+    </replaceStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -101,13 +92,30 @@
         <option value="$PROJECT_DIR$/src/test/java/Test.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/common/utils/StringUtils.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/common/config/Properties.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/common/io/Reader.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/common/exception/CommonException.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/common/io/Writer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/common/config/Const.java" />
-        <option value="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/algorithm/Solver.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/algorithm/dp/DPSolver.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/common/config/Const.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/common/datastructure/Station.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/algorithm/Solver.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/data/Generator.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/worker/Worker.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/algorithm/Output.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/common/datastructure/Point.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/common/datastructure/Taxi.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/common/datastructure/Passenger.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/common/datastructure/GetOff.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/common/datastructure/Deliver.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/common/datastructure/Commodity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/data/Writer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/data/Reader.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/algorithm/Input.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/algorithm/Solution.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/common/utils/RandomUtils.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/common/utils/CollectionUtils.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/data/Generate.java" />
       </list>
     </option>
   </component>
@@ -119,10 +127,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-151" />
-    <option name="y" value="214" />
-    <option name="width" value="1376" />
-    <option name="height" value="792" />
+    <option name="x" value="391" />
+    <option name="y" value="44" />
+    <option name="width" value="1398" />
+    <option name="height" value="828" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -130,6 +138,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -141,6 +150,11 @@
             <path>
               <item name="eduhustsoict" type="b2602c69:ProjectViewProjectNode" />
               <item name="taxi-driver" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="eduhustsoict" type="b2602c69:ProjectViewProjectNode" />
+              <item name="taxi-driver" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -216,19 +230,6 @@
               <item name="hust" type="462c0819:PsiDirectoryNode" />
               <item name="soict" type="462c0819:PsiDirectoryNode" />
               <item name="cbls" type="462c0819:PsiDirectoryNode" />
-              <item name="algorithm" type="462c0819:PsiDirectoryNode" />
-              <item name="dp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="eduhustsoict" type="b2602c69:ProjectViewProjectNode" />
-              <item name="taxi-driver" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="edu" type="462c0819:PsiDirectoryNode" />
-              <item name="hust" type="462c0819:PsiDirectoryNode" />
-              <item name="soict" type="462c0819:PsiDirectoryNode" />
-              <item name="cbls" type="462c0819:PsiDirectoryNode" />
               <item name="common" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -242,7 +243,57 @@
               <item name="soict" type="462c0819:PsiDirectoryNode" />
               <item name="cbls" type="462c0819:PsiDirectoryNode" />
               <item name="common" type="462c0819:PsiDirectoryNode" />
-              <item name="io" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="eduhustsoict" type="b2602c69:ProjectViewProjectNode" />
+              <item name="taxi-driver" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="edu" type="462c0819:PsiDirectoryNode" />
+              <item name="hust" type="462c0819:PsiDirectoryNode" />
+              <item name="soict" type="462c0819:PsiDirectoryNode" />
+              <item name="cbls" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+              <item name="exception" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="eduhustsoict" type="b2602c69:ProjectViewProjectNode" />
+              <item name="taxi-driver" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="edu" type="462c0819:PsiDirectoryNode" />
+              <item name="hust" type="462c0819:PsiDirectoryNode" />
+              <item name="soict" type="462c0819:PsiDirectoryNode" />
+              <item name="cbls" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="eduhustsoict" type="b2602c69:ProjectViewProjectNode" />
+              <item name="taxi-driver" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="edu" type="462c0819:PsiDirectoryNode" />
+              <item name="hust" type="462c0819:PsiDirectoryNode" />
+              <item name="soict" type="462c0819:PsiDirectoryNode" />
+              <item name="cbls" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="eduhustsoict" type="b2602c69:ProjectViewProjectNode" />
+              <item name="taxi-driver" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="edu" type="462c0819:PsiDirectoryNode" />
+              <item name="hust" type="462c0819:PsiDirectoryNode" />
+              <item name="soict" type="462c0819:PsiDirectoryNode" />
+              <item name="cbls" type="462c0819:PsiDirectoryNode" />
+              <item name="worker" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="eduhustsoict" type="b2602c69:ProjectViewProjectNode" />
@@ -268,11 +319,10 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1587117841442" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1588583304083" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -299,6 +349,40 @@
       </list>
     </option>
   </component>
+  <component name="RunManager" selected="Application.Generator">
+    <configuration name="Generator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="edu.hust.soict.cbls.data.Generator" />
+      <module name="taxi-driver" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.hust.soict.cbls.data.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Worker" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="edu.hust.soict.cbls.worker.Worker" />
+      <module name="taxi-driver" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.hust.soict.cbls.worker.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Generator" />
+        <item itemvalue="Application.Worker" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -315,34 +399,65 @@
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
     <layout>
-      <window_info id="Image Layers" />
-      <window_info id="Designer" />
-      <window_info id="Capture Tool" />
-      <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24958494" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26618704" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="SOQL Query" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Log Analyzer" />
-      <window_info anchor="bottom" id="Terminal" visible="true" weight="0.33045357" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info anchor="bottom" id="Anonymous Apex" />
+      <window_info id="Capture Tool" order="2" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="Designer" order="4" />
+      <window_info id="Favorites" order="5" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32937366" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39956802" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Theme Preview" />
-      <window_info anchor="right" id="Maven" />
-      <window_info anchor="right" id="make" />
-      <window_info anchor="right" id="Capture Analysis" />
-      <window_info anchor="right" id="Palette&#9;" />
+      <window_info anchor="bottom" id="Log Analyzer" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.3297414" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="10" />
+      <window_info anchor="bottom" id="SOQL Query" order="11" />
+      <window_info anchor="bottom" id="Anonymous Apex" order="12" />
+      <window_info anchor="bottom" id="Messages" order="13" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Maven" order="3" />
+      <window_info anchor="right" id="Theme Preview" order="4" />
+      <window_info anchor="right" id="make" order="5" />
+      <window_info anchor="right" id="Capture Analysis" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
     </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26674044" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Capture Tool" order="2" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="Designer" order="4" />
+      <window_info id="Favorites" order="5" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32937366" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39956802" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Log Analyzer" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.3297414" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="10" />
+      <window_info anchor="bottom" id="SOQL Query" order="11" />
+      <window_info anchor="bottom" id="Anonymous Apex" order="12" />
+      <window_info anchor="bottom" id="Messages" order="13" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Maven" order="3" />
+      <window_info anchor="right" id="Theme Preview" order="4" />
+      <window_info anchor="right" id="make" order="5" />
+      <window_info anchor="right" id="Capture Analysis" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+    </layout-to-restore>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/README.md">
@@ -356,9 +471,6 @@
     <entry file="file://$PROJECT_DIR$/src/main/resources/config.properties">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/test.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/Test.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -366,20 +478,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/common/utils/Strings.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/common/utils/Strings.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/resources/log4j.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/model.tex">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/algorithm/dp/DPSolver.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="20" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
+        <state relative-caret-position="238">
+          <caret line="14" column="20" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#308#309#0" expanded="true" />
+            <element signature="e#336#337#0" expanded="true" />
+            <element signature="e#389#390#0" expanded="true" />
+            <element signature="e#416#417#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/common/config/Properties.java">
+    <entry file="jar:///usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar!/java/lang/StackOverflowError.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1751">
-          <caret line="105" column="5" selection-start-line="105" selection-start-column="5" selection-end-line="105" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="68">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar!/java/lang/UnsupportedOperationException.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="10" column="11" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
         </state>
       </provider>
     </entry>
@@ -390,38 +520,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/worker/Worker.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/common/config/Properties.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+        <state relative-caret-position="364">
+          <caret line="105" column="5" selection-start-line="105" selection-start-column="5" selection-end-line="105" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/algorithm/ls/LSSolver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="21" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/log4j.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="534">
-          <caret line="52" column="12" selection-start-line="52" selection-start-column="12" selection-end-line="52" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/common/utils/StringUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="39" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/common/exception/CommonException.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/common/exception/ExMessages.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="54" lean-forward="true" selection-start-line="7" selection-start-column="54" selection-end-line="7" selection-end-column="54" />
@@ -431,58 +540,200 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/common/io/Writer.java">
+    <entry file="file://$PROJECT_DIR$/data/test.txt" />
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="55" selection-start-line="6" selection-start-column="55" selection-end-line="6" selection-end-column="55" />
+        <state relative-caret-position="212">
+          <caret line="28" selection-start-line="28" selection-end-line="28" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/common/io/Reader.java">
+    <entry file="jar:///usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar!/java/lang/reflect/Array.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="60" selection-start-line="8" selection-start-column="60" selection-end-line="8" selection-end-column="60" />
+        <state relative-caret-position="68">
+          <caret line="7" column="19" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/worker/Worker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="14" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/algorithm/Output.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/common/datastructure/Taxi.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+        <state relative-caret-position="102">
+          <caret line="6" column="14" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/algorithm/Input.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/common/datastructure/Point.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="18" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
+        <state relative-caret-position="136">
+          <caret line="8" column="37" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/common/datastructure/Passenger.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="14" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
+          <folding>
+            <element signature="e#142#143#0" expanded="true" />
+            <element signature="e#176#177#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/common/datastructure/Deliver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="14" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
+          <folding>
+            <element signature="e#138#139#0" expanded="true" />
+            <element signature="e#172#173#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/common/datastructure/Commodity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="14" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/common/config/Const.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="67" selection-start-line="6" selection-start-column="67" selection-end-line="6" selection-end-column="67" />
+        <state relative-caret-position="85">
+          <caret line="5" column="37" selection-start-line="5" selection-start-column="37" selection-end-line="5" selection-end-column="37" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/algorithm/Solver.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
-          <caret line="32" column="72" lean-forward="true" selection-start-line="32" selection-start-column="72" selection-end-line="32" selection-end-column="72" />
+        <state relative-caret-position="306">
+          <caret line="18" column="29" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/algorithm/dp/DPSolver.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/algorithm/ls/LSSolver.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="8" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="20" />
+        <state relative-caret-position="187">
+          <caret line="14" column="20" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/common/datastructure/GetOff.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="4" column="14" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/data/Writer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="59">
+          <caret line="45" lean-forward="true" selection-start-line="45" selection-end-line="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/tiny.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="23" lean-forward="true" selection-start-line="1" selection-start-column="23" selection-end-line="1" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/data/Generator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/data/Reader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="41" column="30" lean-forward="true" selection-start-line="41" selection-start-column="30" selection-end-line="41" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/algorithm/Input.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="44" column="32" selection-start-line="44" selection-start-column="32" selection-end-line="44" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1019#1020#0" expanded="true" />
+            <element signature="e#1042#1043#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/common/utils/CollectionUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/common/utils/StringUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/algorithm/Solution.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="40" lean-forward="true" selection-start-line="18" selection-start-column="40" selection-end-line="18" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/data/Generate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="46" selection-start-line="16" selection-start-column="46" selection-end-line="16" selection-end-column="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#genPassengers#0;class#Generate#0" />
+            <element signature="method#genGetOff#0;class#Generate#0" />
+            <element signature="method#genCommodities#0;class#Generate#0" />
+            <element signature="method#genDeliver#0;class#Generate#0" />
+            <element signature="method#genTaxies#0;class#Generate#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/hust/soict/cbls/common/utils/RandomUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="102" lean-forward="true" selection-start-line="16" selection-start-column="102" selection-end-line="16" selection-end-column="102" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -2,13 +2,10 @@ package edu.hust.soict.cbls.algorithm;
 
 import edu.hust.soict.cbls.common.config.Const;
 import edu.hust.soict.cbls.common.config.Properties;
-import edu.hust.soict.cbls.common.exception.CommonException;
-import edu.hust.soict.cbls.common.io.Reader;
-import edu.hust.soict.cbls.common.io.Writer;
+import edu.hust.soict.cbls.data.Reader;
+import edu.hust.soict.cbls.data.Writer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import java.io.IOException;
 
 public abstract class Solver implements Runnable{
 
@@ -19,20 +16,15 @@ public abstract class Solver implements Runnable{
 
     public Solver(Properties props){
         this.props = props;
-        try {
-            this.input = Reader.read(Const.INPUT_FILE_PATH);
-        } catch (IOException e) {
-            logger.error(CommonException.getMessage(e));
-            throw new RuntimeException(e);
-        }
+        this.input = Reader.read(Const.INPUT_FILE_PATH);
     }
 
     @Override
     public void run(){
-        Output output = solve(this.input);
-        Writer.write(output, props.getProperty(Const.OUTPUT_FILE_PATH));
+        Solution solution = solve(this.input);
+        Writer.write(solution, props.getProperty(Const.OUTPUT_FILE_PATH));
     }
 
-    public abstract Output solve(Input data);
+    public abstract Solution solve(Input data);
 
 }
