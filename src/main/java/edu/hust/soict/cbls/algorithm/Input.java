@@ -90,6 +90,7 @@ public class Input {
         }
 
         points = new ArrayList<>();
+        points.add(Taxi.station());
         points.addAll(getIn);
         points.addAll(pickup);
         points.addAll(getOff);

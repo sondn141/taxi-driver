@@ -59,11 +59,11 @@ public class Writer {
                     String.valueOf(commodities.get(i).getWeight()))).append("\n");
         }
 
+        strBuilder.append(String.join(" ",
+                String.valueOf(Taxi.station().getX()),
+                String.valueOf(Taxi.station().getY()))).append("\n");
         for(Taxi t : taxies){
-            strBuilder.append(String.join(" ",
-                    String.valueOf(t.startPoint().getX()),
-                    String.valueOf(t.startPoint().getY()),
-                    String.valueOf(t.getCap()))).append("\n");
+            strBuilder.append(t.getCap()).append("\n");
         }
 
         String data = strBuilder.toString();

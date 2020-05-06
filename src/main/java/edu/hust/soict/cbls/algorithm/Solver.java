@@ -7,7 +7,7 @@ import edu.hust.soict.cbls.data.Writer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public abstract class Solver implements Runnable{
+public abstract class Solver{
 
     protected Input input;
     protected Properties props;
@@ -19,7 +19,6 @@ public abstract class Solver implements Runnable{
         this.input = Reader.read(Const.INPUT_FILE_PATH);
     }
 
-    @Override
     public void run(){
         Solution solution = solve(this.input);
         Writer.write(solution, props.getProperty(Const.OUTPUT_FILE_PATH));

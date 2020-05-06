@@ -29,7 +29,6 @@ public class Solution {
     }
 
     public void evaluate(Input input){
-        double[][] distanceMat = input.getDistanceMat();
         double score = 0.0;
         for(List<Integer> route : routes){
             for(int i = 1 ; i < route.size() ; i ++){

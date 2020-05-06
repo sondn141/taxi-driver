@@ -76,9 +76,7 @@ public class Generate {
     public Generate generate(){
         this.input = new Input();
         input.setPassengers(genPassengers());
-        input.setGetOff(genGetOff());
         input.setCommodities(genCommodities());
-        input.setDeliver(genDeliver());
         input.setTaxis(genTaxies());
 
         validate(input);
@@ -97,8 +95,9 @@ public class Generate {
 
             case UNIFORM:{
                 for(int i = 0 ; i < N ; i ++){
-                    passengers.add(
-                            new Passenger(RandomUtils.randUniform(0.0, 1000.0), RandomUtils.randUniform(0.0, 1000.0)));
+                    passengers.add(new Passenger(
+                            new Point(RandomUtils.randUniform(0.0, 1000.0), RandomUtils.randUniform(0.0, 1000.0)),
+                            new Point(RandomUtils.randUniform(0.0, 1000.0), RandomUtils.randUniform(0.0, 1000.0))));
                 }
 
                 break;
@@ -118,40 +117,6 @@ public class Generate {
 
         return passengers;
     }
-    private List<GetOff> genGetOff(){
-        List<GetOff> getOff = new ArrayList<>();
-        switch (pLocation){
-            case NORMAL: {
-                for(int i = 0 ; i < N ; i ++){
-
-                }
-
-                break;
-            }
-
-            case UNIFORM:{
-                for(int i = 0 ; i < N ; i ++){
-                    getOff.add(
-                            new GetOff(RandomUtils.randUniform(0.0, 1000.0), RandomUtils.randUniform(0.0, 1000.0)));
-                }
-
-                break;
-            }
-
-            case GRID:{
-                for(int i = 0 ; i < N ; i ++){
-
-                }
-
-                break;
-            }
-
-            default:
-                throw new UnsupportedOperationException();
-        }
-
-        return getOff;
-    }
     private List<Commodity> genCommodities(){
         List<Commodity> commodities = new ArrayList<>();
         switch (pLocation){
@@ -165,8 +130,10 @@ public class Generate {
 
             case UNIFORM:{
                 for(int i = 0 ; i < M ; i ++){
-                    commodities.add(
-                            new Commodity(RandomUtils.randUniform(0.0, 1000.0), RandomUtils.randUniform(0.0, 1000.0), RandomUtils.randUniform(10.0, 100.0)));
+                    commodities.add(new Commodity(
+                            new Point(RandomUtils.randUniform(0.0, 1000.0), RandomUtils.randUniform(0.0, 1000.0)),
+                            new Point(RandomUtils.randUniform(0.0, 1000.0), RandomUtils.randUniform(0.0, 1000.0)),
+                            RandomUtils.randUniform(10.0, 100.0)));
                 }
 
                 break;
@@ -186,42 +153,9 @@ public class Generate {
 
         return commodities;
     }
-    private List<Deliver> genDeliver(){
-        List<Deliver> deliver = new ArrayList<>();
-        switch (pLocation){
-            case NORMAL: {
-                for(int i = 0 ; i < M ; i ++){
-
-                }
-
-                break;
-            }
-
-            case UNIFORM:{
-                for(int i = 0 ; i < M ; i ++){
-                    deliver.add(
-                            new Deliver(RandomUtils.randUniform(0.0, 1000.0), RandomUtils.randUniform(0.0, 1000.0)));
-                }
-
-                break;
-            }
-
-            case GRID:{
-                for(int i = 0 ; i < M ; i ++){
-
-                }
-
-                break;
-            }
-
-            default:
-                throw new UnsupportedOperationException();
-        }
-
-        return deliver;
-    }
     private List<Taxi> genTaxies(){
         List<Taxi> taxies = new ArrayList<>();
+        Point station = new Point(RandomUtils.randUniform(0.0, 1000.0), RandomUtils.randUniform(0.0, 1000.0));
         switch (pLocation){
             case NORMAL: {
                 for(int i = 0 ; i < K ; i ++){
@@ -233,8 +167,7 @@ public class Generate {
 
             case UNIFORM:{
                 for(int i = 0 ; i < K ; i ++){
-                    taxies.add(
-                            new Taxi(RandomUtils.randUniform(0.0, 1000.0), RandomUtils.randUniform(0.0, 1000.0), RandomUtils.randUniform(10.0, 100.0)));
+                    taxies.add(new Taxi(station, RandomUtils.randUniform(10.0, 100.0)));
                 }
 
                 break;

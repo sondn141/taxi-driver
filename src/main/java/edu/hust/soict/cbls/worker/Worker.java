@@ -12,9 +12,6 @@ public class Worker {
     public static void main(String[] args) {
         Input input = Reader.read("data/tiny.txt");
         List<Point> ps = new ArrayList<>();
-        ps.addAll(input.getPassengers());
-        ps.addAll(input.getCommodities());
-        ps.addAll(input.getTaxis());
 
         System.out.println(input.toString());
     }
