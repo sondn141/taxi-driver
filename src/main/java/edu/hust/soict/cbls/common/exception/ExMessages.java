@@ -5,7 +5,7 @@ import edu.hust.soict.cbls.common.utils.StringUtils;
 import java.util.Arrays;
 import java.util.stream.Collectors;
 
-public class CommonException extends RuntimeException{
+public class ExMessages extends RuntimeException{
 
     public static String getMessage(Throwable e) {
         StackTraceElement[] stackTraceElements = e.getStackTrace();
