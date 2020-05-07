@@ -10,9 +10,6 @@ import java.util.List;
 public class Worker {
 
     public static void main(String[] args) {
-        Input input = Reader.read("data/tiny.txt");
-        List<Point> ps = new ArrayList<>();
 
-        System.out.println(input.toString());
     }
 }
