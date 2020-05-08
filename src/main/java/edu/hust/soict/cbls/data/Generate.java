@@ -96,8 +96,8 @@ public class Generate {
             case UNIFORM:{
                 for(int i = 0 ; i < N ; i ++){
                     passengers.add(new Passenger(
-                            new Point(RandomUtils.randUniform(0.0, 1000.0), RandomUtils.randUniform(0.0, 1000.0)),
-                            new Point(RandomUtils.randUniform(0.0, 1000.0), RandomUtils.randUniform(0.0, 1000.0))));
+                            new Point(0, RandomUtils.randUniform(0.0, 1000.0), RandomUtils.randUniform(0.0, 1000.0)),
+                            new Point(0, RandomUtils.randUniform(0.0, 1000.0), RandomUtils.randUniform(0.0, 1000.0))));
                 }
 
                 break;
@@ -131,8 +131,8 @@ public class Generate {
             case UNIFORM:{
                 for(int i = 0 ; i < M ; i ++){
                     commodities.add(new Commodity(
-                            new Point(RandomUtils.randUniform(0.0, 1000.0), RandomUtils.randUniform(0.0, 1000.0)),
-                            new Point(RandomUtils.randUniform(0.0, 1000.0), RandomUtils.randUniform(0.0, 1000.0)),
+                            new Point(0, RandomUtils.randUniform(0.0, 1000.0), RandomUtils.randUniform(0.0, 1000.0)),
+                            new Point(0, RandomUtils.randUniform(0.0, 1000.0), RandomUtils.randUniform(0.0, 1000.0)),
                             RandomUtils.randUniform(10.0, 100.0)));
                 }
 
@@ -155,7 +155,7 @@ public class Generate {
     }
     private List<Taxi> genTaxies(){
         List<Taxi> taxies = new ArrayList<>();
-        Point station = new Point(RandomUtils.randUniform(0.0, 1000.0), RandomUtils.randUniform(0.0, 1000.0));
+        Point station = new Point(0, RandomUtils.randUniform(0.0, 1000.0), RandomUtils.randUniform(0.0, 1000.0));
         Taxi.setStation(station);
         switch (pLocation){
             case NORMAL: {

@@ -2,11 +2,12 @@ package edu.hust.soict.cbls.common.datastructure;
 
 public class Point {
 
-    private int index;
+    private int idx;
     private double x;
     private double y;
 
-    public Point(double x, double y){
+    public Point(int index, double x, double y){
+        this.idx = index;
         this.x = x;
         this.y = y;
     }
@@ -21,5 +22,9 @@ public class Point {
 
     public double getY() {
         return y;
+    }
+
+    public int getIdx() {
+        return idx;
     }
 }

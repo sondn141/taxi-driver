@@ -21,8 +21,8 @@ public class Reader{
             for(int i = 0 ; i < n ; i ++){
                 String[] pCoor = reader.readLine().split(" ");
                 passengers.add(new Passenger(
-                        new Point(Double.valueOf(pCoor[0]), Double.valueOf(pCoor[1])),
-                        new Point(Double.valueOf(pCoor[2]), Double.valueOf(pCoor[3]))
+                        new Point(i + 1, Double.valueOf(pCoor[0]), Double.valueOf(pCoor[1])),
+                        new Point(i + 1 + n + m, Double.valueOf(pCoor[2]), Double.valueOf(pCoor[3]))
                 ));
             }
 
@@ -30,14 +30,14 @@ public class Reader{
             for(int i = 0 ; i < m ; i ++){
                 String[] cCoor = reader.readLine().split(" ");
                 commodities.add(new Commodity(
-                        new Point(Double.valueOf(cCoor[0]), Double.valueOf(cCoor[1])),
-                        new Point(Double.valueOf(cCoor[2]), Double.valueOf(cCoor[3])),
+                        new Point(i + n + 1, Double.valueOf(cCoor[0]), Double.valueOf(cCoor[1])),
+                        new Point(i + 2*n + m + 1, Double.valueOf(cCoor[2]), Double.valueOf(cCoor[3])),
                         Double.valueOf(cCoor[4])
                 ));
             }
 
             String[] station = reader.readLine().split(" ");
-            Taxi.setStation(new Point(Double.valueOf(station[0]), Double.valueOf(station[1])));
+            Taxi.setStation(new Point(0, Double.valueOf(station[0]), Double.valueOf(station[1])));
             List<Taxi> taxies = new ArrayList<>();
             for(int i = 0 ; i < k ; i ++){
                 double cap = Double.valueOf(reader.readLine());
