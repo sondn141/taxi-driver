@@ -16,7 +16,7 @@ public abstract class Solver{
 
     public Solver(Properties props){
         this.props = props;
-        this.input = Reader.read(Const.INPUT_FILE_PATH);
+        this.input = Reader.read(props.getProperty(Const.INPUT_FILE_PATH));
     }
 
     public void run(){
