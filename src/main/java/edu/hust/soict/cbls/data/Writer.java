@@ -24,6 +24,7 @@ public class Writer {
             List<String> routeStr = route.stream().map(String::valueOf).collect(Collectors.toList());
             strBuilder.append(String.join(" ", routeStr)).append("\n");
         }
+        strBuilder.append(solution.score());
 
         String data = strBuilder.toString();
         try(BufferedWriter writer = new BufferedWriter(new FileWriter(new File(path)))){
