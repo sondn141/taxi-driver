@@ -17,16 +17,19 @@ public class Writer {
 
     private static final Logger logger = LoggerFactory.getLogger(Writer.class);
 
-    public static void write(Solution solution, String path){
+    public static void write(Solution solution, String path, Class<?> solverClass, boolean append){
         List<List<Integer>> routes = solution.convert();
         StringBuilder strBuilder = new StringBuilder();
+        if(solverClass != null)
+            strBuilder.append("======= ").append(solverClass.getName()).append(" =======\n");
         for(List<Integer> route : routes){
             List<String> routeStr = route.stream().map(String::valueOf).collect(Collectors.toList());
             strBuilder.append(String.join(" ", routeStr)).append("\n");
         }
+        strBuilder.append(solution.score());
 
         String data = strBuilder.toString();
-        try(BufferedWriter writer = new BufferedWriter(new FileWriter(new File(path)))){
+        try(BufferedWriter writer = new BufferedWriter(new FileWriter(new File(path), append))){
             writer.write(data);
         }catch (IOException e){
             logger.error("Can not write solution to file\n" + data, e);

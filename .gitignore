@@ -2,3 +2,7 @@ target
 .idea
 test
 *.iml
+/.classpath
+/.project
+/.settings/
+/logs/

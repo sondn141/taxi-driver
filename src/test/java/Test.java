@@ -14,7 +14,7 @@ public class Test extends Solver {
     }
 
     @Override
-    protected Solution solve() {
+    public Solution solve() {
         return null;
     }
 }

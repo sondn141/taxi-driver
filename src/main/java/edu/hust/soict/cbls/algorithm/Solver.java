@@ -21,9 +21,9 @@ public abstract class Solver{
 
     public void run(){
         Solution solution = solve();
-        Writer.write(solution, props.getProperty(Const.OUTPUT_FILE_PATH));
+        Writer.write(solution, props.getProperty(Const.OUTPUT_FILE_PATH), null, false);
     }
 
-    protected abstract Solution solve();
+    public abstract Solution solve();
 
 }

@@ -6,6 +6,9 @@ public class Generator {
         String path = "data/tiny.txt";
 
         new Generate()
+                .setNumOfPassengers(4)
+                .setNumOfCommodities(6)
+                .setNumOfTaxi(3)
                 .generate()
                 .save(path);
     }
