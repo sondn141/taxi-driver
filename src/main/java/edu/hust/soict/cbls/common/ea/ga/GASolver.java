@@ -1,8 +1,8 @@
-package edu.hust.soict.cbls.algorithm.ga;
+package edu.hust.soict.cbls.common.ea.ga;
 
 import edu.hust.soict.cbls.algorithm.Solution;
 import edu.hust.soict.cbls.algorithm.Solver;
-import edu.hust.soict.cbls.algorithm.ga.components.Population;
+import edu.hust.soict.cbls.common.ea.ga.components.Population;
 import edu.hust.soict.cbls.common.config.Const;
 import edu.hust.soict.cbls.common.config.Properties;
 import org.slf4j.Logger;

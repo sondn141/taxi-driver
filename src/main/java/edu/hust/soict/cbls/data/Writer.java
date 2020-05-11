@@ -17,7 +17,7 @@ public class Writer {
 
     private static final Logger logger = LoggerFactory.getLogger(Writer.class);
 
-    public static void write(Solution solution, String path, Class<?> solverClass, boolean append){
+    public static synchronized void write(Solution solution, String path, Class<?> solverClass, boolean append){
         List<List<Integer>> routes = solution.convert();
         StringBuilder strBuilder = new StringBuilder();
         if(solverClass != null)
@@ -26,13 +26,26 @@ public class Writer {
             List<String> routeStr = route.stream().map(String::valueOf).collect(Collectors.toList());
             strBuilder.append(String.join(" ", routeStr)).append("\n");
         }
-        strBuilder.append(solution.score());
+        strBuilder.append(solution.score()).append("\n");
 
         String data = strBuilder.toString();
         try(BufferedWriter writer = new BufferedWriter(new FileWriter(new File(path), append))){
             writer.write(data);
         }catch (IOException e){
             logger.error("Can not write solution to file\n" + data, e);
+        }
+    }
+
+    public static void clear(String file){
+        try{
+            File f = new File(file);
+            if (!f.exists())
+                return;
+            FileWriter w = new FileWriter(f);
+            w.write("");
+            w.flush();
+        }catch (IOException e){
+            logger.error("Can not clear file " + file);
         }
     }
 

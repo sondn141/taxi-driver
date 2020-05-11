@@ -1,10 +1,10 @@
-package edu.hust.soict.cbls.algorithm.ga.components;
+package edu.hust.soict.cbls.common.ea.ga.components;
 
 import edu.hust.soict.cbls.algorithm.Solution;
-import edu.hust.soict.cbls.algorithm.ga.operator.Crossover;
-import edu.hust.soict.cbls.algorithm.ga.operator.Mutation;
-import edu.hust.soict.cbls.algorithm.ga.operator.NaturalSelection;
-import edu.hust.soict.cbls.algorithm.ga.operator.SelectParents;
+import edu.hust.soict.cbls.common.ea.ga.operator.Crossover;
+import edu.hust.soict.cbls.common.ea.ga.operator.Mutation;
+import edu.hust.soict.cbls.common.ea.ga.operator.NaturalSelection;
+import edu.hust.soict.cbls.common.ea.ga.operator.SelectParents;
 import edu.hust.soict.cbls.common.config.Const;
 import edu.hust.soict.cbls.common.config.Properties;
 
