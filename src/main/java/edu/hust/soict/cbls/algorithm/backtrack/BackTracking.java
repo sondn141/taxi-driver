@@ -2,7 +2,6 @@ package edu.hust.soict.cbls.algorithm.backtrack;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.ListIterator;
 
 import edu.hust.soict.cbls.algorithm.Solution;
 import edu.hust.soict.cbls.algorithm.Solver;
@@ -88,7 +87,7 @@ public class BackTracking extends Solver {
     }
 
     @Override
-    protected Solution solve() {
+    public Solution solve() {
     	solution = new MySolution();
     	drivers = new ArrayList<>();
     	for (Taxi taxi: input.getTaxis())

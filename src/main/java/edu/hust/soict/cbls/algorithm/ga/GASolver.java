@@ -24,7 +24,7 @@ public class GASolver<I extends Solution> extends Solver {
     }
 
     @Override
-    protected Solution solve() {
+    public Solution solve() {
         logger.info("Start genetic algorithm...");
         this.pop = new Population<>(props, solClazz);
         logger.info("Initialized population. Tending to evolute the population.");
