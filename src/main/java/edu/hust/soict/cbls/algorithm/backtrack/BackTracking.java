@@ -44,7 +44,7 @@ public class BackTracking extends Solver {
     	if (step == 2*N + 2*M) {
     		System.out.println(score);
     		solution.setScore(score);
-    		solution.setSolution(drivers);
+    		solution.convertSolution(drivers);
     		return;
     	}
     	Driver driver = drivers.get(k);
@@ -98,6 +98,7 @@ public class BackTracking extends Solver {
     	Arrays.fill(commodityStatus, -1);
     	
     	backtrack(0, 0, 0.0);
+    	solution.validate(input);
     	
         return solution;
     }
