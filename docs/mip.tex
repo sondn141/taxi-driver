@@ -62,20 +62,20 @@
 		\item Xác định $r_i$:
 		\begin{align}
 			r_{2N+2M+k} = k,\quad & k=1,2,...,K \\
-			r_j - r_i\leq \mu\times (1 - x_{ij}),\quad & i=1,2,...,2N+2M+K \\
-			r_j - r_i\geq -\mu\times (1 -x_{ij}),\quad & j=1,2,...,2N+2M+K \notag
+			r_j - r_i\leq \mu\times (1 - x_{ij}),\quad & i=1,2,...,2N+2M+K, \\
+			r_j - r_i\geq -\mu\times (1 -x_{ij}),\quad & j=1,2,...,2N+2M, i\ne j \notag
 		\end{align}
 		\item Xác định $t_i$:
 		\begin{align}
 			t_{2N+2M+k} = 0,\quad & k=1,2,...,K \\
-			t_j - t_i -1\leq \mu\times (1 - )x_{ij}),\quad & i=1,2,...,2N+2M+K \\
-			t_j - t_i -1\geq -\mu\times (1 - x_{ij}),\quad & j=1,2,...,2N+2M \notag
+			t_j - t_i -1\leq \mu\times (1 - )x_{ij}),\quad & i=1,2,...,2N+2M+K, \\
+			t_j - t_i -1\geq -\mu\times (1 - x_{ij}),\quad & j=1,2,...,2N+2M, i\ne j \notag
 		\end{align}
 		\item Xác định $c_i$:
 		\begin{align}
 			c_{2N+2M+k} = Q_k,\quad & k=1,2,...,K \\
-			c_j - c_i - w_j\leq \mu\times (1 - x_{ij}),\quad & i=1,2,...,2N+2M+K \\
-			c_j - c_i - w_j\geq -\mu\times (1 - x_{ij}),\quad & j=1,2,...,2N+2M \notag
+			c_j - c_i - w_j\leq \mu\times (1 - x_{ij}),\quad & i=1,2,...,2N+2M+K, \\
+			c_j - c_i - w_j\geq -\mu\times (1 - x_{ij}),\quad & j=1,2,...,2N+2M, i\ne j \notag
 		\end{align}
 		\item Điểm đón và trả của hành khách $i$ phải thuộc lộ trình của cùng một xe, tương tự với các gói hàng:
 		\begin{align}
@@ -96,11 +96,10 @@
 	\begin{itemize}
 		\item Các điểm logic tham chiếu đến $0$ không nối lẫn nhau:
 		\begin{align}
-			x_{ij}=0,\quad & i=2N+2M+1,...,2N+2M+K \\
-							& j=2N+2M+1,...,2N+2M+K \notag \\
-							& i\ne j \notag
+			x_{ij}=0,\quad & i=2N+2M+1,...,2N+2M+K, \\
+							& j=2N+2M+1,...,2N+2M+K, i\ne j \notag
 		\end{align}
-		\item Một điểm không tự nối tới chính nó:
+		\item Một điểm không tự nối tới chính nó, trừ $K$ điểm logic tham chiếu tới $0$:
 		\begin{align}
 			x_{ii}=0,\quad & i=1,2,...,2N+2M
 		\end{align}
