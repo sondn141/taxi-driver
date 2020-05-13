@@ -95,20 +95,20 @@
 		\item Xác định $r_i$:
 		\begin{align}
 			r_{2N+2M+k} = k,\quad & k=1,2,...,K \\
-			x_{ij}=1\Rightarrow r_j=r_i,\quad & i=1,2,...,2N+2M+K \\
-											& j=1,2,...,2N+2M+K \notag
+			x_{ij}=1\Rightarrow r_j=r_i,\quad & i=1,2,...,2N+2M+K, \\
+											& j=1,2,...,2N+2M, i\ne j \notag
 		\end{align}
 		\item Xác định $t_i$:
 		\begin{align}
 			t_{2N+2M+k} = 0,\quad & k=1,2,...,K \\
-			x_{ij}=1\Rightarrow t_j=t_i + 1,\quad & i=1,2,...,2N+2M+K \\
-											& j=1,2,...,2N+2M \notag
+			x_{ij}=1\Rightarrow t_j=t_i + 1,\quad & i=1,2,...,2N+2M+K, \\
+											& j=1,2,...,2N+2M,i\ne j \notag
 		\end{align}
 		\item Xác định $c_i$:
 		\begin{align}
 			c_{2N+2M+k} = Q_k,\quad & k=1,2,...,K \\
-			x_{ij}=1\Rightarrow c_j=c_i - w_j,\quad & i=1,2,...,2N+2M+K \\
-											& j=1,2,...,2N+2M \notag
+			x_{ij}=1\Rightarrow c_j=c_i - w_j,\quad & i=1,2,...,2N+2M+K, \\
+											& j=1,2,...,2N+2M,i\ne j \notag
 		\end{align}
 		\item Điểm đón và trả của hành khách $i$ phải thuộc lộ trình của cùng một xe, tương tự với các gói hàng:
 		\begin{align}
@@ -116,7 +116,7 @@
 		\end{align}
 		\item Điểm đón khách phải liền trước điểm trả khách:
 		\begin{align}
-			x_{i,(i+N+M)} = 1,\quad & i=1,2,...,N
+			x_{i,(i+N+M)} = 1,\quad & i=1,2,...,Nj
 		\end{align}
 		\item Điểm lấy hàng phải ở trước điểm giao hàng:
 		\begin{align}
