@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.util.*;
 
 public class Properties extends java.util.Properties{
+
     private static final String DEFAULT_NAME = "config.properties";
     protected Map<Object, Object> runtimeProps;
 

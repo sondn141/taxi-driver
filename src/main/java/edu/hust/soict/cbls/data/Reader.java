@@ -1,13 +1,20 @@
 package edu.hust.soict.cbls.data;
 
 import edu.hust.soict.cbls.algorithm.Input;
+import edu.hust.soict.cbls.algorithm.Solution;
+import edu.hust.soict.cbls.algorithm.impl.MySolution;
 import edu.hust.soict.cbls.common.datastructure.*;
+import edu.hust.soict.cbls.common.utils.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class Reader{
+
+    private static final Logger logger = LoggerFactory.getLogger(Reader.class);
 
     public static Input read(String path){
         try(BufferedReader reader = new BufferedReader(new FileReader(new File(path)))){
@@ -53,5 +60,36 @@ public class Reader{
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public static Map<String, Solution> readSolution(String resultFile){
+        Map<String, Solution> mapSolution = new HashMap<>();
+        try(BufferedReader reader = new BufferedReader(new FileReader(new File(resultFile)))){
+            String line;
+            String solverClazz = null;
+            List<List<Integer>> sol = new LinkedList<>();
+            while(!StringUtils.isNullOrEmpty(line = reader.readLine())){
+                if(line.startsWith(Writer.OUTPUT_CLASS_SOLVER_SIGNED)){
+                    sol.clear();
+                    solverClazz = line.substring(Writer.OUTPUT_CLASS_SOLVER_SIGNED.length());
+                } else{
+                    String[] lineArr = line.split(" ");
+                    if(lineArr.length > 1){
+                        List<Integer> route = Arrays.stream(lineArr).mapToInt(Integer::valueOf).boxed().collect(Collectors.toList());
+                        sol.add(route);
+                    } else{
+                        MySolution s = new MySolution();
+                        s.setSolution(sol);
+                        s.setScore(Integer.valueOf(line));
+                        mapSolution.put(solverClazz, s);
+                    }
+
+                }
+            }
+        } catch (IOException e) {
+            logger.error("Error while reading solution(s)", e);
+        }
+
+        return mapSolution;
     }
 }
