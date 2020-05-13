@@ -42,7 +42,7 @@ public class BackTracking extends Solver {
     	if (score + (2*N+2*M-step) * minEdge >= solution.score())
     		return;
     	if (step == 2*N + 2*M) {
-    		System.out.println(score);
+//    		System.out.println(score);
     		solution.setScore(score);
     		solution.convertSolution(drivers);
     		return;
@@ -78,7 +78,7 @@ public class BackTracking extends Solver {
     			
     			backtrack(step + 1, k, score + driver.getLength() - length);
     			
-    			driver.pickupBack(commodities[i]);
+    			driver.deliverBack(commodities[i]);
     			commodityStatus[i] = k;
     		}
     	
@@ -98,8 +98,11 @@ public class BackTracking extends Solver {
     	Arrays.fill(commodityStatus, -1);
     	
     	backtrack(0, 0, 0.0);
-    	solution.validate(input);
-    	
         return solution;
     }
+    
+    public static void main(String[] args) {
+		BackTracking bt = new BackTracking(new Properties());
+		bt.solve();
+	}
 }
