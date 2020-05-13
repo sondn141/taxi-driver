@@ -3,7 +3,7 @@ package edu.hust.soict.cbls.algorithm.impl;
 import edu.hust.soict.cbls.algorithm.Input;
 import edu.hust.soict.cbls.algorithm.Solution;
 import edu.hust.soict.cbls.algorithm.backtrack.Driver;
-import edu.hust.soict.cbls.common.datastructure.Point;
+import edu.hust.soict.cbls.algorithm.entity.Point;
 
 import java.util.ArrayList;
 import java.util.List;

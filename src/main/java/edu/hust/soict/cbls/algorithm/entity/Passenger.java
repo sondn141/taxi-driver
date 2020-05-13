@@ -1,4 +1,4 @@
-package edu.hust.soict.cbls.common.datastructure;
+package edu.hust.soict.cbls.algorithm.entity;
 
 public class Passenger implements Entity{
     private Point getIn;

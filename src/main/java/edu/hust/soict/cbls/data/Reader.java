@@ -2,8 +2,11 @@ package edu.hust.soict.cbls.data;
 
 import edu.hust.soict.cbls.algorithm.Input;
 import edu.hust.soict.cbls.algorithm.Solution;
+import edu.hust.soict.cbls.algorithm.entity.Commodity;
+import edu.hust.soict.cbls.algorithm.entity.Passenger;
+import edu.hust.soict.cbls.algorithm.entity.Point;
+import edu.hust.soict.cbls.algorithm.entity.Taxi;
 import edu.hust.soict.cbls.algorithm.impl.MySolution;
-import edu.hust.soict.cbls.common.datastructure.*;
 import edu.hust.soict.cbls.common.utils.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

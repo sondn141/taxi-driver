@@ -2,7 +2,10 @@ package edu.hust.soict.cbls.algorithm.backtrack;
 
 import java.util.ArrayList;
 
-import edu.hust.soict.cbls.common.datastructure.*;
+import edu.hust.soict.cbls.algorithm.entity.Commodity;
+import edu.hust.soict.cbls.algorithm.entity.Passenger;
+import edu.hust.soict.cbls.algorithm.entity.Point;
+import edu.hust.soict.cbls.algorithm.entity.Taxi;
 
 public class Driver {
 	private Taxi taxi;

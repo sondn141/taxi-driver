@@ -30,20 +30,6 @@
             <version>2.11.0</version>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/org.uma.jmetal/jmetal-core -->
-        <dependency>
-            <groupId>org.uma.jmetal</groupId>
-            <artifactId>jmetal-core</artifactId>
-            <version>5.9</version>
-        </dependency>
-
-        <!-- https://mvnrepository.com/artifact/org.uma.jmetal/jmetal-exec -->
-        <dependency>
-            <groupId>org.uma.jmetal</groupId>
-            <artifactId>jmetal-exec</artifactId>
-            <version>5.9</version>
-        </dependency>
-
         <!-- https://mvnrepository.com/artifact/jfree/jfreechart -->
         <dependency>
             <groupId>jfree</groupId>

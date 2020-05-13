@@ -41,12 +41,12 @@ public class MIP extends Solver {
 		double distance[][] = input.getDistanceMat();
 		double[][] d = new double[2*N+2*M+K+1][2*N+2*M+K+1];
 		for (int i=1; i<=2*N+2*M+K; i++)
-			for (int j=i+1; j<=2*N+2*M+K; j++)
+			for (int j=1; j<=2*N+2*M+K; j++)
 			{
 				int iID = i, jID = j;
 				if (iID > 2*N+2*M) iID = 0;
 				if (jID > 2*N+2*M) jID = 0;
-				d[i][j] = d[j][i] = distance[iID][jID];
+				d[i][j] = distance[iID][jID];
 			}
 		
 		// (1)
@@ -74,19 +74,19 @@ public class MIP extends Solver {
 			}
 		}
 		
-		// (16)
-		for (int i=2*N+2*M+1; i<=2*N+2*M+K; i++)
-			for (int j=2*N+2*M+1; j<=2*N+2*M+K; j++)
-				if (i != j) {
-				MPConstraint p = solver.makeConstraint(0, 0);
-				p.setCoefficient(x[i][j], 1);
-			}
-		
-		// (17)
-		for (int i=1; i<=2*N+2*M; i++) {
-			MPConstraint p = solver.makeConstraint(0, 0);
-			p.setCoefficient(x[i][i], 1);
-		}
+//		// (16)
+//		for (int i=2*N+2*M+1; i<=2*N+2*M+K; i++)
+//			for (int j=2*N+2*M+1; j<=2*N+2*M+K; j++)
+//				if (i != j) {
+//					MPConstraint p = solver.makeConstraint(0, 0);
+//					p.setCoefficient(x[i][j], 1);
+//				}
+//		
+//		// (17)
+//		for (int i=1; i<=2*N+2*M; i++) {
+//			MPConstraint p = solver.makeConstraint(0, 0);
+//			p.setCoefficient(x[i][i], 1);
+//		}
 		
 		// (5) + (6)
 		for (int i=1; i<=2*N+2*M+K; i++) {
@@ -100,13 +100,13 @@ public class MIP extends Solver {
 		
 		// (8)
 		for (int i=1; i<=2*N+2*M+K; i++)
-			for (int j=1; j<=2*N+2*M+K; j++) {
-				MPConstraint pos = solver.makeConstraint(-BigM - eps, MPSolver.infinity());
+			for (int j=1; j<=2*N+2*M; j++) {
+				MPConstraint pos = solver.makeConstraint(- BigM, MPSolver.infinity());
 				pos.setCoefficient(r[j], 1);
 				pos.setCoefficient(r[i], -1);
 				pos.setCoefficient(x[i][j], -BigM);
 				
-				MPConstraint neg = solver.makeConstraint(-MPSolver.infinity(), BigM + eps);
+				MPConstraint neg = solver.makeConstraint(-MPSolver.infinity(), BigM);
 				neg.setCoefficient(r[j], 1);
 				neg.setCoefficient(r[i], -1);
 				neg.setCoefficient(x[i][j], BigM);
@@ -114,31 +114,33 @@ public class MIP extends Solver {
 		
 		// (10)
 		for (int i=1; i<=2*N+2*M+K; i++)
-			for (int j=1; j<=2*N+2*M; j++) {
-				MPConstraint pos = solver.makeConstraint(1 - BigM - eps, MPSolver.infinity());
-				pos.setCoefficient(t[j], 1);
-				pos.setCoefficient(t[i], -1);
-				pos.setCoefficient(x[i][j], -BigM);
-				
-				MPConstraint neg = solver.makeConstraint(-MPSolver.infinity(), 1 + BigM +eps);
-				neg.setCoefficient(t[j], 1);
-				neg.setCoefficient(t[i], -1);
-				neg.setCoefficient(x[i][j], BigM);
-			}
+			for (int j=1; j<=2*N+2*M; j++)
+				if (i != j) {
+					MPConstraint pos = solver.makeConstraint(1 - BigM, MPSolver.infinity());
+					pos.setCoefficient(t[j], 1);
+					pos.setCoefficient(t[i], -1);
+					pos.setCoefficient(x[i][j], -BigM);
+					
+					MPConstraint neg = solver.makeConstraint(-MPSolver.infinity(), 1 + BigM);
+					neg.setCoefficient(t[j], 1);
+					neg.setCoefficient(t[i], -1);
+					neg.setCoefficient(x[i][j], BigM);
+				}
 	
 		// (12)
 		for (int i=1; i<=2*N+2*M+K; i++)
-			for (int j=1; j<=2*N+2*M; j++) {
-				MPConstraint pos = solver.makeConstraint(w[j] - BigM - eps, MPSolver.infinity());
-				pos.setCoefficient(c[j], 1);
-				pos.setCoefficient(c[i], -1);
-				pos.setCoefficient(x[i][j], -BigM);
-				
-				MPConstraint neg = solver.makeConstraint(-MPSolver.infinity(), w[j] + BigM + eps);
-				neg.setCoefficient(c[j], 1);
-				neg.setCoefficient(c[i], -1);
-				neg.setCoefficient(x[i][j], BigM);
-			}
+			for (int j=1; j<=2*N+2*M; j++)
+				if (i != j) {
+					MPConstraint pos = solver.makeConstraint(-w[j] - BigM, MPSolver.infinity());
+					pos.setCoefficient(c[j], 1);
+					pos.setCoefficient(c[i], -1);
+					pos.setCoefficient(x[i][j], -BigM);
+					
+					MPConstraint neg = solver.makeConstraint(-MPSolver.infinity(), -w[j] + BigM);
+					neg.setCoefficient(c[j], 1);
+					neg.setCoefficient(c[i], -1);
+					neg.setCoefficient(x[i][j], BigM);
+				}
 		
 		// (13)
 		for (int i=1; i<=N+M; i++) {
@@ -155,7 +157,7 @@ public class MIP extends Solver {
 		
 		// (15)
 		for (int i=N+1; i<=N+M; i++) {
-			MPConstraint p = solver.makeConstraint(-MPSolver.infinity(), -1);
+			MPConstraint p = solver.makeConstraint(-MPSolver.infinity(), - eps);
 			p.setCoefficient(t[i], 1);
 			p.setCoefficient(t[i+N+M], -1);
 		}
@@ -164,18 +166,20 @@ public class MIP extends Solver {
 		MPObjective obj = solver.objective();
 		for (int i=1; i<=2*N+2*M+K; i++)
 			for (int j=1; j<=2*N+2*M+K; j++)
-				obj.setCoefficient(x[i][j], d[i][j]);
+				if (i != j)
+					obj.setCoefficient(x[i][j], d[i][j]);
 		obj.setMinimization();
 		
 		// solve
 		final MPSolver.ResultStatus status = solver.solve();
 		
-		if (status == MPSolver.ResultStatus.OPTIMAL) {
+		if (status == MPSolver.ResultStatus.OPTIMAL) {			
 			List<List<Integer>> tours = new ArrayList<>();
 			for (int k=1; k<=K; k++) {
 				ArrayList<Integer> tour = new ArrayList<>();
 				tour.add(0);
-				int i = 2*N + 2*M + k, j;
+
+				int i = 2*N + 2*M + k, j;				
 				while (true) {
 					for (j=1; j<=2*N+2*M+K; j++)
 						if (solver.lookupVariableOrNull(i+"_"+j).solutionValue() == 1)
@@ -191,11 +195,8 @@ public class MIP extends Solver {
 			MySolution solution = new MySolution();
 			solution.setSolution(tours);
 			solution.setScore(obj.value());
-			solution.validate(input);
-			System.out.println(solution.score());
 			return solution;
 		}
-//		System.out.println(status.name());
 		
 		return null;
 	}

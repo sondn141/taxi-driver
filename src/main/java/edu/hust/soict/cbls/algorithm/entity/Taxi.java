@@ -1,4 +1,4 @@
-package edu.hust.soict.cbls.common.datastructure;
+package edu.hust.soict.cbls.algorithm.entity;
 
 public class Taxi implements Entity{
     private static Point station;

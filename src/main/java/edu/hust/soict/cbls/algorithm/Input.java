@@ -2,7 +2,10 @@ package edu.hust.soict.cbls.algorithm;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import edu.hust.soict.cbls.common.datastructure.*;
+import edu.hust.soict.cbls.algorithm.entity.Commodity;
+import edu.hust.soict.cbls.algorithm.entity.Passenger;
+import edu.hust.soict.cbls.algorithm.entity.Point;
+import edu.hust.soict.cbls.algorithm.entity.Taxi;
 
 import java.util.ArrayList;
 import java.util.List;
