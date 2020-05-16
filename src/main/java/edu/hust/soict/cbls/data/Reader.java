@@ -83,7 +83,7 @@ public class Reader{
                     } else{
                         MySolution s = new MySolution();
                         s.setSolution(sol);
-                        s.setScore(Integer.valueOf(line));
+                        s.setScore(Double.valueOf(line));
                         mapSolution.put(solverClazz, s);
                     }
 

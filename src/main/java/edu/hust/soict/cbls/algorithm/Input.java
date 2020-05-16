@@ -84,6 +84,36 @@ public class Input {
         return points.get(index);
     }
 
+    public int size(){
+        if(points == null || points.isEmpty())
+            initPoints();
+        return points.size();
+    }
+
+
+    /**
+    * Types:
+     * 0: Taxi's station
+     * 1: Spots where Passenger gets in
+     * 2. Spots where Commodity is picked up
+     * 3. Spots where Passenger gets off
+     * 4: Spots where Commodity is delivered
+    * */
+    public int pointType(int index){
+        if(index == 0)
+            return 0;
+        else if(index <= passengers.size())
+            return 1;
+        else if(index <= passengers.size() + commodities.size())
+            return 2;
+        else if(index <= 2 * passengers.size() + commodities.size())
+            return 3;
+        else if(index <= 2 * (passengers.size() + commodities.size()))
+            return 4;
+        else
+            throw new RuntimeException("Point type is not recognized. Index passed: " + index);
+    }
+
     private void initPoints(){
         List<Point> getIn = new ArrayList<>();
         List<Point> getOff = new ArrayList<>();

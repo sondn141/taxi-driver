@@ -106,6 +106,13 @@ public class Properties extends java.util.Properties{
         }
     }
 
+    @SuppressWarnings("unchecked")
+    public Object getObject(String key){
+        Object obj = getProperty(key);
+        assert obj != null;
+        return obj;
+    }
+
     private void load() throws IOException {
         load(Properties.class.getClassLoader().getResourceAsStream(DEFAULT_NAME));
     }

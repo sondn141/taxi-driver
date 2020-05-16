@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-public class Worker implements Runnable {
+public class Worker {
 
     private List<Solver> solvers;
     private String output;
@@ -29,8 +29,7 @@ public class Worker implements Runnable {
         }
     }
 
-    @Override
-    public void run(){
+    public void work(){
         for(Solver solver : solvers){
             executor.submit(() -> {
                 Solution solution = solver.solve();
@@ -46,6 +45,6 @@ public class Worker implements Runnable {
         Properties props = new Properties();
         Worker worker = new Worker(props);
 
-        worker.run();
+        worker.work();
     }
 }
