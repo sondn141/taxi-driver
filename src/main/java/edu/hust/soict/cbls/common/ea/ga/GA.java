@@ -10,14 +10,14 @@ import org.slf4j.LoggerFactory;
 
 import java.util.List;
 
-public class GASolver<I extends Solution> extends Solver {
+public class GA<I extends Solution> extends Solver {
     private Class<I> solClazz;
     private Population<I> pop;
     private Properties props;
 
-    private static final Logger logger = LoggerFactory.getLogger(GASolver.class);
+    private static final Logger logger = LoggerFactory.getLogger(GA.class);
 
-    public GASolver(Properties props, Class<I> solClazz) {
+    public GA(Properties props, Class<I> solClazz) {
         super(props);
         this.solClazz = solClazz;
         this.props = props;

@@ -2,9 +2,9 @@ package edu.hust.soict.cbls.data;
 
 import edu.hust.soict.cbls.algorithm.Input;
 import edu.hust.soict.cbls.algorithm.Solution;
-import edu.hust.soict.cbls.algorithm.entity.Commodity;
-import edu.hust.soict.cbls.algorithm.entity.Passenger;
-import edu.hust.soict.cbls.algorithm.entity.Taxi;
+import edu.hust.soict.cbls.entity.Commodity;
+import edu.hust.soict.cbls.entity.Passenger;
+import edu.hust.soict.cbls.entity.Taxi;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

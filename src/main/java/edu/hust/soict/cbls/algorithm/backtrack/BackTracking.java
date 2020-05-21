@@ -5,9 +5,9 @@ import java.util.Arrays;
 
 import edu.hust.soict.cbls.algorithm.Solution;
 import edu.hust.soict.cbls.algorithm.Solver;
-import edu.hust.soict.cbls.algorithm.entity.Commodity;
-import edu.hust.soict.cbls.algorithm.entity.Passenger;
-import edu.hust.soict.cbls.algorithm.entity.Taxi;
+import edu.hust.soict.cbls.entity.Commodity;
+import edu.hust.soict.cbls.entity.Passenger;
+import edu.hust.soict.cbls.entity.Taxi;
 import edu.hust.soict.cbls.algorithm.impl.MySolution;
 import edu.hust.soict.cbls.common.config.Properties;
 
@@ -102,9 +102,4 @@ public class BackTracking extends Solver {
     	backtrack(0, 0, 0.0);
         return solution;
     }
-    
-    public static void main(String[] args) {
-		BackTracking bt = new BackTracking(new Properties());
-		bt.solve();
-	}
 }

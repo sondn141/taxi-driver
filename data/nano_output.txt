@@ -1,8 +1,0 @@
-======= edu.hust.soict.cbls.algorithm.backtrack.BackTracking =======
-0 3 8 5 10 4 1 6 2 7 9 0
-0 0
-4072.425297080426
-======= edu.hust.soict.cbls.algorithm.mip.MIP =======
-0 3 8 5 10 4 1 6 2 7 9 0
-0 0
-4072.4252970804405

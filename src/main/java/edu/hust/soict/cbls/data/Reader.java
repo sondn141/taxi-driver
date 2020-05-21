@@ -2,10 +2,11 @@ package edu.hust.soict.cbls.data;
 
 import edu.hust.soict.cbls.algorithm.Input;
 import edu.hust.soict.cbls.algorithm.Solution;
-import edu.hust.soict.cbls.algorithm.entity.Commodity;
-import edu.hust.soict.cbls.algorithm.entity.Passenger;
-import edu.hust.soict.cbls.algorithm.entity.Point;
-import edu.hust.soict.cbls.algorithm.entity.Taxi;
+import edu.hust.soict.cbls.common.datastructure.Pair;
+import edu.hust.soict.cbls.entity.Commodity;
+import edu.hust.soict.cbls.entity.Passenger;
+import edu.hust.soict.cbls.entity.Point;
+import edu.hust.soict.cbls.entity.Taxi;
 import edu.hust.soict.cbls.algorithm.impl.MySolution;
 import edu.hust.soict.cbls.common.utils.StringUtils;
 import org.slf4j.Logger;
@@ -94,5 +95,17 @@ public class Reader{
         }
 
         return mapSolution;
+    }
+
+    public static Map<String, Map<String, Solution>> readMultiInputsAndSolutions(List<Pair<String, String>> inpSolPairs){
+        Map<String, Map<String, Solution>> res = new HashMap<>();
+        for(Pair<String, String> inpSol : inpSolPairs){
+            String inputFile = inpSol.getK();
+            String solFile = inpSol.getV();
+            Map<String, Solution> mapSol = readSolution(solFile);
+            res.put(inputFile, mapSol);
+        }
+
+        return res;
     }
 }

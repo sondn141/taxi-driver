@@ -1,14 +1,16 @@
 package edu.hust.soict.cbls.data;
 
 import edu.hust.soict.cbls.algorithm.Input;
-import edu.hust.soict.cbls.algorithm.entity.Commodity;
-import edu.hust.soict.cbls.algorithm.entity.Passenger;
-import edu.hust.soict.cbls.algorithm.entity.Point;
-import edu.hust.soict.cbls.algorithm.entity.Taxi;
+import edu.hust.soict.cbls.entity.Commodity;
+import edu.hust.soict.cbls.entity.Passenger;
+import edu.hust.soict.cbls.entity.Point;
+import edu.hust.soict.cbls.entity.Taxi;
 import edu.hust.soict.cbls.common.utils.RandomUtils;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Random;
 
 public class Generate {
 
@@ -19,6 +21,23 @@ public class Generate {
     private Distribution pLocation = Distribution.UNIFORM;
     private Distribution cLocation = Distribution.UNIFORM;
     private Distribution sLocation = Distribution.UNIFORM;
+    private double locationMean = 500.0;
+    private double locationStd = 50.0;
+    private double locationMax = 1000.0;
+    private double locationMin = 0.0;
+    private int numGrid = 10;
+
+    private Distribution capDistribution = Distribution.UNIFORM;
+    private double capMean = 100.0;
+    private double capStd = 10.0;
+    private double capMin = 10.0;
+    private double capMax = 200.0;
+
+    private Distribution weiDistribution = Distribution.UNIFORM;
+    private double weiMean = 100.0;
+    private double weiStd = 10.0;
+    private double weiMin = 10.0;
+    private double weiMax = 200.0;
 
     private Input input;
 
@@ -37,6 +56,14 @@ public class Generate {
         return this;
     }
 
+    public void setCapDistribution(Distribution capDistribution) {
+        this.capDistribution = capDistribution;
+    }
+
+    public void setWeiDistribution(Distribution weiDistribution) {
+        this.weiDistribution = weiDistribution;
+    }
+
     public Generate setPassengerLocationDistribution(Distribution pLocation){
         this.pLocation = pLocation;
         return this;
@@ -52,144 +79,88 @@ public class Generate {
         return this;
     }
 
-//    public int getNumOfPassengers(int n){
-//        return this.N;
-//    }
-//
-//    public int getNumOfCommodities(int m){
-//        return this.M;
-//    }
-//
-//    public int getNumOfTaxi(int k){
-//        return this.K;
-//    }
-//
-//    public Distribution getPassengerLocationDistribution(){
-//        return this.pLocation;
-//    }
-//
-//    public Distribution getCommodityLocationDistribution(){
-//        return this.cLocation;
-//    }
-//
-//    public Distribution getStationLocationDistribution(){
-//        return this.sLocation;
-//    }
-
     public Generate generate(){
         this.input = new Input();
-        input.setPassengers(genPassengers());
-        input.setCommodities(genCommodities());
-        input.setTaxies(genTaxies());
+
+        List<Point> passengerPoints = getPoints(2 * N);
+        List<Passenger> passengers = new LinkedList<>();
+        for(int i = 0 ;i < N ; i ++){
+            passengers.add(new Passenger(passengerPoints.get(i), passengerPoints.get(i + N)));
+        }
+
+        List<Point> commodityPoints = getPoints(2 * M);
+        List<Double> weis = getWei();
+        List<Commodity> commodities = new LinkedList<>();
+        for(int i = 0 ;i < M ; i ++){
+            commodities.add(new Commodity(commodityPoints.get(i), commodityPoints.get(i + N), weis.get(i)));
+        }
+
+        Point station = RandomUtils.PointUtils.singlePoint(locationMin, locationMax);
+        List<Double> caps = getCap();
+        Taxi.setStation(station);
+        List<Taxi> taxis = new LinkedList<>();
+        for(int i = 0 ; i < K ; i ++){
+            taxis.add(new Taxi(caps.get(i)));
+        }
+
+        this.input.setPassengers(passengers);
+        this.input.setCommodities(commodities);
+        this.input.setTaxies(taxis);
 
         validate(input);
         return this;
     }
-    private List<Passenger> genPassengers(){
-        List<Passenger> passengers = new ArrayList<>();
-        switch (pLocation){
+
+    private List<Double> getCap(){
+        switch (capDistribution){
             case NORMAL: {
-                for(int i = 0 ; i < N ; i ++){
-
-                }
-
-                break;
+                return RandomUtils.randNormals(K, capMean, capStd, capMin, capMax);
             }
 
             case UNIFORM:{
-                for(int i = 0 ; i < N ; i ++){
-                    passengers.add(new Passenger(
-                            new Point(0, RandomUtils.randUniform(0.0, 1000.0), RandomUtils.randUniform(0.0, 1000.0)),
-                            new Point(0, RandomUtils.randUniform(0.0, 1000.0), RandomUtils.randUniform(0.0, 1000.0))));
-                }
-
-                break;
-            }
-
-            case GRID:{
-                for(int i = 0 ; i < N ; i ++){
-
-                }
-
-                break;
+                return RandomUtils.randUniforms(K, capMin, capMax);
             }
 
             default:
                 throw new UnsupportedOperationException();
         }
-
-        return passengers;
     }
-    private List<Commodity> genCommodities(){
-        List<Commodity> commodities = new ArrayList<>();
-        switch (pLocation){
+
+    private List<Double> getWei(){
+        switch (weiDistribution){
             case NORMAL: {
-                for(int i = 0 ; i < M ; i ++){
-
-                }
-
-                break;
+                return RandomUtils.randNormals(K, weiMean, weiStd, weiMin, weiMax);
             }
 
             case UNIFORM:{
-                for(int i = 0 ; i < M ; i ++){
-                    commodities.add(new Commodity(
-                            new Point(0, RandomUtils.randUniform(0.0, 1000.0), RandomUtils.randUniform(0.0, 1000.0)),
-                            new Point(0, RandomUtils.randUniform(0.0, 1000.0), RandomUtils.randUniform(0.0, 1000.0)),
-                            RandomUtils.randUniform(10.0, 100.0)));
-                }
-
-                break;
-            }
-
-            case GRID:{
-                for(int i = 0 ; i < M ; i ++){
-
-                }
-
-                break;
+                return RandomUtils.randUniforms(K, weiMin, weiMax);
             }
 
             default:
                 throw new UnsupportedOperationException();
         }
-
-        return commodities;
     }
-    private List<Taxi> genTaxies(){
-        List<Taxi> taxies = new ArrayList<>();
-        Point station = new Point(0, RandomUtils.randUniform(0.0, 1000.0), RandomUtils.randUniform(0.0, 1000.0));
-        Taxi.setStation(station);
+
+    private List<Point> getPoints(int n){
         switch (pLocation){
             case NORMAL: {
-                for(int i = 0 ; i < K ; i ++){
-
-                }
-
-                break;
+                return RandomUtils.PointUtils
+                        .normalPoints(n, locationMean, locationStd, locationMax, locationMin);
             }
 
             case UNIFORM:{
-                for(int i = 0 ; i < K ; i ++){
-                    taxies.add(new Taxi(RandomUtils.randUniform(10.0, 100.0)));
-                }
-
-                break;
+                return RandomUtils.PointUtils
+                        .uniformPoints(n, locationMax, locationMin);
             }
 
             case GRID:{
-                for(int i = 0 ; i < K ; i ++){
-
-                }
-
-                break;
+                return RandomUtils.PointUtils
+                        .gridPoints(n, numGrid, locationMax, locationMin);
             }
 
             default:
                 throw new UnsupportedOperationException();
         }
-
-        return taxies;
     }
 
     @SuppressWarnings("OptionalGetWithoutIsPresent")

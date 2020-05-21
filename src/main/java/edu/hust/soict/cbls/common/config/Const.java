@@ -41,7 +41,6 @@ public class Const {
     //                              VISUALIZATION
     //
     // 1. SINGLE INPUT, MULTI SOLVERS
-    public static final String SINGLE_INPUT_NULTI_SOLVERS_CHART_TITLE = "SINGLE_INPUT_NULTI_SOLVERS_CHART_TITLE";
 
     // 2. MULTI INPUT, MULTI SOLVERS
 
@@ -49,6 +48,7 @@ public class Const {
 
     // 5. COMMON
     public static final String VISUALIZER_CLASS = "VISUALIZER_CLASS";
+    public static final String VISUALIZATION_CHART_TITLE = "VISUALIZATION_CHART_TITLE";
     public static final String VISUALIZATION_INPUT_FILE = "VISUALIZATION_INPUT_FILE";
     public static final String VISUALIZATION_RESULT_FILE = "VISUALIZATION_RESULT_FILE";
     public static final String VISUALIZATION_IMAGE_FOLDER = "VISUALIZATION_IMAGE_FOLDER";
@@ -58,7 +58,6 @@ public class Const {
 
     public static final Color[] COLORS = new Color[]{
             new Color(0, 0, 0),
-            new Color(255, 255, 255),
             new Color(255,0,0),
             new Color(0, 255, 0),
             new Color(0, 0, 255),
@@ -72,7 +71,8 @@ public class Const {
             new Color(0, 128, 0),
             new Color(128, 0, 128),
             new Color(0, 128, 128),
-            new Color(0, 0, 128)
+            new Color(0, 0, 128),
+            new Color(255, 255, 255),
     };
 
 }

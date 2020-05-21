@@ -2,10 +2,10 @@ package edu.hust.soict.cbls.algorithm;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import edu.hust.soict.cbls.algorithm.entity.Commodity;
-import edu.hust.soict.cbls.algorithm.entity.Passenger;
-import edu.hust.soict.cbls.algorithm.entity.Point;
-import edu.hust.soict.cbls.algorithm.entity.Taxi;
+import edu.hust.soict.cbls.entity.Commodity;
+import edu.hust.soict.cbls.entity.Passenger;
+import edu.hust.soict.cbls.entity.Point;
+import edu.hust.soict.cbls.entity.Taxi;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -63,7 +63,7 @@ public class Input {
         return distanceMat[i][j];
     }
 
-    private double[][] createDistanceMatrix(){
+    private void createDistanceMatrix(){
         if(points == null || points.isEmpty())
             initPoints();
 
@@ -74,8 +74,6 @@ public class Input {
                 distanceMat[i][j] = distanceMat[j][i] = points.get(i).distance(points.get(j));
             }
         }
-
-        return distanceMat;
     }
 
     public Point point(int index){

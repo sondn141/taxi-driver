@@ -1,4 +1,4 @@
-package edu.hust.soict.cbls.algorithm.entity;
+package edu.hust.soict.cbls.entity;
 
 public class Commodity implements Entity{
     private Point pickup;

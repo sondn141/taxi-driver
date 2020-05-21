@@ -6,7 +6,7 @@ import edu.hust.soict.cbls.data.Reader;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public abstract class Solver{
+public abstract class Solver {
 
     protected Input input;
     protected Properties props;

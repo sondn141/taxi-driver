@@ -27,13 +27,13 @@ public class SingleInputMultiSolversViz implements Visualizer{
 
     public SingleInputMultiSolversViz(Properties props){
         this.props = props;
-        this.mapSolution = Reader.readSolution(props.getProperty(Const.VISUALIZATION_RESULT_FILE));
+        this.mapSolution = Reader.readSolution(props.getCollection(Const.VISUALIZATION_RESULT_FILE).get(0));
     }
 
     @Override
     public void drawAndSave(){
         JFreeChart barChart = ChartFactory.createBarChart(
-                props.getProperty(Const.SINGLE_INPUT_NULTI_SOLVERS_CHART_TITLE),
+                props.getProperty(Const.VISUALIZATION_CHART_TITLE),
                 "Solvers",
                 "Objective",
                 createObjectiveDataset(),

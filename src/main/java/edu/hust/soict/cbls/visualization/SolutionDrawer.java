@@ -36,7 +36,7 @@ public class SolutionDrawer implements Visualizer{
     public SolutionDrawer(Properties props){
         this.props = props;
         this.input = Reader.read(props.getProperty(Const.VISUALIZATION_INPUT_FILE));
-        this.solutions = Reader.readSolution(props.getProperty(Const.VISUALIZATION_RESULT_FILE));
+        this.solutions = Reader.readSolution(props.getCollection(Const.VISUALIZATION_RESULT_FILE).get(0));
     }
 
     @Override
@@ -64,8 +64,13 @@ public class SolutionDrawer implements Visualizer{
             }
         }
 
-        Layout<String, String> layout = new CircleLayout<>(graph);
-        layout.setSize(new Dimension(800,800));
+        CircleLayout<String, String> layout = new CircleLayout<>(graph);
+        layout.setSize(new Dimension(
+                props.getIntProperty(Const.VISUALIZATION_FIGURE_WIDTH, 900),
+                props.getIntProperty(Const.VISUALIZATION_FIGURE_WIDTH, 900)));
+        for(int i = 0 ; i < input.size() ; i ++){
+            layout.setLocation(String.valueOf(i), input.point(i).getX(), input.point(i).getY());
+        }
 
         VisualizationImageServer<String,String> visualizer =
                 new VisualizationImageServer<>(layout, layout.getSize());
@@ -108,6 +113,12 @@ public class SolutionDrawer implements Visualizer{
                 default:
                     throw new RuntimeException();
             }
+        });
+
+        visualizer.getRenderContext().setEdgeDrawPaintTransformer((String s) -> {
+            assert s != null;
+            int route = Integer.valueOf(s.split("-")[0]);
+            return Const.COLORS[route];
         });
 
         return visualizer;
