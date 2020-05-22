@@ -20,8 +20,8 @@ public class Reader{
 
     private static final Logger logger = LoggerFactory.getLogger(Reader.class);
 
-    public static Input read(String path){
-        try(BufferedReader reader = new BufferedReader(new FileReader(new File(path)))){
+    public static Input read(File file) throws IOException {
+        try(BufferedReader reader = new BufferedReader(new FileReader(file))){
             Input input = new Input();
             String[] meta = reader.readLine().split(" ");
             int n = Integer.valueOf(meta[0]);
@@ -61,9 +61,11 @@ public class Reader{
             input.setTaxies(taxies);
 
             return input;
-        } catch (IOException e) {
-            throw new RuntimeException(e);
         }
+    }
+
+    public static Input read(String path) throws IOException {
+        return read(new File(path));
     }
 
     public static Map<String, Solution> readSolution(String resultFile){

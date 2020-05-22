@@ -33,7 +33,7 @@ public class SolutionDrawer implements Visualizer{
 
     private static final Logger logger = LoggerFactory.getLogger(SolutionDrawer.class);
 
-    public SolutionDrawer(Properties props){
+    public SolutionDrawer(Properties props) throws IOException {
         this.props = props;
         this.input = Reader.read(props.getProperty(Const.VISUALIZATION_INPUT_FILE));
         this.solutions = Reader.readSolution(props.getCollection(Const.VISUALIZATION_RESULT_FILE).get(0));

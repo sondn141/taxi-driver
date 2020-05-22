@@ -6,6 +6,8 @@ import edu.hust.soict.cbls.data.Reader;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.IOException;
+
 public abstract class Solver {
 
     protected Input input;
@@ -15,9 +17,21 @@ public abstract class Solver {
 
     public Solver(Properties props){
         this.props = props;
-        this.input = Reader.read(props.getProperty(Const.INPUT_FILE_PATH));
+        try {
+            this.input = Reader.read(props.getProperty(Const.INPUT));
+        } catch (IOException e) {
+            logger.warn("Can not read data from input file. May be using recursive worker");
+        }
     }
 
     public abstract Solution solve();
+
+    public void setInput(String inp){
+        try {
+            this.input = Reader.read(inp);
+        } catch (IOException e) {
+            logger.error("Can not read input from " + inp);
+        }
+    }
 
 }

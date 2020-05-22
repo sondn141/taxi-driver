@@ -8,11 +8,14 @@ public class Const {
     public static final int SEED = 5;
 
     // I/O
-    public static final String INPUT_FILE_PATH = "INPUT_FILE_PATH";
-    public static final String OUTPUT_FILE_PATH = "OUTPUT_FILE_PATH";
+    public static final String INPUT = "INPUT";
+    public static final String OUTPUT = "OUTPUT";
 
     // SOLVER
     public static final String SOLVER_CLASS = "SOLVER_CLASS";
+
+    // WORKER
+    public static final String WORKER_THREAD_POOL_SIZE = "WORKER_THREAD_POOL_SIZE";
 
     //
     //                              ALGORITHMS

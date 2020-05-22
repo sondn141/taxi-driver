@@ -28,7 +28,7 @@ public class InputDrawer implements Visualizer {
 
     private static final Logger logger = LoggerFactory.getLogger(InputDrawer.class);
 
-    public InputDrawer(Properties props){
+    public InputDrawer(Properties props) throws IOException {
         this.props = props;
         this.input = Reader.read(props.getProperty(Const.VISUALIZATION_INPUT_FILE));
     }
