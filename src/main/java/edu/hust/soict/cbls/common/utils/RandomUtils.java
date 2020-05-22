@@ -1,7 +1,10 @@
 package edu.hust.soict.cbls.common.utils;
 
 import edu.hust.soict.cbls.common.config.Const;
+import edu.hust.soict.cbls.entity.Point;
 
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Random;
 
 public class RandomUtils {
@@ -25,5 +28,61 @@ public class RandomUtils {
         }
 
         return val;
+    }
+
+    public static List<Double> randUniforms(int n, double min, double max){
+        List<Double> uniforms = new LinkedList<>();
+        for(int i = 0 ; i < n ; i ++)
+            uniforms.add(randUniform(min, max));
+
+        return uniforms;
+    }
+
+    public static List<Double> randNormals(int n, double mean, double std, double min, double max){
+        List<Double> normals = new LinkedList<>();
+        for(int i = 0 ; i < n ; i ++)
+            normals.add(randNormal(mean, std, min, max, true));
+
+        return normals;
+    }
+
+    public static class PointUtils{
+
+        public static Point singlePoint(double min, double max){
+            return new Point(randUniform(min, max), randUniform(min, max));
+        }
+
+        public static List<Point> uniformPoints(int n, double min, double max){
+            List<Point> points = new LinkedList<>();
+            for(int i = 0 ; i < n ; i ++){
+                double x = randUniform(min, max);
+                double y = randUniform(min, max);
+
+                points.add(new Point(x, y));
+            }
+
+            return points;
+        }
+
+        public static List<Point> normalPoints(int n, double mean, double std, double min, double max){
+            List<Point> points = new LinkedList<>();
+            for(int i = 0 ; i < n ; i ++){
+                double x = randNormal(mean, std, min, max, true);
+                double y = randNormal(mean, std, min, max, true);
+
+                points.add(new Point(x, y));
+            }
+
+            return points;
+        }
+
+        public static List<Point> gridPoints(int n, int numGrid, double maxX, double maxY){
+            List<Point> points = new LinkedList<>();
+            for(int i = 0 ; i < n ; i ++){
+                // TODO: Add grid points
+            }
+
+            return points;
+        }
     }
 }

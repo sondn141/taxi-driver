@@ -1,4 +1,4 @@
-package edu.hust.soict.cbls.common.datastructure;
+package edu.hust.soict.cbls.entity;
 
 public interface Entity {
 

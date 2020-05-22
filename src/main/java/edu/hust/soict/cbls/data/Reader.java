@@ -1,16 +1,27 @@
 package edu.hust.soict.cbls.data;
 
 import edu.hust.soict.cbls.algorithm.Input;
-import edu.hust.soict.cbls.common.datastructure.*;
+import edu.hust.soict.cbls.algorithm.Solution;
+import edu.hust.soict.cbls.common.datastructure.Pair;
+import edu.hust.soict.cbls.entity.Commodity;
+import edu.hust.soict.cbls.entity.Passenger;
+import edu.hust.soict.cbls.entity.Point;
+import edu.hust.soict.cbls.entity.Taxi;
+import edu.hust.soict.cbls.algorithm.impl.MySolution;
+import edu.hust.soict.cbls.common.utils.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class Reader{
 
-    public static Input read(String path){
-        try(BufferedReader reader = new BufferedReader(new FileReader(new File(path)))){
+    private static final Logger logger = LoggerFactory.getLogger(Reader.class);
+
+    public static Input read(File file) throws IOException {
+        try(BufferedReader reader = new BufferedReader(new FileReader(file))){
             Input input = new Input();
             String[] meta = reader.readLine().split(" ");
             int n = Integer.valueOf(meta[0]);
@@ -50,8 +61,53 @@ public class Reader{
             input.setTaxies(taxies);
 
             return input;
-        } catch (IOException e) {
-            throw new RuntimeException(e);
         }
+    }
+
+    public static Input read(String path) throws IOException {
+        return read(new File(path));
+    }
+
+    public static Map<String, Solution> readSolution(String resultFile){
+        Map<String, Solution> mapSolution = new HashMap<>();
+        try(BufferedReader reader = new BufferedReader(new FileReader(new File(resultFile)))){
+            String line;
+            String solverClazz = null;
+            List<List<Integer>> sol = new LinkedList<>();
+            while(!StringUtils.isNullOrEmpty(line = reader.readLine())){
+                if(line.startsWith(Writer.OUTPUT_CLASS_SOLVER_SIGNED)){
+                    sol.clear();
+                    solverClazz = line.substring(Writer.OUTPUT_CLASS_SOLVER_SIGNED.length());
+                } else{
+                    String[] lineArr = line.split(" ");
+                    if(lineArr.length > 1){
+                        List<Integer> route = Arrays.stream(lineArr).mapToInt(Integer::valueOf).boxed().collect(Collectors.toList());
+                        sol.add(route);
+                    } else{
+                        MySolution s = new MySolution();
+                        s.setSolution(sol);
+                        s.setScore(Double.valueOf(line));
+                        mapSolution.put(solverClazz, s);
+                    }
+
+                }
+            }
+        } catch (IOException e) {
+            logger.error("Error while reading solution(s)", e);
+        }
+
+        return mapSolution;
+    }
+
+    public static Map<String, Map<String, Solution>> readMultiInputsAndSolutions(List<Pair<String, String>> inpSolPairs){
+        Map<String, Map<String, Solution>> res = new HashMap<>();
+        for(Pair<String, String> inpSol : inpSolPairs){
+            String inputFile = inpSol.getK();
+            String solFile = inpSol.getV();
+            Map<String, Solution> mapSol = readSolution(solFile);
+            res.put(inputFile, mapSol);
+        }
+
+        return res;
     }
 }

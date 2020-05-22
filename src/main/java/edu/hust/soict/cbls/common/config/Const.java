@@ -1,16 +1,21 @@
 package edu.hust.soict.cbls.common.config;
 
+import java.awt.Color;
+
 public class Const {
 
     // RANDOM
     public static final int SEED = 5;
 
     // I/O
-    public static final String INPUT_FILE_PATH = "INPUT_FILE_PATH";
-    public static final String OUTPUT_FILE_PATH = "OUTPUT_FILE_PATH";
+    public static final String INPUT = "INPUT";
+    public static final String OUTPUT = "OUTPUT";
 
     // SOLVER
     public static final String SOLVER_CLASS = "SOLVER_CLASS";
+
+    // WORKER
+    public static final String WORKER_THREAD_POOL_SIZE = "WORKER_THREAD_POOL_SIZE";
 
     //
     //                              ALGORITHMS
@@ -34,5 +39,43 @@ public class Const {
 
     // Natural selection operator
     public static final String GA_NATURAL_SELECTION_OPERATOR_CLASS = "GA_NATURAL_SELECTION_OPERATOR_CLASS";
+
+    //
+    //                              VISUALIZATION
+    //
+    // 1. SINGLE INPUT, MULTI SOLVERS
+
+    // 2. MULTI INPUT, MULTI SOLVERS
+
+    // 3. MULTI INPUT, SINGLE SOLVER
+
+    // 5. COMMON
+    public static final String VISUALIZER_CLASS = "VISUALIZER_CLASS";
+    public static final String VISUALIZATION_CHART_TITLE = "VISUALIZATION_CHART_TITLE";
+    public static final String VISUALIZATION_INPUT_FILE = "VISUALIZATION_INPUT_FILE";
+    public static final String VISUALIZATION_RESULT_FILE = "VISUALIZATION_RESULT_FILE";
+    public static final String VISUALIZATION_IMAGE_FOLDER = "VISUALIZATION_IMAGE_FOLDER";
+    public static final String VISUALIZATION_IMAGE_FILE_NAME = "VISUALIZATION_IMAGE_FILE_NAME";
+    public static final String VISUALIZATION_FIGURE_WIDTH = "VISUALIZATION_FIGURE_WIDTH";
+    public static final String VISUALIZATION_FIGURE_HEIGHT = "VISUALIZATION_FIGURE_HEIGHT";
+
+    public static final Color[] COLORS = new Color[]{
+            new Color(0, 0, 0),
+            new Color(255,0,0),
+            new Color(0, 255, 0),
+            new Color(0, 0, 255),
+            new Color(255, 255, 0),
+            new Color(0, 255, 255),
+            new Color(255, 0, 255),
+            new Color(192, 192, 192),
+            new Color(128, 128, 128),
+            new Color(128, 0, 0),
+            new Color(128, 128, 0),
+            new Color(0, 128, 0),
+            new Color(128, 0, 128),
+            new Color(0, 128, 128),
+            new Color(0, 0, 128),
+            new Color(255, 255, 255),
+    };
 
 }

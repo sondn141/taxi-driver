@@ -5,9 +5,11 @@ import java.util.Arrays;
 
 import edu.hust.soict.cbls.algorithm.Solution;
 import edu.hust.soict.cbls.algorithm.Solver;
+import edu.hust.soict.cbls.entity.Commodity;
+import edu.hust.soict.cbls.entity.Passenger;
+import edu.hust.soict.cbls.entity.Taxi;
 import edu.hust.soict.cbls.algorithm.impl.MySolution;
 import edu.hust.soict.cbls.common.config.Properties;
-import edu.hust.soict.cbls.common.datastructure.*;
 
 public class BackTracking extends Solver {
 	private MySolution solution;
@@ -42,9 +44,9 @@ public class BackTracking extends Solver {
     	if (score + (2*N+2*M-step) * minEdge >= solution.score())
     		return;
     	if (step == 2*N + 2*M) {
-    		System.out.println(score);
+//    		System.out.println(score);
     		solution.setScore(score);
-    		solution.setSolution(drivers);
+    		solution.convertSolution(drivers);
     		return;
     	}
     	Driver driver = drivers.get(k);
@@ -78,7 +80,7 @@ public class BackTracking extends Solver {
     			
     			backtrack(step + 1, k, score + driver.getLength() - length);
     			
-    			driver.pickupBack(commodities[i]);
+    			driver.deliverBack(commodities[i]);
     			commodityStatus[i] = k;
     		}
     	
@@ -98,7 +100,6 @@ public class BackTracking extends Solver {
     	Arrays.fill(commodityStatus, -1);
     	
     	backtrack(0, 0, 0.0);
-    	
         return solution;
     }
 }

@@ -1,4 +1,4 @@
-package edu.hust.soict.cbls.algorithm.ga.operator;
+package edu.hust.soict.cbls.common.ea.ga.operator;
 
 import edu.hust.soict.cbls.algorithm.Solution;
 import edu.hust.soict.cbls.common.config.Const;
@@ -8,14 +8,14 @@ import edu.hust.soict.cbls.common.utils.Reflects;
 import java.util.LinkedList;
 import java.util.List;
 
-public interface Mutation<I extends Solution> {
+public interface Crossover<I extends Solution> {
 
-    I execute(I ind);
+    List<I> execute(List<I> parents);
 
-    static <T extends Mutation> List<T> getMutation(Properties props){
-        List<String> mutationClazz = props.getCollection(Const.GA_MUTATION_OPERATOR_CLASS);
+    static <T extends Crossover<?>> List<T> getCrossover(Properties props){
+        List<String> crossoverClazz = props.getCollection(Const.GA_CROSSOVER_OPERATOR_CLASS);
         List<T> oprs = new LinkedList<>();
-        for(String className : mutationClazz){
+        for(String className : crossoverClazz){
             oprs.add(Reflects.newInstance(className, new Class<?>[]{Properties.class}, props));
         }
 

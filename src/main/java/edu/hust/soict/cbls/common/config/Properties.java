@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.util.*;
 
 public class Properties extends java.util.Properties{
+
     private static final String DEFAULT_NAME = "config.properties";
     protected Map<Object, Object> runtimeProps;
 
@@ -103,6 +104,13 @@ public class Properties extends java.util.Properties{
         } catch (Exception ignored) {
             return Collections.emptyList();
         }
+    }
+
+    @SuppressWarnings("unchecked")
+    public Object getObject(String key){
+        Object obj = getProperty(key);
+        assert obj != null;
+        return obj;
     }
 
     private void load() throws IOException {

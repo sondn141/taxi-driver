@@ -6,3 +6,5 @@ test
 /.project
 /.settings/
 /logs/
+lib/ortools
+result
