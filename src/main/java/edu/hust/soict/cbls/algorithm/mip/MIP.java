@@ -74,19 +74,19 @@ public class MIP extends Solver {
 			}
 		}
 		
-//		// (16)
-//		for (int i=2*N+2*M+1; i<=2*N+2*M+K; i++)
-//			for (int j=2*N+2*M+1; j<=2*N+2*M+K; j++)
-//				if (i != j) {
-//					MPConstraint p = solver.makeConstraint(0, 0);
-//					p.setCoefficient(x[i][j], 1);
-//				}
-//		
-//		// (17)
-//		for (int i=1; i<=2*N+2*M; i++) {
-//			MPConstraint p = solver.makeConstraint(0, 0);
-//			p.setCoefficient(x[i][i], 1);
-//		}
+		// (16)
+		for (int i=2*N+2*M+1; i<=2*N+2*M+K; i++)
+			for (int j=2*N+2*M+1; j<=2*N+2*M+K; j++)
+				if (i != j) {
+					MPConstraint p = solver.makeConstraint(0, 0);
+					p.setCoefficient(x[i][j], 1);
+				}
+		
+		// (17)
+		for (int i=1; i<=2*N+2*M; i++) {
+			MPConstraint p = solver.makeConstraint(0, 0);
+			p.setCoefficient(x[i][i], 1);
+		}
 		
 		// (5) + (6)
 		for (int i=1; i<=2*N+2*M+K; i++) {
@@ -179,7 +179,7 @@ public class MIP extends Solver {
 				ArrayList<Integer> tour = new ArrayList<>();
 				tour.add(0);
 
-				int i = 2*N + 2*M + k, j;				
+				int i = 2*N + 2*M + k, j;	
 				while (true) {
 					for (j=1; j<=2*N+2*M+K; j++)
 						if (solver.lookupVariableOrNull(i+"_"+j).solutionValue() == 1)
