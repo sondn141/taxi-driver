@@ -3,9 +3,11 @@ package edu.hust.soict.cbls.common.utils;
 import edu.hust.soict.cbls.common.config.Const;
 import edu.hust.soict.cbls.entity.Point;
 
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
+import java.util.stream.IntStream;
 
 public class RandomUtils {
 
@@ -28,6 +30,11 @@ public class RandomUtils {
         }
 
         return val;
+    }
+
+    public static int[] randInRange(int min, int max){
+//        List<Integer> ints = Arrays.asList(IntStream.range(min, max).toArray());
+        return null;
     }
 
     public static List<Double> randUniforms(int n, double min, double max){

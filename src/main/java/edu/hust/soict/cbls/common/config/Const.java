@@ -36,6 +36,8 @@ public class Const {
 
     // Select parents operator
     public static final String GA_SELECT_PARENT_OPERATOR_CLASS = "GA_SELECT_PARENT_OPERATOR_CLASS";
+    public static final String GA_SELECT_PARENT_NUM_OF_PAIRS = "GA_SELECT_PARENT_NUM_OF_PAIRS";
+    public static final String GA_SELECT_PARENT_TOURNAMENT_SIZE = "GA_SELECT_PARENT_TOURNAMENT_SIZE";
 
     // Natural selection operator
     public static final String GA_NATURAL_SELECTION_OPERATOR_CLASS = "GA_NATURAL_SELECTION_OPERATOR_CLASS";
