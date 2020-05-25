@@ -81,6 +81,14 @@ public class Input {
             initPoints();
         return points.get(index);
     }
+    
+    /**
+     * @author hungth
+     * @since 20200523
+     * */
+    public List<Point> getPoints() {
+    	return points;
+    }
 
     public int size(){
         if(points == null || points.isEmpty())
