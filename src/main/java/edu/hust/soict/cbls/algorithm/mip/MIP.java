@@ -8,6 +8,7 @@ import com.google.ortools.linearsolver.*;
 import edu.hust.soict.cbls.algorithm.Solution;
 import edu.hust.soict.cbls.algorithm.Solver;
 import edu.hust.soict.cbls.algorithm.impl.MySolution;
+import edu.hust.soict.cbls.common.config.Const;
 import edu.hust.soict.cbls.common.config.Properties;
 
 public class MIP extends Solver {
@@ -199,10 +200,5 @@ public class MIP extends Solver {
 		}
 		
 		return null;
-	}
-
-	public static void main(String[] args) {
-		MIP mip = new MIP(new Properties());
-		mip.solve();
 	}
 }

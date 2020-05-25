@@ -32,4 +32,10 @@ public class Point {
     public int getIdx() {
         return idx;
     }
+
+    public localsearch.domainspecific.vehiclerouting.vrp.entities.Point lol(){
+        localsearch.domainspecific.vehiclerouting.vrp.entities.Point p = new localsearch.domainspecific.vehiclerouting.vrp.entities.Point();
+
+        return p;
+    }
 }

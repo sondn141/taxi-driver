@@ -80,4 +80,6 @@ public class Const {
             new Color(255, 255, 255),
     };
 
+    public static final String BIG_M = "BIG_M";
+
 }
