@@ -2,11 +2,13 @@ package edu.hust.soict.cbls.algorithm;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import edu.hust.soict.cbls.common.utils.CollectionUtils;
 import edu.hust.soict.cbls.entity.Commodity;
 import edu.hust.soict.cbls.entity.Passenger;
 import edu.hust.soict.cbls.entity.Point;
 import edu.hust.soict.cbls.entity.Taxi;
 
+import java.security.InvalidParameterException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -45,6 +47,27 @@ public class Input {
 
     public void setTaxi(Taxi t, int index){
         taxis.set(index, t);
+    }
+
+    public Commodity getCommodity(int index){
+        int p = passengers.size();
+        int c = commodities.size();
+        if(CollectionUtils.inRangeInclusive(1 + p, p + c, index) ||
+                CollectionUtils.inRangeInclusive(p<<1 + c + 1, (p + c)<<2, index)){
+            int idx = (index > (p + c) ? index - (p + c) : index) - 1 - p;
+            return commodities.get(idx);
+        } else
+            throw new RuntimeException("Index passed is not a commodity index");
+    }
+
+    public int commodityPointIdx(int idx, int type){
+        if(!CollectionUtils.inRangeInclusive(0, commodities.size() - 1, idx))
+            throw new IndexOutOfBoundsException();
+        if(type != 2 && type != 4)
+            throw new InvalidParameterException("Commodity type should be 2 or 4");
+        int p = passengers.size();
+        int c = commodities.size();
+        return 1 + p + idx + (type == 2 ? 0 : (p + c));
     }
 
     public Taxi getTaxi(int index){

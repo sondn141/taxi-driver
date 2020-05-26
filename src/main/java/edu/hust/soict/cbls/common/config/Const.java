@@ -8,6 +8,7 @@ public class Const {
     public static final int SEED = 5;
 
     // I/O
+    public static final String INPUT_OBJECT = "INPUT_OBJECT";
     public static final String INPUT = "INPUT";
     public static final String OUTPUT = "OUTPUT";
 

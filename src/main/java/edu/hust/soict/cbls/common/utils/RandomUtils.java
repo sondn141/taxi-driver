@@ -32,6 +32,12 @@ public class RandomUtils {
         return val;
     }
 
+    public static int randInt(int min, int max){
+        if(min > max)
+            throw new IllegalArgumentException("Min value can not be greater than max value");
+        return min + rd.nextInt(max - min);
+    }
+
     public static int[] randInRange(int min, int max){
 //        List<Integer> ints = Arrays.asList(IntStream.range(min, max).toArray());
         return null;
