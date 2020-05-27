@@ -11,6 +11,11 @@ public class Pair<K, V> {
         this.v = v;
     }
 
+    public void set(K k, V v){
+        this.k = k;
+        this.v = v;
+    }
+
     public K getK(){
         return k;
     }

@@ -1,5 +1,8 @@
 package edu.hust.soict.cbls.common.utils;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 import java.util.LinkedList;
@@ -13,7 +16,8 @@ import java.util.List;
 @SuppressWarnings("unchecked")
 public class Reflects {
 
-    static final ClassLoader mainCl = Reflects.class.getClassLoader();
+    private static final ClassLoader mainCl = Reflects.class.getClassLoader();
+    private static final Logger logger = LoggerFactory.getLogger(Reflects.class);
 
     @SuppressWarnings("unchecked")
     public static <T> Class<T> getClassInstance(T object) {
@@ -41,6 +45,7 @@ public class Reflects {
             return clazz.getConstructor(parameterTypes).newInstance(parameters);
         } catch (InstantiationException | IllegalAccessException | InvocationTargetException
                 | NoSuchMethodException e) {
+            logger.error("Error while create new instance using java reflection", e);
             throw new RuntimeException(e);
         }
     }
@@ -50,6 +55,7 @@ public class Reflects {
             return (T) mainCl.loadClass(className).getConstructor(parameterTypes).newInstance(parameters);
         } catch (InstantiationException | IllegalAccessException | InvocationTargetException
                 | NoSuchMethodException | ClassNotFoundException e) {
+            logger.error("Error while create new instance using java reflection", e);
             throw new RuntimeException(e);
         }
     }

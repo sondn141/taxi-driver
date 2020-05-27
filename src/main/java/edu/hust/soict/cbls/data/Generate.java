@@ -12,6 +12,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
 
+@SuppressWarnings("ALL")
 public class Generate {
 
     private int N = 5;

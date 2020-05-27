@@ -38,6 +38,15 @@ public class RandomUtils {
         return min + rd.nextInt(max - min);
     }
 
+    public static int[] randInts(int min, int max, int n){
+        return rd.ints(min, max)
+                .boxed()
+                .distinct()
+                .limit(n)
+                .mapToInt(i -> i)
+                .toArray();
+    }
+
     public static int[] randInRange(int min, int max){
 //        List<Integer> ints = Arrays.asList(IntStream.range(min, max).toArray());
         return null;

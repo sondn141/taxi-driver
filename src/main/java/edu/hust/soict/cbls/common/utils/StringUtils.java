@@ -24,10 +24,9 @@ public class StringUtils {
     public static boolean validPath(String content){
         String[] comps = content.split("/");
         for(int i = 0 ; i < comps.length ; i ++){
-            if(comps[i].contains("."))
+            if(comps[i].contains("\\."))
                 if(i == comps.length - 1)
                     return true;
-                else throw new RuntimeException("Invalid path " + content);
         }
 
         return false;
