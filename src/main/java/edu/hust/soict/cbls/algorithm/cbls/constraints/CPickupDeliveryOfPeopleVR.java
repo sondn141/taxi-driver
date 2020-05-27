@@ -9,6 +9,7 @@ import java.util.TreeMap;
 import java.util.TreeSet;
 
 import localsearch.domainspecific.vehiclerouting.vrp.CBLSVR;
+import localsearch.domainspecific.vehiclerouting.vrp.Constants;
 import localsearch.domainspecific.vehiclerouting.vrp.IConstraintVR;
 import localsearch.domainspecific.vehiclerouting.vrp.VRManager;
 import localsearch.domainspecific.vehiclerouting.vrp.VarRoutesVR;
@@ -85,6 +86,37 @@ public class CPickupDeliveryOfPeopleVR implements IConstraintVR{
 				violations -= vio.get(v);
 				vio.put(v,computeViolations(v));
 				violations += vio.get(v);
+			}
+		}
+	}
+	
+	private void propagateAddPoint(int k)
+	{
+		Set<Point> pickups = pickup2Delivery.keySet();
+		for(Point v = XR.getStartingPointOfRoute(k); v!= XR.getTerminatingPointOfRoute(k); v = XR.next(v))
+		{
+			if(pickups.contains(v))
+			{
+				violations -= vio.get(v);
+				vio.put(v,computeViolations(v));
+				violations += vio.get(v);
+			}
+		}
+	}
+	
+	private void propagateRemovePoint(int k){
+		Set<Point> pickups = pickup2Delivery.keySet();
+		for(Point v = XR.getStartingPointOfRoute(k); v!= XR.getTerminatingPointOfRoute(k); v = XR.oldNext(v))
+		{
+			if(pickups.contains(v))
+			{
+				if(XR.route(v) == Constants.NULL_POINT)
+					violations -= vio.get(v);
+				else{
+					violations -= vio.get(v);
+					vio.put(v,computeViolations(v));
+					violations += vio.get(v);
+				}
 			}
 		}
 	}
@@ -371,14 +403,14 @@ public class CPickupDeliveryOfPeopleVR implements IConstraintVR{
 
 	public void propagateAddTwoPoints(Point x1, Point y1, Point x2, Point y2) {
 		// TODO Auto-generated method stub
-		System.out.println("CPickupDeliveryOfPeople::propagateAddTwoPoints HAS NOT BEEN IMPLEMENTED YET");
-		System.exit(-1);
+		int k1 = XR.oldRoute(y1);
+		propagateAddPoint(k1);
 	}
 
 	public void propagateRemoveTwoPoints(Point x1, Point x2) {
 		// TODO Auto-generated method stub
-		System.out.println("CPickupDeliveryOfPeople::propagateRemoveTwoPoints HAS NOT BEEN IMPLEMENTED YET");
-		System.exit(-1);
+		int k1 = XR.oldRoute(x1);
+    	propagateRemovePoint(k1);
 	}
 	
 	@Override
@@ -1122,17 +1154,76 @@ public class CPickupDeliveryOfPeopleVR implements IConstraintVR{
 		return vio.get(x);
 	}
 	
-	public int evaluateAddTwoPoints(Point x1, Point y1, Point x2, Point y2) {
-		// TODO Auto-generated method stub
-		System.out.println("CPickupDeliveryOfPeople::evaluateAddTwoPoints HAS NOT BEEN IMPLEMENTED YET");
-		return 0;
+	@Override
+	// add the point x1 between y1 and next[y1]
+    // add the point x2 between y2 and next[y2]
+	// y1 and y2 are on the same route and index[y1] <= index[y2]
+	public int evaluateAddTwoPoints(Point x1, Point y1, Point x2, Point y2){
+		int delta = 0;
+		if(pickup2Delivery.containsKey(x1)){
+			Point delivery1 = pickup2Delivery.get(x1);
+			if(delivery1 == x2) {
+				if (y1 != y2)
+					delta++;
+			}
+			else if(XR.route(delivery1) != XR.route(y1)
+					|| (XR.route(delivery1) == XR.route(y1) && XR.index(delivery1) != XR.index(y1) + 1))
+				delta++;
+		}
+		if(delivery2Pickup.containsKey(x1)){
+			Point pick1 = delivery2Pickup.get(x1);
+			if(XR.route(pick1) == XR.route(y1) && XR.index(pick1) + 1 == XR.index(y1))
+				delta--;
+		}
+		if(pickup2Delivery.containsKey(x2)){
+			Point delivery2 = pickup2Delivery.get(x2);
+			if(delivery2 == x1)
+				delta++;
+			else if(XR.route(delivery2) != XR.route(y2) ||
+					(XR.route(delivery2) == XR.route(y2) && XR.index(delivery2) != XR.index(y2) + 1))
+				delta++;
+		}
+		if(delivery2Pickup.containsKey(x2)){
+			Point pick2 = delivery2Pickup.get(x2);
+			if(XR.route(pick2) == XR.route(y2) && XR.index(pick2) + 1 == XR.index(y2))
+				delta--;
+		}
+		if (pickup2Delivery.containsKey(y1)) {
+			if (x1 != pickup2Delivery.get(y1))
+				delta += vio.get(y1) == 0 ? 1 : 0;
+		}
+		if (pickup2Delivery.containsKey(y2)) {
+			if (y1 != y2 && x2 != pickup2Delivery.get(y2))
+				delta += vio.get(y2) == 0 ? 1 : 0;
+		}
+		return delta;
 	}
+    
+	@Override
+    // remove two points x1 and x2 from its current route
+	// x1 and x2 are on the same route, index[x1] < index[x2]
+    public int evaluateRemoveTwoPoints(Point x1, Point x2){
+    	int delta = 0;
+    	if(pickup2Delivery.containsKey(x1)){
+    		delta -= vio.get(x1);
+    	}
+		if(delivery2Pickup.containsKey(x1)){
+			Point pick1 = delivery2Pickup.get(x1);
+			if(XR.route(pick1) == XR.route(x1))
+				delta += vio.get(pick1) == 0 ? 1 : 0;			
+		}
+		
+		if(pickup2Delivery.containsKey(x2)){
+    		delta -= vio.get(x2);
+    	}
+		if(delivery2Pickup.containsKey(x2)){
+			Point pick2 = delivery2Pickup.get(x2);
+			if(pick2 != x1 && XR.route(pick2) == XR.route(x2))
+				delta += vio.get(pick2) == 0 ? 1 : 0;		
+		}
+		return delta;
+    }
 
-	public int evaluateRemoveTwoPoints(Point x1, Point x2) {
-		// TODO Auto-generated method stub
-		System.out.println("CPickupDeliveryOfPeople::evaluateRemoveTwoPoints HAS NOT BEEN IMPLEMENTED YET");
-		return 0;
-	}
 
 	@Override
 	public int evaluateAddRemovePoints(Point x, Point y, Point z) {
