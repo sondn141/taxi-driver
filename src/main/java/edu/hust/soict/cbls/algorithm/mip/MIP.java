@@ -74,7 +74,7 @@ public class MIP extends Solver {
 		}
 		
 		for (int i=2*N+2*M+K+1; i<=size; i++) {
-			int k = i-2*N-2*M;
+			int k = i-2*N-2*M-K;
 			r[i] = solver.makeIntVar(k, k, "r"+i);
 			t[i] = solver.makeIntVar(0, 0, "t"+i);
 			double cap = input.getTaxi(k-1).getCap();
@@ -181,16 +181,16 @@ public class MIP extends Solver {
 				if (i != j)
 					obj.setCoefficient(x[i][j], d[i][j]);
 		obj.setMinimization();
-		
+		System.out.println("not OK");
 		// solve
 		final MPSolver.ResultStatus status = solver.solve();
-		
+		System.out.println("OK");
 		if (status == MPSolver.ResultStatus.OPTIMAL) {			
 			List<List<Integer>> tours = new ArrayList<>();
 			for (int k=1; k<=K; k++) {
 				ArrayList<Integer> tour = new ArrayList<>();
 				tour.add(0);
-
+				
 				int i = 2*N + 2*M + k, j;	
 				while (true) {
 					for (j=1; j<=2*N+2*M+K; j++)

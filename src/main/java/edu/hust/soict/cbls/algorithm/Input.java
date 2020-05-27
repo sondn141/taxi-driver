@@ -107,9 +107,11 @@ public class Input {
     
     /**
      * @author hungth
-     * @since 20200523
+     * @since 20200527
      * */
     public List<Point> getPoints() {
+    	if (points == null)
+    		initPoints();
     	return points;
     }
 
