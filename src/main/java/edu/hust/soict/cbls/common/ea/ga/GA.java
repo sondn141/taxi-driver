@@ -21,6 +21,7 @@ public class GA<I extends Solution> extends Solver {
         super(props);
         this.solClazz = solClazz;
         this.props = props;
+        this.props.setRuntimeObject(Const.INPUT_OBJECT, this.input);
     }
 
     @Override

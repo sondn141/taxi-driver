@@ -8,7 +8,7 @@ import java.util.*;
 public class Properties extends java.util.Properties{
 
     private static final String DEFAULT_NAME = "config.properties";
-    protected Map<Object, Object> runtimeProps;
+    protected Map<String, Object> runtimeProps;
 
     public Properties() {
         try {
@@ -17,10 +17,6 @@ public class Properties extends java.util.Properties{
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
-
-    public SubProperties toSubProperties(String prefix){
-        return new SubProperties(prefix, this.runtimeProps);
     }
 
     /**
@@ -106,11 +102,14 @@ public class Properties extends java.util.Properties{
         }
     }
 
-    @SuppressWarnings("unchecked")
-    public Object getObject(String key){
-        Object obj = getProperty(key);
-        assert obj != null;
-        return obj;
+    public void setRuntimeObject(String key, Object obj){
+        assert obj != null && !StringUtils.isNullOrEmpty(key);
+        this.runtimeProps.put(key, obj);
+    }
+
+    public <T> T getRuntimeObject(String key, Class<T> clazz){
+        assert !StringUtils.isNullOrEmpty(key);
+        return clazz.cast(this.runtimeProps.get(key));
     }
 
     private void load() throws IOException {
