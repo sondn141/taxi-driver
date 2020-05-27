@@ -63,6 +63,10 @@ public class Info {
 		return points.subList(N+1, N+M+1);
 	}
 	
+	public List<Point> peoplePickupPoints() {
+		return points.subList(1, N+1);
+	}
+	
 	public ArrayList<Point> allPoints() {
 		return new ArrayList(points.subList(1, size));
 	}

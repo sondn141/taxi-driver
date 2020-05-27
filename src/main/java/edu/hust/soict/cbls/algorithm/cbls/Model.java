@@ -3,15 +3,19 @@ package edu.hust.soict.cbls.algorithm.cbls;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import edu.hust.soict.cbls.algorithm.Solution;
+import edu.hust.soict.cbls.algorithm.Solver;
 import edu.hust.soict.cbls.algorithm.cbls.constraints.CPickupDeliveryOfGoodVR;
 import edu.hust.soict.cbls.algorithm.cbls.constraints.CPickupDeliveryOfPeopleVR;
+import edu.hust.soict.cbls.algorithm.mip.MIP;
+import edu.hust.soict.cbls.common.config.Properties;
 import localsearch.domainspecific.vehiclerouting.vrp.*;
 import localsearch.domainspecific.vehiclerouting.vrp.constraints.leq.Leq;
 import localsearch.domainspecific.vehiclerouting.vrp.entities.*;
 import localsearch.domainspecific.vehiclerouting.vrp.functions.*;
 import localsearch.domainspecific.vehiclerouting.vrp.invariants.*;
 
-public class Model {
+public class Model extends Solver {
 //	public static int PEOPLE = 1;
 //	public static int GOOD = 0;
 //	int scale = 100000;
@@ -45,8 +49,9 @@ public class Model {
 //	HashMap<Point, IFunctionVR> accDisF;
 	private IFunctionVR[] costRoute;
 	
-	public Model(Info info) {
-		this.info = info;
+	public Model(Properties props) {
+		super(props);
+		this.info = new Info(input);
 		points = info.allPoints();
 	}
 	
@@ -100,5 +105,24 @@ public class Model {
 		valueSolution.add(objective.getValue());
 		
 		mgr.close();
+	}
+	
+	private void initSolution() {
+		Point x = info.peoplePickupPoints().get(0);
+		Point y = pickup2DeliveryOfPeople.get(x);
+		mgr.performAddTwoPoints(x, XR.startPoint(1), y, XR.startPoint(1));
+		for(Point p = XR.getStartingPointOfRoute(1); p != XR.getTerminatingPointOfRoute(1); p = XR.next(p))
+			System.out.print(" " + p.getID());
+	}
+
+	@Override
+	public Solution solve() {
+		initSolution();
+		return null;
+	}
+	
+	public static void main(String[] args) {
+		Model cbls = new Model(new Properties());
+		cbls.solve();
 	}
 }
