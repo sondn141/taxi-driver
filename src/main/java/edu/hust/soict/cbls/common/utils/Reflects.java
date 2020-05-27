@@ -36,6 +36,7 @@ public class Reflects {
         try {
             return (T) mainCl.loadClass(className).newInstance();
         } catch (InstantiationException | IllegalAccessException | ClassNotFoundException e) {
+            logger.error("Error while create new instance using java reflection", e);
             throw new RuntimeException(e);
         }
     }

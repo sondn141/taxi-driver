@@ -80,7 +80,11 @@ public class Input {
     }
 
     public Taxi getTaxi(int index){
-        return taxis.get(index);
+        try{
+            return taxis.get(index);
+        } catch (Exception e){
+            throw new RuntimeException("Error while getting taxi", e);
+        }
     }
 
     public double[][] getDistanceMat() {
