@@ -36,7 +36,8 @@ public class RecursiveWorker {
         if(StringUtils.validPath(output.getAbsolutePath()))
             throw new RuntimeException("Invalid output path");
 
-        FileUtils.copyDirectory(input, output, (File f) -> false);
+        if(input.isDirectory())
+            FileUtils.copyDirectory(input, output, (File f) -> false);
     }
 
     private void recursiveWork(File file){

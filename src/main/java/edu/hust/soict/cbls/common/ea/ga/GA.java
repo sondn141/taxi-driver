@@ -31,12 +31,16 @@ public class GA<I extends Solution> extends Solver {
         logger.info("Initialized population. Tending to evolute the population.");
         for(int i = 1 ; i <= props.getIntProperty(Const.GA_GENERATION, 100); i ++){
             logger.info("=========================== Gen " + i + " ===========================");
-            List<I> childs = pop.crossover();
-            pop.mutation(childs);
-            pop.addAll(childs);
-            pop.sort();
-            pop.naturalSelection();
-            logger.info("==============================================================");
+            try{
+                List<I> childs = pop.crossover();
+                pop.mutation(childs);
+                pop.addAll(childs);
+                pop.sort();
+                pop.naturalSelection();
+                logger.info("==============================================================");
+            }catch (Exception e){
+                logger.error("Error while running GA", e);
+            }
         }
 
         return pop.get(0);

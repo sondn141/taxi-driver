@@ -212,9 +212,4 @@ public class MIP extends Solver {
 		
 		return null;
 	}
-
-	public static void main(String[] args) {
-		MIP mip = new MIP(new Properties());
-		mip.solve();
-	}
 }

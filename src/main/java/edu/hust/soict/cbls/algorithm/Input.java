@@ -49,6 +49,15 @@ public class Input {
         taxis.set(index, t);
     }
 
+    public int getPassengerGetOff(int index){
+        int p = passengers.size();
+        int c = commodities.size();
+
+        if(index >= p + 1)
+            throw new RuntimeException("Invalid passenger getting in point index");
+        return index + p + c;
+    }
+
     public Commodity getCommodity(int index){
         int p = passengers.size();
         int c = commodities.size();
@@ -71,7 +80,11 @@ public class Input {
     }
 
     public Taxi getTaxi(int index){
-        return taxis.get(index);
+        try{
+            return taxis.get(index);
+        } catch (Exception e){
+            throw new RuntimeException("Error while getting taxi", e);
+        }
     }
 
     public double[][] getDistanceMat() {
@@ -89,10 +102,13 @@ public class Input {
     private void createDistanceMatrix(){
         if(points == null || points.isEmpty())
             initPoints();
+        if(distanceMat != null)
+            return;
 
         int n = points.size();
         distanceMat = new double[n][n];
         for(int i = 0 ; i < n - 1 ; i ++){
+            distanceMat[i] = new double[n];
             for(int j = i + 1 ; j < n ; j ++){
                 distanceMat[i][j] = distanceMat[j][i] = points.get(i).distance(points.get(j));
             }

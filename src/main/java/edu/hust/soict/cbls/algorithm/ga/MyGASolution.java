@@ -29,20 +29,39 @@ public class MyGASolution implements Solution {
 
         List<Commodity> commodities = inp.getCommodities();
         for(int i = 0 ; i < commodities.size() ; i ++){
-            int route = RandomUtils.randInt(0, k);
-            int pickup = SolutionUtils.firstPossiblePickupIndex(inp, commodities.get(i), gene.get(route), inp.getTaxi(route).getCap());
-            gene.get(route).add(pickup, inp.commodityPointIdx(i, 2));
+            int pickup = -1;
+            int route = -1;
+            while(pickup < 0){
+                route = RandomUtils.randInt(0, k);
+                pickup = SolutionUtils.firstPossiblePickupIndex(inp, commodities.get(i), gene.get(route), inp.getTaxi(route).getCap());
+            }
+            if(gene.get(route).isEmpty())
+                gene.get(route).add(inp.commodityPointIdx(i, 2));
+            else
+                gene.get(route).add(pickup, inp.commodityPointIdx(i, 2));
             int deliver = RandomUtils.randInt(pickup + 1, gene.get(route).size() + 1);
             gene.get(route).add(deliver, inp.commodityPointIdx(i, 4));
         }
 
         for(int i = 1 ; i <= inp.getPassengers().size() ; i ++){
             int route = RandomUtils.randInt(0, k);
+            if(gene.get(route).isEmpty()){
+                gene.get(route).add(i);
+                gene.get(route).add(i + inp.getPassengers().size() + commodities.size());
+                continue;
+            }
             int slot = RandomUtils.randInt(0, gene.get(route).size() + 1);
+            if(CollectionUtils.inRangeInclusive(0, gene.get(route).size() - 1, slot)){
+                int type = inp.pointType(gene.get(route).get(slot));
+                slot += type == 1 ? 2 : (type == 3 ? 1 : 0);
+            }
             gene.get(route).add(slot, i);
             gene.get(route).add(slot + 1, i + inp.getPassengers().size() + commodities.size());
         }
 
+        if(!SolutionUtils.validateRouteAllDiff(gene) || !SolutionUtils.validatePassengerGetIn(gene, inp)){
+            System.out.println();
+        }
         this.score = SolutionUtils.evaluate(inp, this.gene);
     }
 
@@ -54,7 +73,13 @@ public class MyGASolution implements Solution {
 
     @Override
     public List<List<Integer>> convert() {
-        return gene;
+        List<List<Integer>> n = new LinkedList<>();
+        for(List<Integer> l : gene){
+            List<Integer> k = new LinkedList<>(l);
+            n.add(k);
+        }
+
+        return n;
     }
 
     @Override
