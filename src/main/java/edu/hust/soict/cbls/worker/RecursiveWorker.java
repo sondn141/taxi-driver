@@ -8,6 +8,8 @@ import edu.hust.soict.cbls.common.utils.Reflects;
 import edu.hust.soict.cbls.common.utils.StringUtils;
 import edu.hust.soict.cbls.data.Writer;
 import org.apache.commons.io.FileUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.io.IOException;
@@ -23,6 +25,8 @@ public class RecursiveWorker {
     private File input;
 
     private List<Solver> solvers;
+
+    private static final Logger logger = LoggerFactory.getLogger(RecursiveWorker.class);
 
     public RecursiveWorker(Properties props) throws IOException {
         this.props = props;
@@ -61,8 +65,12 @@ public class RecursiveWorker {
             for(Solver solver : solvers){
                 solver.setInput(inpFile);
                 executor.submit(() -> {
-                    Solution solution = solver.solve();
-                    Writer.write(solution, outFile, solver.getClass(), true);
+                    try{
+                        Solution solution = solver.solve();
+                        Writer.write(solution, outFile, solver.getClass(), true);
+                    } catch (Exception e){
+                        logger.error("Error while solving problem", e);
+                    }
                 });
             }
             executor.shutdown();
