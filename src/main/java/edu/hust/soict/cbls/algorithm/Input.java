@@ -13,6 +13,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Input {
+	/**
+     * @author hungth
+     * @since 20200528
+     * */
+	public static final int STATION = 0;
+	public static final int PASSENGER_GETIN = 1;
+	public static final int COMMODITY_PICKUP = 2;
+	public static final int PASSENGER_GETOFF = 3;
+	public static final int COMMODITY_DELIVER = 4;
 
     private List<Passenger> passengers;
     private List<Commodity> commodities;
@@ -90,8 +99,6 @@ public class Input {
     }
 
     public double distance(int i, int j){
-        if(distanceMat == null)
-            createDistanceMatrix();
         return distanceMat[i][j];
     }
 
@@ -104,7 +111,7 @@ public class Input {
         int n = points.size();
         distanceMat = new double[n][n];
         for(int i = 0 ; i < n - 1 ; i ++){
-            distanceMat[i] = new double[n];
+//            distanceMat[i] = new double[n];
             for(int j = i + 1 ; j < n ; j ++){
                 distanceMat[i][j] = distanceMat[j][i] = points.get(i).distance(points.get(j));
             }

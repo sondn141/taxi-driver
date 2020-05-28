@@ -69,7 +69,7 @@ public class MIP extends Solver {
 		MPVariable[] c = new MPVariable[size+1];
 		for (int i=1; i<=2*N+2*M+K; i++) {
 			r[i] = solver.makeIntVar(1, K, "r"+i);
-			t[i] = solver.makeIntVar(0, 2*N+2*M, "t"+i);
+			t[i] = solver.makeIntVar(0, 2*N+2*M+1, "t"+i);
 			c[i] = solver.makeNumVar(0, MPSolver.infinity(), "c"+i);
 		}
 		
@@ -96,16 +96,19 @@ public class MIP extends Solver {
 //		}
 		
 		// (5)
-		for (int i=1; i<=size; i++) 
-			if (!stopID(i)) {
-				MPConstraint ij = solver.makeConstraint(1, 1);
-				for (int j=1; j<=size; j++)
-					ij.setCoefficient(x[i][j], 1);
-			}
+		for (int i=1; i<=size; i++) {
+			MPConstraint ij = stopID(i) ? 
+					solver.makeConstraint(0, 0) :
+						solver.makeConstraint(1, 1);
+			for (int j=1; j<=size; j++)
+				ij.setCoefficient(x[i][j], 1);
+		}
 		
 		// (6)
-		for (int i=1; i<=2*N+2*M+K; i++) {
-			MPConstraint ji = solver.makeConstraint(1, 1);
+		for (int i=1; i<=size; i++) {
+			MPConstraint ji = i > 2*N+2*M+K ? 
+					solver.makeConstraint(0, 0) :
+						solver.makeConstraint(1, 1);
 			for (int j=1; j<=size; j++)
 				ji.setCoefficient(x[j][i], 1);
 		}
@@ -173,7 +176,7 @@ public class MIP extends Solver {
 			p.setCoefficient(t[i], 1);
 			p.setCoefficient(t[i+N+M], -1);
 		}
-		
+		System.out.println("fail");
 		// (18)
 		MPObjective obj = solver.objective();
 		for (int i=1; i<=size; i++)
@@ -181,28 +184,32 @@ public class MIP extends Solver {
 				if (i != j)
 					obj.setCoefficient(x[i][j], d[i][j]);
 		obj.setMinimization();
-		System.out.println("not OK");
+
 		// solve
 		final MPSolver.ResultStatus status = solver.solve();
-		System.out.println("OK");
-		if (status == MPSolver.ResultStatus.OPTIMAL) {			
+		
+		if (status == MPSolver.ResultStatus.OPTIMAL) {	
 			List<List<Integer>> tours = new ArrayList<>();
 			for (int k=1; k<=K; k++) {
 				ArrayList<Integer> tour = new ArrayList<>();
 				tour.add(0);
 				
-				int i = 2*N + 2*M + k, j;	
+				int i = 2*N + 2*M + K + k, j;	
 				while (true) {
-					for (j=1; j<=2*N+2*M+K; j++)
+					for (j=1; j<=size; j++)
 						if (solver.lookupVariableOrNull(i+"_"+j).solutionValue() == 1)
 							break;
-					if (j > 2*N+2*M)
+					if (stopID(j))
 						break;
 					tour.add(j);
 					i = j;
 				}
 				tour.add(0);
 				tours.add(tour);
+				double score = 0.0;
+				for (j=0; j<tour.size() - 1; j++)
+					score += distance[tour.get(j)][tour.get(j+1)];
+				System.out.println(score);
 			}
 			MySolution solution = new MySolution();
 			solution.setSolution(tours);

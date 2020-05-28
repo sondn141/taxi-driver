@@ -18,6 +18,7 @@ import edu.hust.soict.cbls.algorithm.cbls.neighborhoodexploration.PeopleMoveExpl
 import edu.hust.soict.cbls.algorithm.impl.MySolution;
 import edu.hust.soict.cbls.common.config.Properties;
 import edu.hust.soict.cbls.common.datastructure.Pair;
+import edu.hust.soict.cbls.common.utils.SolutionUtils;
 import edu.hust.soict.cbls.data.Reader;
 import localsearch.domainspecific.vehiclerouting.vrp.*;
 import localsearch.domainspecific.vehiclerouting.vrp.constraints.leq.Leq;
@@ -203,6 +204,7 @@ public class CBLS extends Solver {
 
 //	@Override
 	public Solution solve() {
+		stateModel();
 		search(10);
 
 //		for (int k=1; k<=K; k++) {
@@ -215,6 +217,7 @@ public class CBLS extends Solver {
 		MySolution solution = new MySolution();
 		solution.setSolution(convertSolution());
 		solution.setScore(objective.getValue());
+//		System.out.println(SolutionUtils.validateSolution(solution.getSolution(), input));
 		return solution;
 	}
 	

@@ -10,6 +10,7 @@ import edu.hust.soict.cbls.entity.Passenger;
 import edu.hust.soict.cbls.entity.Taxi;
 import edu.hust.soict.cbls.algorithm.impl.MySolution;
 import edu.hust.soict.cbls.common.config.Properties;
+import edu.hust.soict.cbls.common.utils.SolutionUtils;
 
 public class BackTracking extends Solver {
 	private MySolution solution;
@@ -100,6 +101,8 @@ public class BackTracking extends Solver {
     	Arrays.fill(commodityStatus, -1);
     	
     	backtrack(0, 0, 0.0);
+//    	System.out.println(SolutionUtils.validateSolution(solution.getSolution(), input));
+//    	System.out.println(solution.getScore());
         return solution;
     }
 }
