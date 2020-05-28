@@ -8,6 +8,7 @@ import com.google.ortools.linearsolver.*;
 import edu.hust.soict.cbls.algorithm.Solution;
 import edu.hust.soict.cbls.algorithm.Solver;
 import edu.hust.soict.cbls.algorithm.impl.MySolution;
+import edu.hust.soict.cbls.common.config.Const;
 import edu.hust.soict.cbls.common.config.Properties;
 
 public class MIP extends Solver {
@@ -35,7 +36,8 @@ public class MIP extends Solver {
 		solver.suppressOutput();
 		
 		final int size = 2*N+2*M+2*K;
-		final double BigM = 1e6, eps = 1e-6;
+		final double BigM = props.getDoubleProperty(Const.MIP_BIG_M, 1e6);
+		final double eps = props.getDoubleProperty(Const.MIP_EPSILON, 1e-6);
 		
 		// w
 		double[] w = new double[size+1];

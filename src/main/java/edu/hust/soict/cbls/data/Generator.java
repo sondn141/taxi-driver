@@ -3,12 +3,12 @@ package edu.hust.soict.cbls.data;
 public class Generator {
 
     public static void main(String[] args) {
-        String path = "data/test.txt";
+        String path = "data/medium.txt";
 
         new Generate()
-                .setNumOfPassengers(4)
-                .setNumOfCommodities(3)
-                .setNumOfTaxi(2)
+                .setNumOfPassengers(20)
+                .setNumOfCommodities(30)
+                .setNumOfTaxi(5)
                 .generate()
                 .save(path);
     }

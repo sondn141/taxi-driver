@@ -122,6 +122,8 @@ public class GenericLocalSearch implements ISearch {
 	public void restart(int currentIter){
 		if(verbose) System.out.println(name() + "::restart............");
 //		XR.setRandom();
+//		XR.initStartingTerminatingPoints();
+//		mgr.initPropagation();
 //		generateInitialSolution();
 		perturb(XR.getNbClients());
 		if(F.getValues().lt(bestValue)){
@@ -257,6 +259,7 @@ public class GenericLocalSearch implements ISearch {
 			if(P.size() >= 2){
 				for(int i = 1; i <= 10; i++){
 					Point x = P.get(R.nextInt(P.size()));
+					
 					Point y = P.get(R.nextInt(P.size()));
 					
 					if(x != y && XR.checkPerformOnePointMove(x, y)){

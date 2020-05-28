@@ -93,7 +93,7 @@ public class Generate {
         List<Double> weis = getWei();
         List<Commodity> commodities = new LinkedList<>();
         for(int i = 0 ;i < M ; i ++){
-            commodities.add(new Commodity(commodityPoints.get(i), commodityPoints.get(i + N), weis.get(i)));
+            commodities.add(new Commodity(commodityPoints.get(i), commodityPoints.get(i + M), weis.get(i)));
         }
 
         Point station = RandomUtils.PointUtils.singlePoint(locationMin, locationMax);
@@ -130,11 +130,11 @@ public class Generate {
     private List<Double> getWei(){
         switch (weiDistribution){
             case NORMAL: {
-                return RandomUtils.randNormals(K, weiMean, weiStd, weiMin, weiMax);
+                return RandomUtils.randNormals(M, weiMean, weiStd, weiMin, weiMax);
             }
 
             case UNIFORM:{
-                return RandomUtils.randUniforms(K, weiMin, weiMax);
+                return RandomUtils.randUniforms(M, weiMin, weiMax);
             }
 
             default:
@@ -146,17 +146,17 @@ public class Generate {
         switch (pLocation){
             case NORMAL: {
                 return RandomUtils.PointUtils
-                        .normalPoints(n, locationMean, locationStd, locationMax, locationMin);
+                        .normalPoints(n, locationMean, locationStd, locationMin, locationMax);
             }
 
             case UNIFORM:{
                 return RandomUtils.PointUtils
-                        .uniformPoints(n, locationMax, locationMin);
+                        .uniformPoints(n, locationMin, locationMax);
             }
 
             case GRID:{
                 return RandomUtils.PointUtils
-                        .gridPoints(n, numGrid, locationMax, locationMin);
+                        .gridPoints(n, numGrid, locationMin, locationMax);
             }
 
             default:
