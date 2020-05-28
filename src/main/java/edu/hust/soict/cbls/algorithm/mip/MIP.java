@@ -65,18 +65,18 @@ public class MIP extends Solver {
 		
 		// (2) + (3) + (4) + (7) + (9) + (11)
 		MPVariable[] r = new MPVariable[size+1];
-		MPVariable[] t = new MPVariable[size+1];
+		MPVariable[] l = new MPVariable[size+1];
 		MPVariable[] c = new MPVariable[size+1];
 		for (int i=1; i<=2*N+2*M+K; i++) {
 			r[i] = solver.makeIntVar(1, K, "r"+i);
-			t[i] = solver.makeIntVar(0, 2*N+2*M, "t"+i);
+			l[i] = solver.makeNumVar(0, MPSolver.infinity(), "l"+i);
 			c[i] = solver.makeNumVar(0, MPSolver.infinity(), "c"+i);
 		}
 		
 		for (int i=2*N+2*M+K+1; i<=size; i++) {
-			int k = i-2*N-2*M;
+			int k = i-2*N-2*M-K;
 			r[i] = solver.makeIntVar(k, k, "r"+i);
-			t[i] = solver.makeIntVar(0, 0, "t"+i);
+			l[i] = solver.makeNumVar(0, 0, "t"+i);
 			double cap = input.getTaxi(k-1).getCap();
 			c[i] = solver.makeNumVar(cap, cap, "c"+i);
 		}
@@ -96,16 +96,19 @@ public class MIP extends Solver {
 //		}
 		
 		// (5)
-		for (int i=1; i<=size; i++) 
-			if (!stopID(i)) {
-				MPConstraint ij = solver.makeConstraint(1, 1);
-				for (int j=1; j<=size; j++)
-					ij.setCoefficient(x[i][j], 1);
-			}
+		for (int i=1; i<=size; i++) {
+			MPConstraint ij = stopID(i) ? 
+					solver.makeConstraint(0, 0) :
+						solver.makeConstraint(1, 1);
+			for (int j=1; j<=size; j++)
+				ij.setCoefficient(x[i][j], 1);
+		}
 		
 		// (6)
-		for (int i=1; i<=2*N+2*M+K; i++) {
-			MPConstraint ji = solver.makeConstraint(1, 1);
+		for (int i=1; i<=size; i++) {
+			MPConstraint ji = i > 2*N+2*M+K ? 
+					solver.makeConstraint(0, 0) :
+						solver.makeConstraint(1, 1);
 			for (int j=1; j<=size; j++)
 				ji.setCoefficient(x[j][i], 1);
 		}
@@ -128,14 +131,14 @@ public class MIP extends Solver {
 		for (int i=1; i<=size; i++)
 			for (int j=1; j<=2*N+2*M+K; j++)
 				if (i != j) {
-					MPConstraint pos = solver.makeConstraint(1 - BigM, MPSolver.infinity());
-					pos.setCoefficient(t[j], 1);
-					pos.setCoefficient(t[i], -1);
+					MPConstraint pos = solver.makeConstraint(d[i][j] - BigM, MPSolver.infinity());
+					pos.setCoefficient(l[j], 1);
+					pos.setCoefficient(l[i], -1);
 					pos.setCoefficient(x[i][j], -BigM);
 					
-					MPConstraint neg = solver.makeConstraint(-MPSolver.infinity(), 1 + BigM);
-					neg.setCoefficient(t[j], 1);
-					neg.setCoefficient(t[i], -1);
+					MPConstraint neg = solver.makeConstraint(-MPSolver.infinity(), d[i][j] + BigM);
+					neg.setCoefficient(l[j], 1);
+					neg.setCoefficient(l[i], -1);
 					neg.setCoefficient(x[i][j], BigM);
 				}
 	
@@ -169,40 +172,48 @@ public class MIP extends Solver {
 		
 		// (15)
 		for (int i=N+1; i<=N+M; i++) {
-			MPConstraint p = solver.makeConstraint(-MPSolver.infinity(), - eps);
-			p.setCoefficient(t[i], 1);
-			p.setCoefficient(t[i+N+M], -1);
+			MPConstraint p = solver.makeConstraint(-MPSolver.infinity(), 0);
+			p.setCoefficient(l[i], 1);
+			p.setCoefficient(l[i+N+M], -1);
+		}
+//		System.out.println("fail");
+		// (18)
+		MPVariable maxVR = solver.makeNumVar(0, MPSolver.infinity(), "maxVR");
+		for (int i=2*N+2*M+1; i<=2*N+2*M+K; i++) {
+			MPConstraint p = solver.makeConstraint(0, MPSolver.infinity());
+			p.setCoefficient(maxVR, 1);
+			p.setCoefficient(l[i], -1);
 		}
 		
-		// (18)
 		MPObjective obj = solver.objective();
-		for (int i=1; i<=size; i++)
-			for (int j=1; j<=size; j++)
-				if (i != j)
-					obj.setCoefficient(x[i][j], d[i][j]);
+		obj.setCoefficient(maxVR, 1);
 		obj.setMinimization();
-		
+
 		// solve
 		final MPSolver.ResultStatus status = solver.solve();
 		
-		if (status == MPSolver.ResultStatus.OPTIMAL) {			
+		if (status == MPSolver.ResultStatus.OPTIMAL) {	
 			List<List<Integer>> tours = new ArrayList<>();
 			for (int k=1; k<=K; k++) {
 				ArrayList<Integer> tour = new ArrayList<>();
 				tour.add(0);
-
-				int i = 2*N + 2*M + k, j;	
+				
+				int i = 2*N + 2*M + K + k, j;	
 				while (true) {
-					for (j=1; j<=2*N+2*M+K; j++)
+					for (j=1; j<=size; j++)
 						if (solver.lookupVariableOrNull(i+"_"+j).solutionValue() == 1)
 							break;
-					if (j > 2*N+2*M)
+					if (stopID(j))
 						break;
 					tour.add(j);
 					i = j;
 				}
 				tour.add(0);
 				tours.add(tour);
+//				double score = 0.0;
+//				for (j=0; j<tour.size() - 1; j++)
+//					score += distance[tour.get(j)][tour.get(j+1)];
+//				System.out.println(score);
 			}
 			MySolution solution = new MySolution();
 			solution.setSolution(tours);

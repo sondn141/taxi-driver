@@ -39,8 +39,16 @@ public class MySolution implements Solution {
 		System.out.println("Debug score: " + score);
 	}
 	
+	public List<List<Integer>> getSolution() {
+		return solution;
+	}
+	
 	public void setSolution(List<List<Integer>> tours) {
 		this.solution = tours;
+	}
+	
+	public double getScore() {
+		return score;
 	}
 	
 	public void setScore(double score) {

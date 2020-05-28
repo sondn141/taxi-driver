@@ -3,6 +3,7 @@ package edu.hust.soict.cbls.common.utils;
 import edu.hust.soict.cbls.algorithm.Input;
 import edu.hust.soict.cbls.common.config.Const;
 import edu.hust.soict.cbls.entity.Commodity;
+import edu.hust.soict.cbls.entity.Point;
 
 import java.util.List;
 
@@ -72,4 +73,62 @@ public class SolutionUtils {
         return true;
     }
 
+    /**
+     * @author hungth
+     * @since 20200528
+     * */
+    public static boolean validateSolution(List<List<Integer>> routes, Input inp) {
+    	int N = inp.getPassengers().size();
+    	int M = inp.getCommodities().size();
+    	int K = inp.getTaxis().size();
+    	
+    	int[] indices = new int[2*N*2*M+1];
+    	int[] r = new int[2*N*2*M+1];
+    	double[] w = new double[2*N*2*M+1];
+//    	double score = 0;
+    	
+    	inp.getDistanceMat();
+    	
+    	List<Point> points = inp.getPoints();
+    	
+    	int k = 0;
+    	for (List<Integer> route: routes) {
+    		double cap = inp.getTaxis().get(k++).getCap();
+    		if (route.get(0) != 0 || route.get(route.size() - 1) != 0) {
+    			System.out.println("Incorrect station!");
+    			return false;
+    		}
+    		for (int i=1; i<route.size()-1; i++) {
+    			int p = route.get(i);
+    			int prev = route.get(i-1);
+    			r[p] = k;
+    			indices[p] = indices[prev] + 1;
+    			if (inp.pointType(p) == Input.COMMODITY_PICKUP)
+    				w[p] = w[prev] + inp.getCommodities().get(p-N-1).getWeight();
+    			else if (inp.pointType(p) == Input.COMMODITY_DELIVER)
+    				w[p] = w[prev] - inp.getCommodities().get(p-2*N-M-1).getWeight();
+    			else w[p] = w[prev];
+    			if (w[p] < 0 || w[p] > cap) {
+    				System.out.println("Capacity violated!");
+    				return false;
+    			}
+//    			score += inp.distance(prev, p);
+//    			score += points.get(prev).distance(points.get(p));
+    		}
+//    		score += inp.distance(route.get(route.size()-2), 0);
+//    		score += points.get(route.get(route.size()-2)).distance(points.get(0));
+    	}
+    	for (int i=1; i<=N; i++)
+    		if (r[i] != r[i+N+M] || indices[i] + 1 != indices[i+N+M]) {
+    			System.out.println("Passenger order failed!");
+    			return false;
+    		}
+    	for (int i=N+1; i<=N+M; i++)
+    		if (r[i] != r[i+N+M] || indices[i] >= indices[i+N+M]) {
+    			System.out.println("Commodity order failed!");
+    			return false;
+    		}
+    	System.out.println("Validated solution: " + evaluate(inp, routes));
+    	return true;
+    }
 }
