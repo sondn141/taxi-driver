@@ -40,9 +40,17 @@ public class BackTracking extends Solver {
         			minEdge = edges[i][j];
     }
     
-    private void backtrack(int step, int k, double score) {
+    private double maxVR() {
+    	double max = 0.0;
+    	for (Driver d: drivers)
+    		max = Double.max(max, d.getLength());
+    	return max;
+    }
+    
+    private void backtrack(int step, int k) {
 //    	System.out.println(step + " " + k + " " + score);
-    	if (score + (2*N+2*M-step) * minEdge >= solution.score())
+    	double score = maxVR();
+    	if (score >= solution.score())
     		return;
     	if (step == 2*N + 2*M) {
 //    		System.out.println(score);
@@ -51,14 +59,14 @@ public class BackTracking extends Solver {
     		return;
     	}
     	Driver driver = drivers.get(k);
-    	double length = driver.getLength();
+//    	double length = driver.getLength();
     	
     	for (int i=0; i<N; i++)
     		if (!passengerStatus[i]) {
     			driver.serve(passengers[i]);
     			passengerStatus[i] = true;
     			
-    			backtrack(step + 2, k, score + driver.getLength() - length);
+    			backtrack(step + 2, k);
     			
     			driver.serveBack(passengers[i]);
     			passengerStatus[i] = false;
@@ -70,7 +78,7 @@ public class BackTracking extends Solver {
     				continue;
     			commodityStatus[i] = k;
     			
-    			backtrack(step + 1, k, score + driver.getLength() - length);
+    			backtrack(step + 1, k);
     			
     			driver.pickupBack(commodities[i]);
     			commodityStatus[i] = -1;
@@ -79,14 +87,14 @@ public class BackTracking extends Solver {
     			driver.deliver(commodities[i]);
     			commodityStatus[i] = -2;
     			
-    			backtrack(step + 1, k, score + driver.getLength() - length);
+    			backtrack(step + 1, k);
     			
     			driver.deliverBack(commodities[i]);
     			commodityStatus[i] = k;
     		}
     	
     	if (k < K - 1)
-    		backtrack(step, k + 1, score);
+    		backtrack(step, k + 1);
     }
 
     @Override
@@ -100,7 +108,7 @@ public class BackTracking extends Solver {
     	commodityStatus = new int[M];
     	Arrays.fill(commodityStatus, -1);
     	
-    	backtrack(0, 0, 0.0);
+    	backtrack(0, 0);
 //    	System.out.println(SolutionUtils.validateSolution(solution.getSolution(), input));
 //    	System.out.println(solution.getScore());
         return solution;

@@ -121,9 +121,9 @@ public class GenericLocalSearch implements ISearch {
 	}
 	public void restart(int currentIter){
 		if(verbose) System.out.println(name() + "::restart............");
-		XR.setRandom();
-		generateInitialSolution();
-//		perturb(XR.getNbClients());
+//		XR.setRandom();
+//		generateInitialSolution();
+		perturb(XR.getNbClients());
 		if(F.getValues().lt(bestValue)){
 			updateBest();
 		}
