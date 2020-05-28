@@ -33,7 +33,7 @@ public class MyGASolution implements Solution {
             int route = -1;
             while(pickup < 0){
                 route = RandomUtils.randInt(0, k);
-                pickup = SolutionUtils.firstPossiblePickupIndex(inp, commodities.get(i), gene.get(route), inp.getTaxi(route).getCap());
+                pickup = SolutionUtils.possiblePickupIndex(inp, commodities.get(i), gene.get(route), inp.getTaxi(route).getCap());
             }
             if(gene.get(route).isEmpty())
                 gene.get(route).add(inp.commodityPointIdx(i, 2));
@@ -59,7 +59,12 @@ public class MyGASolution implements Solution {
             gene.get(route).add(slot + 1, i + inp.getPassengers().size() + commodities.size());
         }
 
-        if(!SolutionUtils.validateRouteAllDiff(gene) || !SolutionUtils.validatePassengerGetIn(gene, inp)){
+        for(List<Integer> r : gene){
+            r.add(0);
+            r.add(0, 0);
+        }
+        if(!SolutionUtils.validateRouteAllDiff(gene) ||
+                !SolutionUtils.validatePassengerGetIn(gene, inp) || !SolutionUtils.validateSolution(gene, inp)){
             System.out.println();
         }
         this.score = SolutionUtils.evaluate(inp, this.gene);

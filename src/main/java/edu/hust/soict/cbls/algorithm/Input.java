@@ -71,7 +71,7 @@ public class Input {
         int p = passengers.size();
         int c = commodities.size();
         if(CollectionUtils.inRangeInclusive(1 + p, p + c, index) ||
-                CollectionUtils.inRangeInclusive(p<<1 + c + 1, (p + c)<<2, index)){
+                CollectionUtils.inRangeInclusive(p*2 + c + 1, (p + c)*2, index)){
             int idx = (index > (p + c) ? index - (p + c) : index) - 1 - p;
             return commodities.get(idx);
         } else

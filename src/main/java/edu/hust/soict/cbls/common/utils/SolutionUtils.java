@@ -26,18 +26,28 @@ public class SolutionUtils {
         return longest;
     }
 
-    public static int firstPossiblePickupIndex(Input input, Commodity commodity, List<Integer> route, double cap){
+    public static int possiblePickupIndex(Input input, Commodity commodity, List<Integer> route, double cap){
         if(route.isEmpty())
             return commodity.getWeight() > cap ? -1 : 0;
         double rem = cap;
+        P:
         for(int i = 0 ; i < route.size() ; i ++){
             int pointIdx = route.get(i);
             int type = input.pointType(pointIdx);
             if(type == 2 || type == 4){
                 Commodity c = input.getCommodity(pointIdx);
                 rem += type == 2 ? c.getWeight() : -c.getWeight();
-                if(rem >= commodity.getWeight())
+                if(rem >= commodity.getWeight()){
+                    double tmp = rem - commodity.getWeight();
+                    for(int j = i + 1 ; j < route.size() ; j ++){
+                        int p = route.get(j);
+                        int t = input.pointType(p);
+                        tmp += t == 4 ? input.getCommodity(p).getWeight() : (t == 2 ? -input.getCommodity(p).getWeight() : 0.0);
+                        if(tmp < 0 || tmp > cap)
+                            continue P;
+                    }
                     return i + 1;
+                }
             }
         }
 
@@ -50,7 +60,7 @@ public class SolutionUtils {
 
         for(List<Integer> r : routes)
             for(Integer i : r)
-                if(appr[i])
+                if( i!= 0 && appr[i])
                     return false;
                 else
                     appr[i] = true;
