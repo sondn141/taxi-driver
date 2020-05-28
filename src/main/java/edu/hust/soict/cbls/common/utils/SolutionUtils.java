@@ -14,11 +14,11 @@ public class SolutionUtils {
         for(List<Integer> route : routes){
             if(route.isEmpty())
                 continue;
-            double dis = distanceMat[0][route.get(0)];
+            double dis = route.get(0) == 0 ? 0.0 : distanceMat[0][route.get(0)];
             for(int i = 1 ; i < route.size() ; i ++){
                 dis += distanceMat[route.get(i - 1)][route.get(i)];
             }
-            dis += distanceMat[route.get(route.size() - 1)][0];
+            dis += route.get(route.size() - 1) == 0 ? 0.0 : distanceMat[route.get(route.size() - 1)][0];
             longest = Math.max(dis, longest);
         }
 
