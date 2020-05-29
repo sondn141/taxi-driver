@@ -170,14 +170,14 @@
 		\frametitle{Mô hình ràng buộc}
 		\textbf{\underline{Tham số}}
 		\begin{itemize}
-			\item Tập $2N+2M+K$ điểm:
+			\item Tập $2N+2M+2K$ điểm:
 			\begin{itemize}
 				\item Hành khách $i$: điểm đón $i$ và điểm trả $i+N+M$ ($i=1,2,...,N$)
 				\item Gói hàng $j$: điểm lấy hàng $j$ và điểm trả $j+N+M$ ($j=N+1,N+2,...,N+M$)
-				\item $K$ điểm logic $2N+2M+1, 2N+2M+2, ..., 2N+2M+K$ tham chiếu tới điểm xuất phát vật lý $0$. Điểm $2N+2M+k$ tương ứng là điểm bắt đầu và kết thúc lộ trình xe thứ $k$ ($k=1,2,...,K$)
+				\item $2K$ điểm logic $2N+2M+1, 2N+2M+2, ..., 2N+2M+2K$ tham chiếu tới điểm xuất phát vật lý $0$. Điểm $2N+2M+k$ tương ứng là điểm bắt đầu, $2N+2M+K+k$ là điểm kết thúc lộ trình xe thứ $k$ ($k=1,2,...,K$)
 			\end{itemize}
-			\item $d_{ij}$: Khoảng cách từ điểm $i$ tới điểm $j$ ($i,j\in \{1,2,...,2N+2M+K\}$)
-			\item $w_i$: Sự thay đổi khối lượng hàng khi đi tới điểm $i$ ($i=1,2,...,2N+2M+K$)
+			\item $d_{ij}$: Khoảng cách từ điểm $i$ tới điểm $j$ ($i,j\in \{1,2,...,2N+2M+2K\}$)
+			\item $w_i$: Sự thay đổi khối lượng hàng khi đi tới điểm $i$ ($i=1,2,...,2N+2M+2K$)
 			\begin{equation}
 				w_i =
 				\begin{cases}
@@ -193,7 +193,7 @@
 		\frametitle{Mô hình ràng buộc}
 		\textbf{\underline{Biến quyết định}}
 		\begin{itemize}
-			\item $x_{ij}$: Biến nhị phân, xác định cung đi từ điểm $i$ đến điểm $j$ có xuất hiện trong lộ trình của 1 trong $k$ xe không ($i,j\in \{1,2,...,2N+2M+K$)
+			\item $x_{ij}$: Biến nhị phân, xác định cung đi từ điểm $i$ đến điểm $j$ có xuất hiện trong lộ trình của 1 trong $k$ xe không ($i,j\in \{1,2,...,2N+2M+2K$)
 			\begin{equation}
 				x_{ij} = 
 				\begin{cases}
@@ -201,15 +201,15 @@
 					0 & \text{ngược lại}
 				\end{cases}
 			\end{equation}
-			\item Tại mỗi điểm $i$ ($i=1,2,...,2N+2M+K$):
+			\item Tại mỗi điểm $i$ ($i=1,2,...,2N+2M+2K$):
 			\begin{itemize}
 				\item $r_i$: chỉ số của xe đi qua điểm $i$ trong lộ trình
 				\begin{equation}
 					1\leq r_i\leq K
 				\end{equation}
-				\item $t_i$: thứ tự của điểm $i$ trong lộ trình của xe $k$ đi qua nó (điểm xuất phát có thứ tự 0)
+				\item $l_i$: khoảng cách tích lũy của xe đi từ điểm $0$ đến điểm $i$ trong lộ trình
 				\begin{equation}
-					0\leq t_i\leq 2N+2M
+					0\leq t_i\leq 2N+2M+1
 				\end{equation}
 				\item $c_i$: khối lượng hàng xe $k$ (đi qua điểm $i$) còn chịu được khi đi tới điểm $i$
 				\begin{equation}
@@ -225,31 +225,31 @@
 		\begin{itemize}
 			\item Ràng buộc cân bằng luồng vào ra:
 			\begin{align}
-				\sum_{j=1}^{2N+2M+K} x_{ij} = 1,\quad & i=1,2,...,2N+2M+K \\
-				\sum_{i=1}^{2N+2M+K} x_{ij} = 1,\quad & j=1,2,...,2N+2M+K
+				\sum_{j=1}^{2N+2M+2K} x_{ij} = 1,\quad & i=1,2,...,2N+2M+K \\
+				\sum_{i=1}^{2N+2M+2K} x_{ij} = 1,\quad & j=1,2,...,2N+2M;2N+2M+K+1,...,2N+2M+2K
 			\end{align}
 			\item Xác định $r_i$:
 			\begin{align}
 				r_{2N+2M+k} = k,\quad & k=1,2,...,K \\
 				x_{ij}=1\Rightarrow r_j=r_i,\quad & i=1,2,...,2N+2M+K, \\
-				& j=1,2,...,2N+2M, i\ne j \notag
+				& j=1,2,...,2N+2M;2N+2M+K+1,...,2N+2M+2K, i\ne j \notag
 			\end{align}
 		\end{itemize}
 	\end{frame}
 	\begin{frame}
 		\frametitle{Mô hình ràng buộc}
 		\begin{itemize}
-			\item Xác định $t_i$:
+			\item Xác định $l_i$:
 			\begin{align}
-				t_{2N+2M+k} = 0,\quad & k=1,2,...,K \\
-				x_{ij}=1\Rightarrow t_j=t_i + 1,\quad & i=1,2,...,2N+2M+K, \\
-				& j=1,2,...,2N+2M,i\ne j \notag
+				l_{2N+2M+k} = 0,\quad & k=1,2,...,K \\
+				x_{ij}=1\Rightarrow l_j=l_i + d_{ij},\quad & i=1,2,...,2N+2M+K, \\
+				& j=1,2,...,2N+2M;2N+2M+K+1,...,2N+2M+2K,i\ne j \notag
 			\end{align}
 			\item Xác định $c_i$:
 			\begin{align}
 				c_{2N+2M+k} = Q_k,\quad & k=1,2,...,K \\
 				x_{ij}=1\Rightarrow c_j=c_i - w_j,\quad & i=1,2,...,2N+2M+K, \\
-				& j=1,2,...,2N+2M,i\ne j \notag
+				& j=1,2,...,2N+2M;2N+2M+K+1,...,2N+2M+2K,i\ne j \notag
 			\end{align}
 		\end{itemize}
 	\end{frame}
@@ -262,74 +262,81 @@
 			\end{align}
 			\item Điểm đón khách phải liền trước điểm trả khách:
 			\begin{align}
-				x_{i,(i+N+M)} = 1,\quad & i=1,2,...,Nj
+				x_{i,(i+N+M)} = 1,\quad & i=1,2,...,N
 			\end{align}
 			\item Điểm lấy hàng phải ở trước điểm giao hàng:
 			\begin{align}
-				t_i < t_{i+N+M},\quad & i=N+1,N+2,...,N+M
+				l_i < l_{i+N+M},\quad & i=N+1,N+2,...,N+M
 			\end{align}
 			\item Khối lượng còn lại của xe tại mọi thời điểm không âm (đã thỏa mãn).
 		\end{itemize}
 	\end{frame}
 	\begin{frame}
 		\frametitle{Mô hình ràng buộc}
+		\begin{itemize}
+			\item $L$: Độ dài của lộ trình xe dài nhất trong $K$ lộ trình
+			\item Ràng buộc xác định lộ trình dài nhất:
+			\begin{align}
+				l_i\leq L,\quad & i=2N+2M+K+1,...,2N+2M+2K
+			\end{align}
+		\end{itemize}
 		\textbf{\underline{Hàm mục tiêu}}
 		\begin{equation}
-			\sum_{i=1}^{2N+2M+K} \sum_{j=1}^{2N+2M+K} d_{ij}\times x_{ij} \leftarrow min
+			L \leftarrow min
 		\end{equation}
 	\end{frame}
 
 	\begin{frame}
 		\frametitle{Mô hình MIP}
-		\textbf{\underline{Tham số}}
+			\textbf{\underline{Tham số}}
 		\begin{itemize}
-			\item Tập $2N+2M+K$ điểm:
+			\item Tập $2N+2M+2K$ điểm:
 			\begin{itemize}
 				\item Hành khách $i$: điểm đón $i$ và điểm trả $i+N+M$ ($i=1,2,...,N$)
 				\item Gói hàng $j$: điểm lấy hàng $j$ và điểm trả $j+N+M$ ($j=N+1,N+2,...,N+M$)
-				\item $K$ điểm logic $2N+2M+1, 2N+2M+2, ..., 2N+2M+K$ tham chiếu tới điểm xuất phát vật lý $0$. Điểm $2N+2M+k$ tương ứng là điểm bắt đầu và kết thúc lộ trình xe thứ $k$ ($k=1,2,...,K$)
+				\item $2K$ điểm logic $2N+2M+1, 2N+2M+2, ..., 2N+2M+2K$ tham chiếu tới điểm xuất phát vật lý $0$. Điểm $2N+2M+k$ tương ứng là điểm bắt đầu, $2N+2M+K+k$ là điểm kết thúc lộ trình xe thứ $k$ ($k=1,2,...,K$)
 			\end{itemize}
-			\item $d_{ij}$: Khoảng cách từ điểm $i$ tới điểm $j$ ($i,j\in \{1,2,...,2N+2M+K\}$)
-			\item $w_i$: Sự thay đổi khối lượng hàng khi đi tới điểm $i$ ($i=1,2,...,2N+2M+K$)
+			\item $d_{ij}$: Khoảng cách từ điểm $i$ tới điểm $j$ ($i,j\in \{1,2,...,2N+2M+2K\}$)
+			\item $w_i$: Sự thay đổi khối lượng hàng khi đi tới điểm $i$ ($i=1,2,...,2N+2M+2K$)
 			\begin{equation}
-				w_i =
-				\begin{cases}
-					q_i & \text{nếu } N+1\leq i\leq N+M\\
-					-q_{i-(N+M)} & \text{nếu } 2N+M+1\leq i\leq 2N+2M\\
-					0 & \text{ngược lại}
-				\end{cases} \notag
+			w_i =
+			\begin{cases}
+			q_i & \text{nếu } N+1\leq i\leq N+M\\
+			-q_{i-(N+M)} & \text{nếu } 2N+M+1\leq i\leq 2N+2M\\
+			0 & \text{ngược lại}
+			\end{cases} \notag
 			\end{equation}
 			\item $Q_k$: Khối lượng hàng tối đa xe thứ $k$ có thể chở ($k=1,2,...,K$)
 		\end{itemize}
 	\end{frame}
 	\begin{frame}
 		\frametitle{Mô hình MIP}
-		\textbf{\underline{Biến quyết định}}
+	\textbf{\underline{Biến quyết định}}
+	\begin{itemize}
+		\item $x_{ij}$: Biến nhị phân, xác định cung đi từ điểm $i$ đến điểm $j$ có xuất hiện trong lộ trình của 1 trong $k$ xe không ($i,j\in \{1,2,...,2N+2M+2K$)
+		\begin{equation}
+		x_{ij} = 
+		\begin{cases}
+		1 & \text{nếu cung $(i,j)$ có trong lộ trình của 1 xe}\\
+		0 & \text{ngược lại}
+		\end{cases}
+		\end{equation}
+		\item Tại mỗi điểm $i$ ($i=1,2,...,2N+2M+2K$):
 		\begin{itemize}
-			\item $x_{ij}$: Biến nhị phân, xác định cung đi từ điểm $i$ đến điểm $j$ có xuất hiện trong lộ trình của 1 trong $k$ xe không ($i,j\in \{1,2,...,2N+2M+K$)
+			\item $r_i$: chỉ số của xe đi qua điểm $i$ trong lộ trình
 			\begin{equation}
-				x_{ij} = 
-				\begin{cases}
-					1 & \text{nếu cung $(i,j)$ có trong lộ trình của 1 xe}\\
-					0 & \text{ngược lại}
-				\end{cases}
+			1\leq r_i\leq K
 			\end{equation}
-			\item Tại mỗi điểm $i$ ($i=1,2,...,2N+2M+K$):
-			\begin{itemize}
-				\item $r_i$: chỉ số của xe đi qua điểm $i$ trong lộ trình
-				\begin{equation}
-					1\leq r_i\leq K
-				\end{equation}
-				\item $t_i$: thứ tự của điểm $i$ trong lộ trình của xe $k$ đi qua nó (điểm xuất phát có thứ tự 0)
-				\begin{equation}
-					0\leq t_i\leq 2N+2M
-				\end{equation}
-				\item $c_i$: khối lượng hàng xe $k$ (đi qua điểm $i$) còn chịu được khi đi tới điểm $i$
-				\begin{equation}
-					0\leq c_i\leq \max _{1\leq k\leq K} \{Q_k\}
-				\end{equation}
-			\end{itemize}
+			\item $l_i$: khoảng cách tích lũy của xe đi từ điểm $0$ đến điểm $i$ trong lộ trình
+			\begin{equation}
+			0\leq t_i\leq 2N+2M+1
+			\end{equation}
+			\item $c_i$: khối lượng hàng xe $k$ (đi qua điểm $i$) còn chịu được khi đi tới điểm $i$
+			\begin{equation}
+			0\leq c_i\leq \max _{1\leq k\leq K} \{Q_k\}
+			\end{equation}
 		\end{itemize}
+	\end{itemize}
 		
 	\end{frame}
 	\begin{frame}
@@ -338,31 +345,31 @@
 		\begin{itemize}
 			\item Ràng buộc cân bằng luồng vào ra:
 			\begin{align}
-				\sum_{j=1}^{2N+2M+K} x_{ij} = 1,\quad & i=1,2,...,2N+2M+K \\
-				\sum_{i=1}^{2N+2M+K} x_{ij} = 1,\quad & j=1,2,...,2N+2M+K
+					\sum_{j=1}^{2N+2M+2K} x_{ij} = 1,\quad & i=1,2,...,2N+2M+K \\
+				\sum_{i=1}^{2N+2M+2K} x_{ij} = 1,\quad & j=1,2,...,2N+2M;2N+2M+K+1,...,2N+2M+2K
 			\end{align}
 			\item Xác định $r_i$:
 			\begin{align}
 				r_{2N+2M+k} = k,\quad & k=1,2,...,K \\
-				r_j - r_i\leq \mu\times (1 - x_{ij}),\quad & i=1,2,...,2N+2M+K, \\
-				r_j - r_i\geq -\mu\times (1 -x_{ij}),\quad & j=1,2,...,2N+2M, i\ne j \notag
+				r_j - r_i\leq \mu\times (1 - x_{ij}),\quad & i=1,2,...,2N+2M+2K, \\
+				r_j - r_i\geq -\mu\times (1 -x_{ij}),\quad & j=1,2,...,2N+2M;2N+2M+K+1,...,2N+2M+2K, i\ne j \notag
 			\end{align}
 		\end{itemize}
 	\end{frame}
 	\begin{frame}
 		\frametitle{Mô hình MIP}
 		\begin{itemize}
-			\item Xác định $t_i$:
+			\item Xác định $l_i$:
 			\begin{align}
-				t_{2N+2M+k} = 0,\quad & k=1,2,...,K \\
-				t_j - t_i -1\leq \mu\times (1 - )x_{ij}),\quad & i=1,2,...,2N+2M+K, \\
-				t_j - t_i -1\geq -\mu\times (1 - x_{ij}),\quad & j=1,2,...,2N+2M, i\ne j \notag
+				l_{2N+2M+k} = 0,\quad & k=1,2,...,K \\
+				l_j - l_i -d_{ij}\leq \mu\times (1 - x_{ij}),\quad & i=1,2,...,2N+2M+2K, \\
+				l_j - l_i -d_{ij}\geq -\mu\times (1 - x_{ij}),\quad & j=1,2,...,2N+2M;2N+2M+K+1,...,2N+2M+2K, i\ne j \notag
 			\end{align}
 			\item Xác định $c_i$:
 			\begin{align}
 				c_{2N+2M+k} = Q_k,\quad & k=1,2,...,K \\
-				c_j - c_i - w_j\leq \mu\times (1 - x_{ij}),\quad & i=1,2,...,2N+2M+K, \\
-				c_j - c_i - w_j\geq -\mu\times (1 - x_{ij}),\quad & j=1,2,...,2N+2M, i\ne j \notag
+				c_j - c_i - w_j\leq \mu\times (1 - x_{ij}),\quad & i=1,2,...,2N+2M+2K, \\
+				c_j - c_i - w_j\geq -\mu\times (1 - x_{ij}),\quad & j=1,2,...,2N+2M;2N+2M+K+1,...,2N+2M+2K, i\ne j \notag \notag
 			\end{align}
 		\end{itemize}
 	\end{frame}
@@ -379,7 +386,7 @@
 			\end{align}
 			\item Điểm lấy hàng phải ở trước điểm giao hàng:
 			\begin{align}
-				t_i + 1\leq t_{i+N+M},\quad & i=N+1,N+2,...,N+M
+				l_i \leq l_{i+N+M},\quad & i=N+1,N+2,...,N+M
 			\end{align}
 			\item Khối lượng còn lại của xe tại mọi thời điểm không âm (đã thỏa mãn).
 		\end{itemize}
@@ -388,10 +395,9 @@
 		\frametitle{Mô hình MIP}
 		\textbf{\underline{Ràng buộc thừa}}
 		\begin{itemize}
-			\item Các điểm logic tham chiếu đến $0$ không nối lẫn nhau:
+			\item Điểm đầu và điểm cuối tương ứng cùng nằm trên 1 lộ trình:
 			\begin{align}
-				x_{ij}=0,\quad & i=2N+2M+1,...,2N+2M+K, \\
-				& j=2N+2M+1,...,2N+2M+K, i\ne j \notag
+				r_i=r_{K+i},\quad & i=2N+2M+1,...,2N+2M+K
 			\end{align}
 			\item Một điểm không tự nối tới chính nó, trừ $K$ điểm logic tham chiếu tới $0$:
 			\begin{align}
@@ -401,9 +407,16 @@
 	\end{frame}
 	\begin{frame}
 		\frametitle{Mô hình MIP}
+		\begin{itemize}
+			\item $L$: Độ dài của lộ trình xe dài nhất trong $K$ lộ trình
+			\item Ràng buộc xác định lộ trình dài nhất:
+			\begin{align}
+			l_i\leq L,\quad & i=2N+2M+K+1,...,2N+2M+2K
+			\end{align}
+		\end{itemize}
 		\textbf{\underline{Hàm mục tiêu}}
 		\begin{equation}
-			\sum_{i=1}^{2N+2M+K} \sum_{j=1}^{2N+2M+K} d_{ij}\times x_{ij} \leftarrow min
+		L \leftarrow min
 		\end{equation}
 	\end{frame}
 	
