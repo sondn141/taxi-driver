@@ -6,6 +6,7 @@ public class Const {
 
     // RANDOM
     public static final int SEED = 5;
+    public static final double EPSI = 1E-6;
 
     // I/O
     public static final String INPUT_OBJECT = "INPUT_OBJECT";
