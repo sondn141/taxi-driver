@@ -63,10 +63,8 @@ public class MyGASolution implements Solution {
             r.add(0);
             r.add(0, 0);
         }
-        if(!SolutionUtils.validateRouteAllDiff(gene) ||
-                !SolutionUtils.validatePassengerGetIn(gene, inp) || !SolutionUtils.validateCapacity(gene, inp)){
-            System.out.println("Violated");
-        }
+
+        SolutionUtils.validateSolution(gene, inp);
         this.score = SolutionUtils.evaluate(inp, this.gene);
     }
 

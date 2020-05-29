@@ -5,6 +5,7 @@ import edu.hust.soict.cbls.common.config.Const;
 import edu.hust.soict.cbls.entity.Commodity;
 import edu.hust.soict.cbls.entity.Point;
 
+import java.util.LinkedList;
 import java.util.List;
 
 public class SolutionUtils {
@@ -46,6 +47,12 @@ public class SolutionUtils {
                         if(tmp < 0 || tmp > cap)
                             continue P;
                     }
+
+                    List<Integer> lol = new LinkedList<>(route);
+                    lol.add(i + 1, commodity.getPickup().getIdx());
+                    if(!SolutionUtils.validateSingleRouteCap(lol, input, cap)){
+                        System.out.println();
+                    }
                     return i + 1;
                 }
             }
@@ -67,37 +74,18 @@ public class SolutionUtils {
         return true;
     }
 
-    public static boolean validatePassengerGetIn(List<List<Integer>> routes, Input inp){
-        for(List<Integer> route : routes){
-            for(int i = 0 ; i < route.size() ; i ++){
-                int type = inp.pointType(route.get(i));
-                if(type == 1){
-                    int type2 = inp.pointType(route.get(i + 1));
-                    if(!(type2 == 3 && inp.getPassengerGetOff(route.get(i)) == route.get(i + 1))){
-                        return false;
-                    }
-                }
+    public static boolean validateSingleRouteCap(List<Integer> route, Input inp, double cap){
+        double rem = cap;
+        for(Integer e : route){
+            int type = inp.pointType(e);
+            if(type == 2){
+                double w =inp.getCommodity(e).getWeight();
+                rem -= w;
             }
-        }
-
-        return true;
-    }
-
-    public static boolean validateCapacity(List<List<Integer>> routes, Input inp){
-        List<Double> cap = inp.getCap();
-        for(int i = 0 ; i < routes.size() ; i ++){
-            List<Integer> route = routes.get(i);
-            double rem = cap.get(i);
-            for(int j = 1 ; j < route.size() - 1 ; j ++){
-                int pIdx = route.get(j);
-                int type = inp.pointType(pIdx);
-                if(type == 2)
-                    rem += inp.getCommodity(pIdx).getWeight();
-                else if(type ==4)
-                    rem -= inp.getCommodity(pIdx).getWeight();
-                if(rem < 0 || rem > cap.get(i))
-                    return false;
-            }
+            else if(type == 4)
+                rem += inp.getCommodity(e).getWeight();
+            if(rem < -Const.EPSI || rem > cap + Const.EPSI)
+                return false;
         }
 
         return true;
@@ -107,7 +95,7 @@ public class SolutionUtils {
      * @author hungth
      * @since 20200528
      * */
-    public static boolean validateSolution(List<List<Integer>> routes, Input inp) {
+    public static void validateSolution(List<List<Integer>> routes, Input inp) {
     	int N = inp.getPassengers().size();
     	int M = inp.getCommodities().size();
     	int K = inp.getTaxis().size();
@@ -125,8 +113,7 @@ public class SolutionUtils {
     	for (List<Integer> route: routes) {
     		double cap = inp.getTaxis().get(k++).getCap();
     		if (route.get(0) != 0 || route.get(route.size() - 1) != 0) {
-    			System.out.println("Incorrect station!");
-    			return false;
+    			throw new RuntimeException("Incorrect station!");
     		}
     		for (int i=1; i<route.size()-1; i++) {
     			int p = route.get(i);
@@ -138,9 +125,8 @@ public class SolutionUtils {
     			else if (inp.pointType(p) == Input.COMMODITY_DELIVER)
     				w[p] = w[prev] - inp.getCommodities().get(p-2*N-M-1).getWeight();
     			else w[p] = w[prev];
-    			if (w[p] < 0 || w[p] > cap) {
-    				System.out.println("Capacity violated!");
-    				return false;
+    			if (w[p] < -Const.EPSI || w[p] > cap + Const.EPSI) {
+    			    throw new RuntimeException("Capacity violated");
     			}
 //    			score += inp.distance(prev, p);
 //    			score += points.get(prev).distance(points.get(p));
@@ -150,15 +136,11 @@ public class SolutionUtils {
     	}
     	for (int i=1; i<=N; i++)
     		if (r[i] != r[i+N+M] || indices[i] + 1 != indices[i+N+M]) {
-    			System.out.println("Passenger order failed!");
-    			return false;
+    			throw new RuntimeException("Passenger order failed!");
     		}
     	for (int i=N+1; i<=N+M; i++)
     		if (r[i] != r[i+N+M] || indices[i] >= indices[i+N+M]) {
-    			System.out.println("Commodity order failed!");
-    			return false;
+    			throw new RuntimeException("Commodity order failed!");
     		}
-    	System.out.println("Validated solution: " + evaluate(inp, routes));
-    	return true;
     }
 }
