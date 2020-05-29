@@ -80,6 +80,26 @@ public class Generate {
         return this;
     }
 
+    public Generate setMaxCap(double cap){
+        this.capMax = cap;
+        return this;
+    }
+
+    public Generate setMinCap(double cap){
+        this.capMin = cap;
+        return this;
+    }
+
+    public Generate setMaxWei(double wei){
+        this.weiMax = wei;
+        return this;
+    }
+
+    public Generate setMinWei(double wei){
+        this.weiMin = wei;
+        return this;
+    }
+
     public Generate generate(){
         this.input = new Input();
 

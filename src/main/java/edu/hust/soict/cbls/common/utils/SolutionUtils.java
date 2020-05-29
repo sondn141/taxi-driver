@@ -36,7 +36,7 @@ public class SolutionUtils {
             int type = input.pointType(pointIdx);
             if(type == 2 || type == 4){
                 Commodity c = input.getCommodity(pointIdx);
-                rem += type == 2 ? c.getWeight() : -c.getWeight();
+                rem += type == 2 ? -c.getWeight() : c.getWeight();
                 if(rem >= commodity.getWeight()){
                     double tmp = rem - commodity.getWeight();
                     for(int j = i + 1 ; j < route.size() ; j ++){
@@ -51,7 +51,7 @@ public class SolutionUtils {
             }
         }
 
-        return route.size();
+        return commodity.getWeight() > cap ? -1 : route.size();
     }
 
     public static boolean validateRouteAllDiff(List<List<Integer>> routes){
@@ -60,7 +60,7 @@ public class SolutionUtils {
 
         for(List<Integer> r : routes)
             for(Integer i : r)
-                if( i!= 0 && appr[i])
+                if(i != 0 && appr[i])
                     return false;
                 else
                     appr[i] = true;
@@ -77,6 +77,26 @@ public class SolutionUtils {
                         return false;
                     }
                 }
+            }
+        }
+
+        return true;
+    }
+
+    public static boolean validateCapacity(List<List<Integer>> routes, Input inp){
+        List<Double> cap = inp.getCap();
+        for(int i = 0 ; i < routes.size() ; i ++){
+            List<Integer> route = routes.get(i);
+            double rem = cap.get(i);
+            for(int j = 1 ; j < route.size() - 1 ; j ++){
+                int pIdx = route.get(j);
+                int type = inp.pointType(pIdx);
+                if(type == 2)
+                    rem += inp.getCommodity(pIdx).getWeight();
+                else if(type ==4)
+                    rem -= inp.getCommodity(pIdx).getWeight();
+                if(rem < 0 || rem > cap.get(i))
+                    return false;
             }
         }
 
