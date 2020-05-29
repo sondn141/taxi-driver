@@ -378,7 +378,7 @@ public class VarRoutesVR{
 //		}
 	}
 	
-	private void initStartingTerminatingPoints(){
+	public void initStartingTerminatingPoints(){
 		for (int i = 1; i <= K; i++) {
 			int ids = getIndex(getStartingPointOfRoute(i));
 			int idt = getIndex(getTerminatingPointOfRoute(i));

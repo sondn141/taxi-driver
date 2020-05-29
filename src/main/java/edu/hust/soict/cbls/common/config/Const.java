@@ -42,6 +42,15 @@ public class Const {
 
     // Natural selection operator
     public static final String GA_NATURAL_SELECTION_OPERATOR_CLASS = "GA_NATURAL_SELECTION_OPERATOR_CLASS";
+    
+    // 2. LOCAL SEARCH
+    public static final String LS_MAX_STABLE = "LS_MAX_STABLE";
+    public static final String LS_MAX_ITER = "LS_MAX_ITER";
+    public static final String LS_TIME_LIMIT = "LS_TIME_LIMIT";
+    
+    // 3. MIP
+    public static final String MIP_BIG_M = "MIP_BIG_M";
+    public static final String MIP_EPSILON = "MIP_EPSILON";
 
     //
     //                              VISUALIZATION

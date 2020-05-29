@@ -16,6 +16,7 @@ import edu.hust.soict.cbls.algorithm.cbls.constraints.CPickupDeliveryOfPeopleVR;
 import edu.hust.soict.cbls.algorithm.cbls.neighborhoodexploration.GoodsMoveExplorer;
 import edu.hust.soict.cbls.algorithm.cbls.neighborhoodexploration.PeopleMoveExplorer;
 import edu.hust.soict.cbls.algorithm.impl.MySolution;
+import edu.hust.soict.cbls.common.config.Const;
 import edu.hust.soict.cbls.common.config.Properties;
 import edu.hust.soict.cbls.common.datastructure.Pair;
 import edu.hust.soict.cbls.common.utils.SolutionUtils;
@@ -30,27 +31,11 @@ import localsearch.domainspecific.vehiclerouting.vrp.functions.*;
 import localsearch.domainspecific.vehiclerouting.vrp.invariants.*;
 import localsearch.domainspecific.vehiclerouting.vrp.neighborhoodexploration.INeighborhoodExplorer;
 
-public class CBLS extends Solver {
-//	public static int PEOPLE = 1;
-//	public static int GOOD = 0;
-//	int scale = 100000;
+public class LocalSearch extends Solver {
 	private ArrayList<Point> points;
-//	public ArrayList<Point> pickupPoints;
-//	public ArrayList<Point> deliveryPoints;
-	
-//	ArrayList<Integer> type;
-//	ArrayList<Point> startPoints;
-//	ArrayList<Point> stopPoints;
-//	
-//	public ArrayList<Point> rejectPoints;
-//	public ArrayList<Point> rejectPickupGoods;
-//	public ArrayList<Point> rejectPickupPeoples;
 	private HashMap<Point,Point> pickup2DeliveryOfGood;
 	private HashMap<Point,Point> pickup2DeliveryOfPeople;
-//	public HashMap<Point, Point> pickup2Delivery;
-//	public HashMap<Point,Point> delivery2Pickup;
-	
-	private HashMap<Point, AccumulatedNodeWeightsOnPathVR> weights;
+
 	private Info info;
 	public int K, N, M;
 	public static double MAX_DISTANCE;
@@ -77,13 +62,13 @@ public class CBLS extends Solver {
 //		points = info.allPoints();
 //	}
 	
-	public CBLS(Properties props) {
+	public LocalSearch(Properties props) {
 		super(props);
 		this.info = new Info(input);
 		points = info.allPoints();
 	}
 	
-	private void stateModel() {
+	protected void stateModel() {
 		mgr = new VRManager();
 		XR = new VarRoutesVR(mgr);
 		S = new ConstraintSystemVR(mgr);
@@ -173,7 +158,7 @@ public class CBLS extends Solver {
 //		}
 //	}
 	
-	private List<List<Integer>> convertSolution() {
+	protected List<List<Integer>> convertSolution() {
 		List<List<Integer>> solution = new ArrayList<>();
 		for (int k=1; k<=K; k++) {
 			ArrayList<Integer> route = new ArrayList<>();
@@ -187,32 +172,27 @@ public class CBLS extends Solver {
 		return solution;
 	}
 	
-	public void search(int timeLimit){
+	public void search(int maxStable, int maxIter, int timeLimit){
 		ArrayList<INeighborhoodExplorer> NE = new ArrayList<INeighborhoodExplorer>();
 		NE.add(new PeopleMoveExplorer(XR, F, pickup2DeliveryOfPeople));
 		NE.add(new GoodsMoveExplorer(XR, F, pickup2DeliveryOfGood));
 
-		MySearch se = new MySearch(mgr, S, objective,
+		VRPPDSearch se = new VRPPDSearch(mgr, S, costRoute,
 				pickup2DeliveryOfPeople,
 				pickup2DeliveryOfGood);
 		se.setNeighborhoodExplorer(NE);
 		se.setObjectiveFunction(F);
-		se.setMaxStable(50);
+		se.setMaxStable(maxStable);
 
-		se.search(10, timeLimit);
+		se.search(maxIter, timeLimit);
 	}
 
 //	@Override
 	public Solution solve() {
 		stateModel();
-		search(10);
-
-//		for (int k=1; k<=K; k++) {
-//			System.out.print("Route " + k + ":");
-//			for(Point p = XR.startPoint(k); p != XR.endPoint(k); p = XR.next(p))
-//				System.out.print(" " + p.getID());
-//			System.out.println();
-//		}
+		search(props.getIntProperty(Const.LS_MAX_STABLE, 50),
+				props.getIntProperty(Const.LS_MAX_ITER, 100),
+				props.getIntProperty(Const.LS_TIME_LIMIT, 100));
 
 		MySolution solution = new MySolution();
 		solution.setSolution(convertSolution());

@@ -5,7 +5,6 @@ import static edu.hust.soict.cbls.data.Generate.Distribution.*;
 public class Generator {
 
     public static void main(String[] args) {
-
         new Generate()
                 .setNumOfPassengers(2)
                 .setPassengerLocationDistribution(UNIFORM)
