@@ -11,6 +11,7 @@ import edu.hust.soict.cbls.entity.Taxi;
 import java.security.InvalidParameterException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Input {
 	/**
@@ -56,6 +57,10 @@ public class Input {
 
     public void setTaxi(Taxi t, int index){
         taxis.set(index, t);
+    }
+
+    public List<Double> getCap(){
+        return taxis.stream().mapToDouble(Taxi::getCap).boxed().collect(Collectors.toList());
     }
 
     public int getPassengerGetOff(int index){

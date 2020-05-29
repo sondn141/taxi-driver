@@ -80,6 +80,26 @@ public class Generate {
         return this;
     }
 
+    public Generate setMaxCap(double cap){
+        this.capMax = cap;
+        return this;
+    }
+
+    public Generate setMinCap(double cap){
+        this.capMin = cap;
+        return this;
+    }
+
+    public Generate setMaxWei(double wei){
+        this.weiMax = wei;
+        return this;
+    }
+
+    public Generate setMinWei(double wei){
+        this.weiMin = wei;
+        return this;
+    }
+
     public Generate generate(){
         this.input = new Input();
 
@@ -92,7 +112,7 @@ public class Generate {
         List<Point> commodityPoints = getPoints(2 * M);
         List<Double> weis = getWei();
         List<Commodity> commodities = new LinkedList<>();
-        for(int i = 0 ;i < M ; i ++){
+        for(int i = 0 ; i < M ; i ++){
             commodities.add(new Commodity(commodityPoints.get(i), commodityPoints.get(i + M), weis.get(i)));
         }
 
