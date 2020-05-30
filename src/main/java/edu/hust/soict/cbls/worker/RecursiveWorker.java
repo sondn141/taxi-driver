@@ -17,6 +17,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 
 public class RecursiveWorker {
 
@@ -44,7 +45,7 @@ public class RecursiveWorker {
             FileUtils.copyDirectory(input, output, (File f) -> false);
     }
 
-    private void recursiveWork(File file){
+    private void recursiveWork(File file) throws InterruptedException {
         if(file.isDirectory()){
             File[] files = file.listFiles();
             if(files == null) return;
@@ -53,6 +54,7 @@ public class RecursiveWorker {
         } else{
             String inpFile = file.getAbsolutePath();
             String outFile = inpFile.replace(input.getAbsolutePath(), output.getAbsolutePath());
+            logger.info("Processing input file: " + inpFile);
 
             List<String> solverClazz = props.getCollection(Const.SOLVER_CLASS);
             props.setProperty(Const.INPUT, inpFile);
@@ -75,16 +77,21 @@ public class RecursiveWorker {
                     }
                 });
             }
+
             executor.shutdown();
+            while(!executor.awaitTermination(10000, TimeUnit.MILLISECONDS)){
+                // waiting
+                logger.info("Executor is running on processing file: " + inpFile);
+            }
         }
     }
 
-    public void work(){
+    public void work() throws InterruptedException {
         recursiveWork(input);
     }
 
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, InterruptedException {
         Properties props = new Properties();
         RecursiveWorker worker = new RecursiveWorker(props);
 
