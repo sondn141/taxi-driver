@@ -77,7 +77,7 @@ public class Reader{
             while(!StringUtils.isNullOrEmpty(line = reader.readLine())){
                 if(line.startsWith(Writer.OUTPUT_CLASS_SOLVER_SIGNED)){
                     sol.clear();
-                    solverClazz = line.substring(Writer.OUTPUT_CLASS_SOLVER_SIGNED.length());
+                    solverClazz = line.split(" ")[1];
                 } else{
                     String[] lineArr = line.split(" ");
                     if(lineArr.length > 1){

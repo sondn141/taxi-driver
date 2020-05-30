@@ -2,15 +2,27 @@ package edu.hust.soict.cbls.algorithm;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import edu.hust.soict.cbls.common.utils.CollectionUtils;
 import edu.hust.soict.cbls.entity.Commodity;
 import edu.hust.soict.cbls.entity.Passenger;
 import edu.hust.soict.cbls.entity.Point;
 import edu.hust.soict.cbls.entity.Taxi;
 
+import java.security.InvalidParameterException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Input {
+	/**
+     * @author hungth
+     * @since 20200528
+     * */
+	public static final int STATION = 0;
+	public static final int PASSENGER_GETIN = 1;
+	public static final int COMMODITY_PICKUP = 2;
+	public static final int PASSENGER_GETOFF = 3;
+	public static final int COMMODITY_DELIVER = 4;
 
     private List<Passenger> passengers;
     private List<Commodity> commodities;
@@ -47,6 +59,40 @@ public class Input {
         taxis.set(index, t);
     }
 
+    public List<Double> getCap(){
+        return taxis.stream().mapToDouble(Taxi::getCap).boxed().collect(Collectors.toList());
+    }
+
+    public int getPassengerGetOff(int index){
+        int p = passengers.size();
+        int c = commodities.size();
+
+        if(index >= p + 1)
+            throw new RuntimeException("Invalid passenger getting in point index");
+        return index + p + c;
+    }
+
+    public Commodity getCommodity(int index){
+        int p = passengers.size();
+        int c = commodities.size();
+        if(CollectionUtils.inRangeInclusive(1 + p, p + c, index) ||
+                CollectionUtils.inRangeInclusive(p*2 + c + 1, (p + c)*2, index)){
+            int idx = (index > (p + c) ? index - (p + c) : index) - 1 - p;
+            return commodities.get(idx);
+        } else
+            throw new RuntimeException("Index passed is not a commodity index");
+    }
+
+    public int commodityPointIdx(int idx, int type){
+        if(!CollectionUtils.inRangeInclusive(0, commodities.size() - 1, idx))
+            throw new IndexOutOfBoundsException();
+        if(type != 2 && type != 4)
+            throw new InvalidParameterException("Commodity type should be 2 or 4");
+        int p = passengers.size();
+        int c = commodities.size();
+        return 1 + p + idx + (type == 2 ? 0 : (p + c));
+    }
+
     public Taxi getTaxi(int index){
         return taxis.get(index);
     }
@@ -58,18 +104,19 @@ public class Input {
     }
 
     public double distance(int i, int j){
-        if(distanceMat == null)
-            createDistanceMatrix();
         return distanceMat[i][j];
     }
 
     private void createDistanceMatrix(){
         if(points == null || points.isEmpty())
             initPoints();
+        if(distanceMat != null)
+            return;
 
         int n = points.size();
         distanceMat = new double[n][n];
         for(int i = 0 ; i < n - 1 ; i ++){
+//            distanceMat[i] = new double[n];
             for(int j = i + 1 ; j < n ; j ++){
                 distanceMat[i][j] = distanceMat[j][i] = points.get(i).distance(points.get(j));
             }
@@ -80,6 +127,16 @@ public class Input {
         if(points == null || points.isEmpty())
             initPoints();
         return points.get(index);
+    }
+    
+    /**
+     * @author hungth
+     * @since 20200527
+     * */
+    public List<Point> getPoints() {
+    	if (points == null)
+    		initPoints();
+    	return points;
     }
 
     public int size(){

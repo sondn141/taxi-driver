@@ -94,7 +94,7 @@ public class SolutionDrawer implements Visualizer{
                     return new Rectangle(-15, -15, 30, 30);
 
                 default:
-                    throw new RuntimeException();
+                    throw new RuntimeException("Can not resolve spot type");
             }
         });
         visualizer.getRenderContext().setVertexFillPaintTransformer((String s) -> {
@@ -111,7 +111,7 @@ public class SolutionDrawer implements Visualizer{
                     return Const.COLORS[index - input.getPassengers().size() - input.getCommodities().size()];
 
                 default:
-                    throw new RuntimeException();
+                    throw new RuntimeException("Can not resolve spot type");
             }
         });
 

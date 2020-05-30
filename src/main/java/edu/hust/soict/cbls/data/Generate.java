@@ -12,6 +12,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
 
+@SuppressWarnings("ALL")
 public class Generate {
 
     private int N = 5;
@@ -79,6 +80,26 @@ public class Generate {
         return this;
     }
 
+    public Generate setMaxCap(double cap){
+        this.capMax = cap;
+        return this;
+    }
+
+    public Generate setMinCap(double cap){
+        this.capMin = cap;
+        return this;
+    }
+
+    public Generate setMaxWei(double wei){
+        this.weiMax = wei;
+        return this;
+    }
+
+    public Generate setMinWei(double wei){
+        this.weiMin = wei;
+        return this;
+    }
+
     public Generate generate(){
         this.input = new Input();
 
@@ -91,8 +112,8 @@ public class Generate {
         List<Point> commodityPoints = getPoints(2 * M);
         List<Double> weis = getWei();
         List<Commodity> commodities = new LinkedList<>();
-        for(int i = 0 ;i < M ; i ++){
-            commodities.add(new Commodity(commodityPoints.get(i), commodityPoints.get(i + N), weis.get(i)));
+        for(int i = 0 ; i < M ; i ++){
+            commodities.add(new Commodity(commodityPoints.get(i), commodityPoints.get(i + M), weis.get(i)));
         }
 
         Point station = RandomUtils.PointUtils.singlePoint(locationMin, locationMax);
@@ -129,11 +150,11 @@ public class Generate {
     private List<Double> getWei(){
         switch (weiDistribution){
             case NORMAL: {
-                return RandomUtils.randNormals(K, weiMean, weiStd, weiMin, weiMax);
+                return RandomUtils.randNormals(M, weiMean, weiStd, weiMin, weiMax);
             }
 
             case UNIFORM:{
-                return RandomUtils.randUniforms(K, weiMin, weiMax);
+                return RandomUtils.randUniforms(M, weiMin, weiMax);
             }
 
             default:
@@ -145,17 +166,17 @@ public class Generate {
         switch (pLocation){
             case NORMAL: {
                 return RandomUtils.PointUtils
-                        .normalPoints(n, locationMean, locationStd, locationMax, locationMin);
+                        .normalPoints(n, locationMean, locationStd, locationMin, locationMax);
             }
 
             case UNIFORM:{
                 return RandomUtils.PointUtils
-                        .uniformPoints(n, locationMax, locationMin);
+                        .uniformPoints(n, locationMin, locationMax);
             }
 
             case GRID:{
                 return RandomUtils.PointUtils
-                        .gridPoints(n, numGrid, locationMax, locationMin);
+                        .gridPoints(n, numGrid, locationMin, locationMax);
             }
 
             default:

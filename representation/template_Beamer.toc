@@ -1,0 +1,6 @@
+\beamer@sectionintoc {1}{Gi\IeC {\'\ohorn }i thi\IeC {\d \ecircumflex }u b\IeC {\`a}i to\IeC {\'a}n}{3}{0}{1}
+\beamer@sectionintoc {2}{C\IeC {\'a}c h\IeC {\uhorn }\IeC {\'\ohorn }ng ti\IeC {\'\ecircumflex }p c\IeC {\d \acircumflex }n}{5}{0}{2}
+\beamer@sectionintoc {3}{M\IeC {\^o} h\IeC {\`\i }nh h\IeC {\'o}a b\IeC {\`a}i to\IeC {\'a}n}{8}{0}{3}
+\beamer@sectionintoc {4}{C\IeC {\`a}i \IeC {\dj }\IeC {\d \abreve }t thu\IeC {\d \acircumflex }t to\IeC {\'a}n}{21}{0}{4}
+\beamer@sectionintoc {5}{Th\IeC {\d \uhorn }c nghi\IeC {\d \ecircumflex }m v\IeC {\`a} \IeC {\dj }\IeC {\'a}nh gi\IeC {\'a}}{23}{0}{5}
+\beamer@sectionintoc {6}{K\IeC {\'\ecircumflex }t lu\IeC {\d \acircumflex }n}{25}{0}{6}

@@ -26,6 +26,36 @@ public class Writer {
         if(solverClass != null)
             strBuilder.append(OUTPUT_CLASS_SOLVER_SIGNED).append(solverClass.getName()).append("\n");
         for(List<Integer> route : routes){
+            if(route.get(0) != 0)
+                route.add(0, 0);
+            if(route.get(route.size() - 1) != 0)
+                route.add(0);
+            List<String> routeStr = route.stream().map(String::valueOf).collect(Collectors.toList());
+            strBuilder.append(String.join(" ", routeStr)).append("\n");
+        }
+        strBuilder.append(solution.score()).append("\n");
+
+        String data = strBuilder.toString();
+        try(BufferedWriter writer = new BufferedWriter(new FileWriter(new File(path), append))){
+            writer.write(data);
+        }catch (IOException e){
+            logger.error("Can not write solution to file\n" + data, e);
+        }
+    }
+
+    public static synchronized void write(Solution solution, String path, Class<?> solverClass, long runtime, boolean append){
+        List<List<Integer>> routes = solution.convert();
+        StringBuilder strBuilder = new StringBuilder();
+        if(solverClass != null)
+            strBuilder.append(OUTPUT_CLASS_SOLVER_SIGNED).append(solverClass.getName())
+                    .append(" Runtime: ")
+                    .append(runtime)
+                    .append("\n");
+        for(List<Integer> route : routes){
+            if(route.get(0) != 0)
+                route.add(0, 0);
+            if(route.get(route.size() - 1) != 0)
+                route.add(0);
             List<String> routeStr = route.stream().map(String::valueOf).collect(Collectors.toList());
             strBuilder.append(String.join(" ", routeStr)).append("\n");
         }

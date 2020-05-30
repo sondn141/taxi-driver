@@ -6,8 +6,10 @@ public class Const {
 
     // RANDOM
     public static final int SEED = 5;
+    public static final double EPSI = 1E-6;
 
     // I/O
+    public static final String INPUT_OBJECT = "INPUT_OBJECT";
     public static final String INPUT = "INPUT";
     public static final String OUTPUT = "OUTPUT";
 
@@ -36,9 +38,20 @@ public class Const {
 
     // Select parents operator
     public static final String GA_SELECT_PARENT_OPERATOR_CLASS = "GA_SELECT_PARENT_OPERATOR_CLASS";
+    public static final String GA_SELECT_PARENT_NUM_OF_PAIRS = "GA_SELECT_PARENT_NUM_OF_PAIRS";
+    public static final String GA_SELECT_PARENT_TOURNAMENT_SIZE = "GA_SELECT_PARENT_TOURNAMENT_SIZE";
 
     // Natural selection operator
     public static final String GA_NATURAL_SELECTION_OPERATOR_CLASS = "GA_NATURAL_SELECTION_OPERATOR_CLASS";
+    
+    // 2. LOCAL SEARCH
+    public static final String LS_MAX_STABLE = "LS_MAX_STABLE";
+    public static final String LS_MAX_ITER = "LS_MAX_ITER";
+    public static final String LS_TIME_LIMIT = "LS_TIME_LIMIT";
+    
+    // 3. MIP
+    public static final String MIP_BIG_M = "MIP_BIG_M";
+    public static final String MIP_EPSILON = "MIP_EPSILON";
 
     //
     //                              VISUALIZATION

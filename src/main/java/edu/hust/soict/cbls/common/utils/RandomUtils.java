@@ -3,9 +3,11 @@ package edu.hust.soict.cbls.common.utils;
 import edu.hust.soict.cbls.common.config.Const;
 import edu.hust.soict.cbls.entity.Point;
 
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
+import java.util.stream.IntStream;
 
 public class RandomUtils {
 
@@ -28,6 +30,26 @@ public class RandomUtils {
         }
 
         return val;
+    }
+
+    public static int randInt(int min, int max){
+        if(min > max)
+            throw new IllegalArgumentException("Min value can not be greater than max value");
+        return min + rd.nextInt(max - min);
+    }
+
+    public static int[] randInts(int min, int max, int n){
+        return rd.ints(min, max)
+                .boxed()
+                .distinct()
+                .limit(n)
+                .mapToInt(i -> i)
+                .toArray();
+    }
+
+    public static int[] randInRange(int min, int max){
+//        List<Integer> ints = Arrays.asList(IntStream.range(min, max).toArray());
+        return null;
     }
 
     public static List<Double> randUniforms(int n, double min, double max){

@@ -32,4 +32,12 @@ public class Point {
     public int getIdx() {
         return idx;
     }
+    
+    /**
+     * @author hungth
+     * @since 20200523
+     * */
+    public localsearch.domainspecific.vehiclerouting.vrp.entities.Point toCBLS() {
+    	return new localsearch.domainspecific.vehiclerouting.vrp.entities.Point(idx, x, y);
+    }
 }

@@ -8,6 +8,8 @@ import edu.hust.soict.cbls.common.utils.Reflects;
 import edu.hust.soict.cbls.common.utils.StringUtils;
 import edu.hust.soict.cbls.data.Writer;
 import org.apache.commons.io.FileUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.io.IOException;
@@ -15,6 +17,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 
 public class RecursiveWorker {
 
@@ -23,6 +26,8 @@ public class RecursiveWorker {
     private File input;
 
     private List<Solver> solvers;
+
+    private static final Logger logger = LoggerFactory.getLogger(RecursiveWorker.class);
 
     public RecursiveWorker(Properties props) throws IOException {
         this.props = props;
@@ -36,10 +41,11 @@ public class RecursiveWorker {
         if(StringUtils.validPath(output.getAbsolutePath()))
             throw new RuntimeException("Invalid output path");
 
-        FileUtils.copyDirectory(input, output, (File f) -> false);
+        if(input.isDirectory())
+            FileUtils.copyDirectory(input, output, (File f) -> false);
     }
 
-    private void recursiveWork(File file){
+    private void recursiveWork(File file) throws InterruptedException {
         if(file.isDirectory()){
             File[] files = file.listFiles();
             if(files == null) return;
@@ -48,6 +54,7 @@ public class RecursiveWorker {
         } else{
             String inpFile = file.getAbsolutePath();
             String outFile = inpFile.replace(input.getAbsolutePath(), output.getAbsolutePath());
+            logger.info("Processing input file: " + inpFile);
 
             List<String> solverClazz = props.getCollection(Const.SOLVER_CLASS);
             props.setProperty(Const.INPUT, inpFile);
@@ -60,20 +67,31 @@ public class RecursiveWorker {
             for(Solver solver : solvers){
                 solver.setInput(inpFile);
                 executor.submit(() -> {
-                    Solution solution = solver.solve();
-                    Writer.write(solution, outFile, solver.getClass(), true);
+                    try{
+                        long s = System.currentTimeMillis();
+                        Solution solution = solver.solve();
+                        long runtime = System.currentTimeMillis() - s;
+                        Writer.write(solution, outFile, solver.getClass(), runtime, true);
+                    } catch (Exception e){
+                        logger.error("Error while solving problem", e);
+                    }
                 });
             }
+
             executor.shutdown();
+            while(!executor.awaitTermination(10000, TimeUnit.MILLISECONDS)){
+                // waiting
+                logger.info("Executor is running on processing file: " + inpFile);
+            }
         }
     }
 
-    public void work(){
+    public void work() throws InterruptedException {
         recursiveWork(input);
     }
 
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, InterruptedException {
         Properties props = new Properties();
         RecursiveWorker worker = new RecursiveWorker(props);
 
