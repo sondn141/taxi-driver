@@ -46,7 +46,7 @@ public class MultiInputMultiSolverViz implements Visualizer {
     public void drawAndSave() {
         JFreeChart lineChart = ChartFactory.createLineChart(
                 props.getProperty(Const.VISUALIZATION_CHART_TITLE),
-                "Objective","Files",
+                "Files","Objective",
                 createDataset(),
                 PlotOrientation.VERTICAL,
                 true,true,false);

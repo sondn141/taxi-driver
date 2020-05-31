@@ -4,11 +4,15 @@ import edu.hust.soict.cbls.algorithm.Input;
 import edu.hust.soict.cbls.common.config.Const;
 import edu.hust.soict.cbls.entity.Commodity;
 import edu.hust.soict.cbls.entity.Point;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.LinkedList;
 import java.util.List;
 
 public class SolutionUtils {
+
+    private static final Logger logger = LoggerFactory.getLogger(SolutionUtils.class);
 
     public static double evaluate(Input input, List<List<Integer>> routes){
         double longest = -1.0;
@@ -25,6 +29,22 @@ public class SolutionUtils {
         }
 
         return longest;
+    }
+
+    public static Point meanOfRoute(List<Integer> route, Input inp){
+        double sumX = 0.0;
+        double sumY = 0.0;
+
+        for(Integer i : route){
+            if(i == 0)
+                continue;
+            Point p = inp.point(i);
+            sumX += p.getX();
+            sumY += p.getY();
+        }
+
+        int size = route.size() - 2;
+        return new Point(sumX/size, sumY/size);
     }
 
     public static int possiblePickupIndex(Input input, Commodity commodity, List<Integer> route, double cap){
@@ -67,8 +87,10 @@ public class SolutionUtils {
 
         for(List<Integer> r : routes)
             for(Integer i : r)
-                if(i != 0 && appr[i])
+                if(i != 0 && appr[i]){
+                    System.out.println(i);
                     return false;
+                }
                 else
                     appr[i] = true;
         return true;
@@ -95,7 +117,12 @@ public class SolutionUtils {
      * @author hungth
      * @since 20200528
      * */
-    public static void validateSolution(List<List<Integer>> routes, Input inp) {
+    public static boolean validateSolution(List<List<Integer>> routes, Input inp) {
+        if(!validateRouteAllDiff(routes)){
+            logger.warn("All diff violated");
+            return false;
+        }
+
     	int N = inp.getPassengers().size();
     	int M = inp.getCommodities().size();
     	int K = inp.getTaxis().size();
@@ -113,7 +140,8 @@ public class SolutionUtils {
     	for (List<Integer> route: routes) {
     		double cap = inp.getTaxis().get(k++).getCap();
     		if (route.get(0) != 0 || route.get(route.size() - 1) != 0) {
-    			throw new RuntimeException("Incorrect station!");
+                logger.warn("Route is not completed. 0 must be appear in the ends");
+                return false;
     		}
     		for (int i=1; i<route.size()-1; i++) {
     			int p = route.get(i);
@@ -126,21 +154,22 @@ public class SolutionUtils {
     				w[p] = w[prev] - inp.getCommodities().get(p-2*N-M-1).getWeight();
     			else w[p] = w[prev];
     			if (w[p] < -Const.EPSI || w[p] > cap + Const.EPSI) {
-    			    throw new RuntimeException("Capacity violated");
+                    logger.warn("Capacity violated");
+                    return false;
     			}
-//    			score += inp.distance(prev, p);
-//    			score += points.get(prev).distance(points.get(p));
     		}
-//    		score += inp.distance(route.get(route.size()-2), 0);
-//    		score += points.get(route.get(route.size()-2)).distance(points.get(0));
     	}
     	for (int i=1; i<=N; i++)
     		if (r[i] != r[i+N+M] || indices[i] + 1 != indices[i+N+M]) {
-    			throw new RuntimeException("Passenger order failed!");
+                logger.warn("Commodity route violated");
+                return false;
     		}
     	for (int i=N+1; i<=N+M; i++)
     		if (r[i] != r[i+N+M] || indices[i] >= indices[i+N+M]) {
-    			throw new RuntimeException("Commodity order failed!");
+                logger.warn("Commodity route violated");
+                return false;
     		}
+
+    	return true;
     }
 }

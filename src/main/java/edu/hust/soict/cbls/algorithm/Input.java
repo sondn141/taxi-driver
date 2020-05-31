@@ -63,6 +63,12 @@ public class Input {
         return taxis.stream().mapToDouble(Taxi::getCap).boxed().collect(Collectors.toList());
     }
 
+    public double getCap(int index){
+        if(index < taxis.size())
+            return taxis.get(index).getCap();
+        else throw new RuntimeException("Index passed is not a taxi index");
+    }
+
     public int getPassengerGetOff(int index){
         int p = passengers.size();
         int c = commodities.size();

@@ -8,6 +8,8 @@ import edu.hust.soict.cbls.common.datastructure.Triplet;
 import edu.hust.soict.cbls.common.ea.ga.operator.Mutation;
 import edu.hust.soict.cbls.common.utils.CollectionUtils;
 import edu.hust.soict.cbls.common.utils.SolutionUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.Collections;
 import java.util.LinkedList;
@@ -17,6 +19,8 @@ public class PassengerSwapMutation implements Mutation<MyGASolution> {
 
     private Properties props;
 
+    private static final Logger logger = LoggerFactory.getLogger(PassengerSwapMutation.class);
+
     public PassengerSwapMutation(Properties props){
         this.props = props;
     }
@@ -25,9 +29,7 @@ public class PassengerSwapMutation implements Mutation<MyGASolution> {
     public MyGASolution execute(MyGASolution ind) {
         Input inp = props.getRuntimeObject(Const.INPUT_OBJECT, Input.class);
         List<List<Integer>> routes = ind.convert();
-        if(!SolutionUtils.validateRouteAllDiff(routes)){
-            System.out.println("Up --->" + ind.convert() + "|" + "--->" + routes);
-        }
+
         List<Triplet<Integer, Integer, Integer>> pIdxes = pIndexes(routes);
         Collections.shuffle(pIdxes);
 
@@ -39,9 +41,8 @@ public class PassengerSwapMutation implements Mutation<MyGASolution> {
         routes.get(p2.get2()).set(p2.get3(), p1.get1());
         routes.get(p2.get2()).set(p2.get3() + 1, inp.getPassengerGetOff(p1.get1()));
 
-        if(!SolutionUtils.validateRouteAllDiff(routes)){
-            System.out.println("--->" + ind.convert() + "|" + "--->" + routes);
-        }
+        if(!SolutionUtils.validateSolution(routes, inp))
+            logger.warn("Invalid solution produced");
 
         return new MyGASolution(props, routes);
     }
