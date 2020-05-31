@@ -8,6 +8,8 @@ import edu.hust.soict.cbls.common.utils.CollectionUtils;
 import edu.hust.soict.cbls.common.utils.RandomUtils;
 import edu.hust.soict.cbls.common.utils.SolutionUtils;
 import edu.hust.soict.cbls.entity.Commodity;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -17,6 +19,8 @@ public class MyGASolution implements Solution {
 
     private List<List<Integer>> gene;
     private double score;
+
+    private static final Logger logger = LoggerFactory.getLogger(MyGASolution.class);
 
     public MyGASolution(Properties props){
         // TODO: Initialize solution here
@@ -64,7 +68,9 @@ public class MyGASolution implements Solution {
             r.add(0, 0);
         }
 
-        SolutionUtils.validateSolution(gene, inp);
+        if(!SolutionUtils.validateSolution(gene, inp))
+            logger.warn("Invalid solution generated");
+
         this.score = SolutionUtils.evaluate(inp, this.gene);
     }
 

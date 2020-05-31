@@ -7,6 +7,8 @@ import edu.hust.soict.cbls.common.config.Properties;
 import edu.hust.soict.cbls.common.datastructure.Pair;
 import edu.hust.soict.cbls.common.ea.ga.operator.Crossover;
 import edu.hust.soict.cbls.common.utils.SolutionUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.Arrays;
 import java.util.LinkedList;
@@ -15,6 +17,8 @@ import java.util.List;
 public class OuterPassengerReorderCrossover implements Crossover<MyGASolution> {
 
     private Properties props;
+
+    private static final Logger logger = LoggerFactory.getLogger(OuterPassengerReorderCrossover.class);
 
     public OuterPassengerReorderCrossover(Properties props){
         this.props = props;
@@ -32,6 +36,11 @@ public class OuterPassengerReorderCrossover implements Crossover<MyGASolution> {
         List<Integer> reordered2 = reorderRoute(r2.get(homo.getV()), r1.get(homo.getK()));
         r1.set(homo.getK(), reordered2);
 
+        if(!SolutionUtils.validateSolution(r1, props.getRuntimeObject(Const.INPUT_OBJECT, Input.class)))
+            logger.warn("Invalid solution produced");
+        if(!SolutionUtils.validateSolution(r2, props.getRuntimeObject(Const.INPUT_OBJECT, Input.class)))
+            logger.warn("Invalid solution produced");
+
         return Arrays.asList(new MyGASolution(props, r1), new MyGASolution(props, r2));
     }
 
@@ -44,14 +53,10 @@ public class OuterPassengerReorderCrossover implements Crossover<MyGASolution> {
             List<Integer> tmp = new LinkedList<>(r1.get(i));
             for(int j = 0 ; j < r2.size() ; j ++){
                 tmp.retainAll(r2.get(j));
-                try{
-                    tmp.removeIf((k) -> {
-                        int t = inp.pointType(k);
-                        return t != 1 && t != 3;
-                    });
-                }catch (Exception e){
-                    System.out.println();
-                }
+                tmp.removeIf((k) -> {
+                    int t = inp.pointType(k);
+                    return t != 1 && t != 3;
+                });
                 if(tmp.size() > homo){
                     mostHomo.set(i, j);
                     homo = tmp.size();
