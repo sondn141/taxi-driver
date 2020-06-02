@@ -68,10 +68,12 @@ public class RecursiveWorker {
                 solver.setInput(inpFile);
                 executor.submit(() -> {
                     try{
+                        logger.info(solver.getClass() + " is executing");
                         long s = System.currentTimeMillis();
                         Solution solution = solver.solve();
                         long runtime = System.currentTimeMillis() - s;
                         Writer.write(solution, outFile, solver.getClass(), runtime, true);
+                        logger.info(solver.getClass() + " has done");
                     } catch (Exception e){
                         logger.error("Error while solving problem", e);
                     }
