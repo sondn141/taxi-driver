@@ -46,7 +46,7 @@ public class MultiInputMultiSolverViz implements Visualizer {
     public void drawAndSave() {
         JFreeChart lineChart = ChartFactory.createLineChart(
                 props.getProperty(Const.VISUALIZATION_CHART_TITLE),
-                "Years","Number of Schools",
+                "Files","Objective",
                 createDataset(),
                 PlotOrientation.VERTICAL,
                 true,true,false);
@@ -67,12 +67,13 @@ public class MultiInputMultiSolverViz implements Visualizer {
         DefaultCategoryDataset dataset = new DefaultCategoryDataset();
         Map<String, Map<String, Solution>> inpSolMap = Reader.readMultiInputsAndSolutions(inpSolPairs);
         for(Map.Entry<String, Map<String, Solution>> kv : inpSolMap.entrySet()){
-            String input = kv.getKey();
+            String input = kv.getKey().substring(kv.getKey().lastIndexOf("/") + 1);
             Map<String, Solution> mapSol = kv.getValue();
             for(Map.Entry<String, Solution> sols : mapSol.entrySet()){
-                String solver = sols.getKey();
+                String[] solver = sols.getKey().split("\\.");
+                String solverName = solver[solver.length - 1];
                 double score = sols.getValue().score();
-                dataset.addValue(score, solver, input);
+                dataset.addValue(score, solverName, input);
             }
         }
 

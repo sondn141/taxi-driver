@@ -30,19 +30,18 @@ public class GA<I extends Solution> extends Solver {
         this.pop = new Population<>(props, solClazz);
         logger.info("Initialized population. Tending to evolute the population.");
         for(int i = 1 ; i <= props.getIntProperty(Const.GA_GENERATION, 100); i ++){
-            logger.info("=========================== Gen " + i + " ===========================");
             try{
                 List<I> childs = pop.crossover();
                 pop.mutation(childs);
                 pop.addAll(childs);
                 pop.sort();
                 pop.naturalSelection();
-                logger.info("==============================================================");
             }catch (Exception e){
                 logger.error("Error while running GA", e);
             }
         }
 
+        logger.info("End GA");
         return pop.get(0);
     }
 }

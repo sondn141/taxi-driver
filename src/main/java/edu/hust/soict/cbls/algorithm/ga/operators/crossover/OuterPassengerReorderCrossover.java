@@ -7,6 +7,8 @@ import edu.hust.soict.cbls.common.config.Properties;
 import edu.hust.soict.cbls.common.datastructure.Pair;
 import edu.hust.soict.cbls.common.ea.ga.operator.Crossover;
 import edu.hust.soict.cbls.common.utils.SolutionUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.Arrays;
 import java.util.LinkedList;
@@ -16,6 +18,8 @@ public class OuterPassengerReorderCrossover implements Crossover<MyGASolution> {
 
     private Properties props;
 
+    private static final Logger logger = LoggerFactory.getLogger(OuterPassengerReorderCrossover.class);
+
     public OuterPassengerReorderCrossover(Properties props){
         this.props = props;
     }
@@ -24,9 +28,6 @@ public class OuterPassengerReorderCrossover implements Crossover<MyGASolution> {
     public List<MyGASolution> execute(List<MyGASolution> parents) {
         List<List<Integer>> r1 = parents.get(0).convert();
         List<List<Integer>> r2 = parents.get(1).convert();
-        if(!SolutionUtils.validateRouteAllDiff(r1) || !SolutionUtils.validateRouteAllDiff(r2)){
-            System.out.println("Up --->" + r1 + " " + "--->" + r2);
-        }
 
         Pair<Integer, Integer> homo = mostPHomologousRoute(r1, r2);
 
@@ -35,10 +36,11 @@ public class OuterPassengerReorderCrossover implements Crossover<MyGASolution> {
         List<Integer> reordered2 = reorderRoute(r2.get(homo.getV()), r1.get(homo.getK()));
         r1.set(homo.getK(), reordered2);
 
+        if(!SolutionUtils.validateSolution(r1, props.getRuntimeObject(Const.INPUT_OBJECT, Input.class)))
+            logger.warn("Invalid solution produced");
+        if(!SolutionUtils.validateSolution(r2, props.getRuntimeObject(Const.INPUT_OBJECT, Input.class)))
+            logger.warn("Invalid solution produced");
 
-        if(!SolutionUtils.validateRouteAllDiff(r1) || !SolutionUtils.validateRouteAllDiff(r2)){
-            System.out.println("--->" + r1 + " " + "--->" + r2);
-        }
         return Arrays.asList(new MyGASolution(props, r1), new MyGASolution(props, r2));
     }
 
