@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.4.23)  29 MAY 2020 14:19
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.4.23)  2 JUN 2020 17:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1163,106 +1163,106 @@ Package: booktabs 2016/04/27 v1.618033 publication quality tables
 )
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\\' on input line 89.
+(hyperref)                removing `\\' on input line 90.
 
 
 Package hyperref Warning: Composite letter `\textasciigrave+\acircumflex'
 (hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textasciigrave' on input line 89.
+(hyperref)                removing `\textasciigrave' on input line 90.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\acircumflex' on input line 89.
+(hyperref)                removing `\acircumflex' on input line 90.
 
 
 Package hyperref Warning: Composite letter `\texttilde+\ocircumflex'
 (hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\texttilde' on input line 89.
+(hyperref)                removing `\texttilde' on input line 90.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\ocircumflex' on input line 89.
+(hyperref)                removing `\ocircumflex' on input line 90.
 
 
 Package hyperref Warning: Composite letter `\textdotbelow+o'
 (hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textdotbelow' on input line 89.
+(hyperref)                removing `\textdotbelow' on input line 90.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\ohorn' on input line 89.
+(hyperref)                removing `\ohorn' on input line 90.
 
 
 Package hyperref Warning: Composite letter `\textdotbelow+\acircumflex'
 (hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textdotbelow' on input line 98.
+(hyperref)                removing `\textdotbelow' on input line 99.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\acircumflex' on input line 98.
+(hyperref)                removing `\acircumflex' on input line 99.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\h' on input line 98.
+(hyperref)                removing `\h' on input line 99.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\ecircumflex' on input line 98.
+(hyperref)                removing `\ecircumflex' on input line 99.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\uhorn' on input line 98.
+(hyperref)                removing `\uhorn' on input line 99.
 
 
 Package hyperref Warning: Composite letter `\textasciigrave+\ohorn'
 (hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textasciigrave' on input line 98.
+(hyperref)                removing `\textasciigrave' on input line 99.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\ohorn' on input line 98.
+(hyperref)                removing `\ohorn' on input line 99.
 
 
 Package hyperref Warning: Composite letter `\textacute+\ecircumflex'
 (hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textacute' on input line 98.
+(hyperref)                removing `\textacute' on input line 99.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\ecircumflex' on input line 98.
+(hyperref)                removing `\ecircumflex' on input line 99.
 
 
 Package hyperref Warning: Composite letter `\textdotbelow+\ohorn'
 (hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textdotbelow' on input line 98.
+(hyperref)                removing `\textdotbelow' on input line 99.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\ohorn' on input line 98.
+(hyperref)                removing `\ohorn' on input line 99.
 
 (./template_Beamer.aux)
 \openout1 = `template_Beamer.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 98.
-LaTeX Font Info:    ... okay on input line 98.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 98.
-LaTeX Font Info:    ... okay on input line 98.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 98.
-LaTeX Font Info:    ... okay on input line 98.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 98.
-LaTeX Font Info:    ... okay on input line 98.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 98.
-LaTeX Font Info:    ... okay on input line 98.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 98.
-LaTeX Font Info:    ... okay on input line 98.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 98.
-LaTeX Font Info:    ... okay on input line 98.
-LaTeX Font Info:    Checking defaults for T5/cmr/m/n on input line 98.
-LaTeX Font Info:    Try loading font information for T5+cmr on input line 98.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 99.
+LaTeX Font Info:    ... okay on input line 99.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 99.
+LaTeX Font Info:    ... okay on input line 99.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 99.
+LaTeX Font Info:    ... okay on input line 99.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 99.
+LaTeX Font Info:    ... okay on input line 99.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 99.
+LaTeX Font Info:    ... okay on input line 99.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 99.
+LaTeX Font Info:    ... okay on input line 99.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 99.
+LaTeX Font Info:    ... okay on input line 99.
+LaTeX Font Info:    Checking defaults for T5/cmr/m/n on input line 99.
+LaTeX Font Info:    Try loading font information for T5+cmr on input line 99.
  (/usr/share/texlive/texmf-dist/tex/latex/vntex/t5cmr.fd
 File: t5cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 98.
+LaTeX Font Info:    ... okay on input line 99.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1330,7 +1330,7 @@ e
 ))
 ABD: EveryShipout initializing macros
 \AtBeginShipoutBox=\box54
-Package hyperref Info: Link coloring OFF on input line 98.
+Package hyperref Info: Link coloring OFF on input line 99.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -1340,56 +1340,56 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count164
 )
-LaTeX Info: Redefining \ref on input line 98.
-LaTeX Info: Redefining \pageref on input line 98.
-LaTeX Info: Redefining \nameref on input line 98.
+LaTeX Info: Redefining \ref on input line 99.
+LaTeX Info: Redefining \pageref on input line 99.
+LaTeX Info: Redefining \nameref on input line 99.
 
 (./template_Beamer.out) (./template_Beamer.out)
 \@outlinefile=\write5
 \openout5 = `template_Beamer.out'.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 98.
+(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 99.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 98.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 99.
 \symnumbers=\mathgroup6
 \sympureletters=\mathgroup7
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/cmss/m/n --> T5/cmr/m/n on input line 98.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 98.
+(Font)                  OT1/cmss/m/n --> T5/cmr/m/n on input line 99.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 99.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> T5/cmss/bx/n on input line 98.
+(Font)                  OT1/cmr/bx/n --> T5/cmss/bx/n on input line 99.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmr/bx/n --> T5/cmss/bx/n on input line 98.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 98.
+(Font)                  OT1/cmr/bx/n --> T5/cmss/bx/n on input line 99.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 99.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> T5/cmss/m/n on input line 98.
+(Font)                  OT1/cmss/m/n --> T5/cmss/m/n on input line 99.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> T5/cmss/m/n on input line 98.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 98.
+(Font)                  OT1/cmss/bx/n --> T5/cmss/m/n on input line 99.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 99.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> T5/cmss/m/it on input line 98.
+(Font)                  OT1/cmr/m/it --> T5/cmss/m/it on input line 99.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> T5/cmss/m/it on input line 98.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 98.
+(Font)                  OT1/cmr/bx/it --> T5/cmss/m/it on input line 99.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 99.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> T5/cmtt/m/n on input line 98.
+(Font)                  OT1/cmtt/m/n --> T5/cmtt/m/n on input line 99.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> T5/cmtt/m/n on input line 98.
+(Font)                  OT1/cmtt/m/n --> T5/cmtt/m/n on input line 99.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
-(Font)                  T5/cmss/m/n --> T5/cmss/bx/n on input line 98.
+(Font)                  T5/cmss/m/n --> T5/cmss/bx/n on input line 99.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  T5/cmss/m/it --> T5/cmss/bx/it on input line 98.
+(Font)                  T5/cmss/m/it --> T5/cmss/bx/it on input line 99.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/cmss/bx/n --> T5/cmr/bx/n on input line 98.
+(Font)                  OT1/cmss/bx/n --> T5/cmr/bx/n on input line 99.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  T5/cmss/bx/n --> T5/cmss/bx/n on input line 98.
+(Font)                  T5/cmss/bx/n --> T5/cmss/bx/n on input line 99.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  T5/cmss/m/n --> T5/cmss/bx/n on input line 98.
+(Font)                  T5/cmss/m/n --> T5/cmss/bx/n on input line 99.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  T5/cmss/m/it --> T5/cmss/bx/it on input line 98.
+(Font)                  T5/cmss/m/it --> T5/cmss/bx/it on input line 99.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  T5/cmtt/m/n --> T5/cmtt/bx/n on input line 98.
+(Font)                  T5/cmtt/m/n --> T5/cmtt/bx/n on input line 99.
 
 (/usr/share/texlive/texmf-dist/tex/latex/translator/translator-basic-dictionary
 -English.dict
@@ -1422,20 +1422,20 @@ Dictionary: translator-theorem-dictionary, Language: English
 
 Package hyperref Warning: Composite letter `\textacute+\ohorn'
 (hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textacute' on input line 114.
+(hyperref)                removing `\textacute' on input line 115.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\ohorn' on input line 114.
+(hyperref)                removing `\ohorn' on input line 115.
 
 
 Package hyperref Warning: Composite letter `\textdotbelow+\ecircumflex'
 (hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textdotbelow' on input line 114.
+(hyperref)                removing `\textdotbelow' on input line 115.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\ecircumflex' on input line 114.
+(hyperref)                removing `\ecircumflex' on input line 115.
 
 [3
 
@@ -1444,34 +1444,34 @@ Package hyperref Warning: Glyph not defined in PD1 encoding,
 ]
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\uhorn' on input line 133.
+(hyperref)                removing `\uhorn' on input line 134.
 
 
 Package hyperref Warning: Composite letter `\textacute+\ohorn'
 (hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textacute' on input line 133.
+(hyperref)                removing `\textacute' on input line 134.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\ohorn' on input line 133.
+(hyperref)                removing `\ohorn' on input line 134.
 
 
 Package hyperref Warning: Composite letter `\textacute+\ecircumflex'
 (hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textacute' on input line 133.
+(hyperref)                removing `\textacute' on input line 134.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\ecircumflex' on input line 133.
+(hyperref)                removing `\ecircumflex' on input line 134.
 
 
 Package hyperref Warning: Composite letter `\textdotbelow+\acircumflex'
 (hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textdotbelow' on input line 133.
+(hyperref)                removing `\textdotbelow' on input line 134.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\acircumflex' on input line 133.
+(hyperref)                removing `\acircumflex' on input line 134.
 
 [5
 
@@ -1480,41 +1480,41 @@ Package hyperref Warning: Glyph not defined in PD1 encoding,
 ] [7
 
 ]
-LaTeX Font Info:    Try loading font information for U+msa on input line 191.
+LaTeX Font Info:    Try loading font information for U+msa on input line 192.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 191.
+LaTeX Font Info:    Try loading font information for U+msb on input line 192.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 
 LaTeX Font Warning: Font shape `T5/cmss/m/it' in size <10.95> not available
-(Font)              Font shape `T5/cmss/m/sl' tried instead on input line 191.
+(Font)              Font shape `T5/cmss/m/sl' tried instead on input line 192.
 
 
 LaTeX Font Warning: Font shape `T5/cmss/m/it' in size <8> not available
-(Font)              Font shape `T5/cmss/m/sl' tried instead on input line 191.
+(Font)              Font shape `T5/cmss/m/sl' tried instead on input line 192.
 
 
 LaTeX Font Warning: Font shape `T5/cmss/m/it' in size <6> not available
-(Font)              Font shape `T5/cmss/m/sl' tried instead on input line 191.
+(Font)              Font shape `T5/cmss/m/sl' tried instead on input line 192.
 
 
 LaTeX Font Warning: Font shape `T5/cmss/m/it' in size <10> not available
-(Font)              Font shape `T5/cmss/m/sl' tried instead on input line 191.
+(Font)              Font shape `T5/cmss/m/sl' tried instead on input line 192.
 
 
 LaTeX Font Warning: Font shape `T5/cmss/m/it' in size <7> not available
-(Font)              Font shape `T5/cmss/m/sl' tried instead on input line 191.
+(Font)              Font shape `T5/cmss/m/sl' tried instead on input line 192.
 
 
 LaTeX Font Warning: Font shape `T5/cmss/m/it' in size <5> not available
-(Font)              Font shape `T5/cmss/m/sl' tried instead on input line 191.
+(Font)              Font shape `T5/cmss/m/sl' tried instead on input line 192.
 
 
-Overfull \vbox (0.58925pt too high) detected at line 191
+Overfull \vbox (0.58925pt too high) detected at line 192
  []
 
 [8
@@ -1522,24 +1522,24 @@ Overfull \vbox (0.58925pt too high) detected at line 191
 ] [9
 
 ]
-Overfull \hbox (49.68497pt too wide) detected at line 238
+Overfull \hbox (49.68497pt too wide) detected at line 239
 []
  []
 
 
-Overfull \hbox (73.34311pt too wide) detected at line 238
+Overfull \hbox (73.34311pt too wide) detected at line 239
 []
  []
 
 [10
 
 ]
-Overfull \hbox (95.65608pt too wide) detected at line 255
+Overfull \hbox (95.65608pt too wide) detected at line 256
 []
  []
 
 
-Overfull \hbox (99.9539pt too wide) detected at line 255
+Overfull \hbox (99.9539pt too wide) detected at line 256
 []
  []
 
@@ -1550,7 +1550,7 @@ Overfull \hbox (99.9539pt too wide) detected at line 255
 ] [13
 
 ]
-Overfull \vbox (0.58925pt too high) detected at line 311
+Overfull \vbox (0.58925pt too high) detected at line 312
  []
 
 [14
@@ -1558,24 +1558,24 @@ Overfull \vbox (0.58925pt too high) detected at line 311
 ] [15
 
 ]
-Overfull \hbox (49.68497pt too wide) detected at line 358
+Overfull \hbox (49.68497pt too wide) detected at line 359
 []
  []
 
 
-Overfull \hbox (105.49106pt too wide) detected at line 358
+Overfull \hbox (105.49106pt too wide) detected at line 359
 []
  []
 
 [16
 
 ]
-Overfull \hbox (127.80403pt too wide) detected at line 375
+Overfull \hbox (127.80403pt too wide) detected at line 376
 []
  []
 
 
-Overfull \hbox (132.10185pt too wide) detected at line 375
+Overfull \hbox (132.10185pt too wide) detected at line 376
 []
  []
 
@@ -1590,25 +1590,25 @@ Overfull \hbox (132.10185pt too wide) detected at line 375
 ]
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\dj' on input line 425.
+(hyperref)                removing `\dj' on input line 426.
 
 
 Package hyperref Warning: Composite letter `\textdotbelow+\abreve'
 (hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textdotbelow' on input line 425.
+(hyperref)                removing `\textdotbelow' on input line 426.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\abreve' on input line 425.
+(hyperref)                removing `\abreve' on input line 426.
 
 
 Package hyperref Warning: Composite letter `\textdotbelow+\acircumflex'
 (hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textdotbelow' on input line 425.
+(hyperref)                removing `\textdotbelow' on input line 426.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\acircumflex' on input line 425.
+(hyperref)                removing `\acircumflex' on input line 426.
 
 [21
 
@@ -1618,24 +1618,24 @@ Package hyperref Warning: Glyph not defined in PD1 encoding,
 
 Package hyperref Warning: Composite letter `\textdotbelow+\uhorn'
 (hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textdotbelow' on input line 442.
+(hyperref)                removing `\textdotbelow' on input line 443.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\uhorn' on input line 442.
+(hyperref)                removing `\uhorn' on input line 443.
 
 
 Package hyperref Warning: Composite letter `\textdotbelow+\ecircumflex'
 (hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textdotbelow' on input line 442.
+(hyperref)                removing `\textdotbelow' on input line 443.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\ecircumflex' on input line 442.
+(hyperref)                removing `\ecircumflex' on input line 443.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\dj' on input line 442.
+(hyperref)                removing `\dj' on input line 443.
 
 [23
 
@@ -1645,20 +1645,20 @@ Package hyperref Warning: Glyph not defined in PD1 encoding,
 
 Package hyperref Warning: Composite letter `\textacute+\ecircumflex'
 (hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textacute' on input line 461.
+(hyperref)                removing `\textacute' on input line 462.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\ecircumflex' on input line 461.
+(hyperref)                removing `\ecircumflex' on input line 462.
 
 
 Package hyperref Warning: Composite letter `\textdotbelow+\acircumflex'
 (hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textdotbelow' on input line 461.
+(hyperref)                removing `\textdotbelow' on input line 462.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\acircumflex' on input line 461.
+(hyperref)                removing `\acircumflex' on input line 462.
 
 [25
 
@@ -1672,18 +1672,18 @@ Package hyperref Warning: Glyph not defined in PD1 encoding,
 \tf@snm=\write8
 \openout8 = `template_Beamer.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 470.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 470.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 471.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 471.
  (./template_Beamer.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 470.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 470.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 471.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 471.
 Package rerunfilecheck Info: File `template_Beamer.out' has not changed.
 (rerunfilecheck)             Checksum: D047CD9461E7051F7CEB78DD2874804C;341.
  ) 
 Here is how much of TeX's memory you used:
  18131 strings out of 494319
  335924 string characters out of 6167607
- 401771 words of memory out of 5000000
+ 401796 words of memory out of 5000000
  21131 multiletter control sequences out of 15000+600000
  26603 words of font info for 60 fonts, out of 8000000 for 9000
  309 hyphenation exceptions out of 8191
@@ -1701,7 +1701,7 @@ nr/vnss10.pfb></usr/share/texlive/texmf-dist/fonts/type1/vntex/vnr/vnss12.pfb><
 ve/texmf-dist/fonts/type1/vntex/vnr/vnssbx10.pfb></usr/share/texlive/texmf-dist
 /fonts/type1/vntex/vnr/vnssi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/v
 ntex/vnr/vnssi8.pfb>
-Output written on template_Beamer.pdf (25 pages, 178453 bytes).
+Output written on template_Beamer.pdf (25 pages, 178779 bytes).
 PDF statistics:
  794 PDF objects out of 1000 (max. 8388607)
  731 compressed objects within 8 object streams
