@@ -87,24 +87,30 @@
 \title[Project 5]{Project 5 \\
 	Taxi vận chuyển người kết hợp hàng hóa} % The short title appears at the bottom of every slide, the full title is only on the title page
 
-\author{Trần Huy Hùng,\\ Đỗ Ngọc Sơn} % Your name
-\institute[UCLA] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
+\author{Trần Huy Hùng\and Đỗ Ngọc Sơn} % Your name
+\institute[HUST] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
 {
 	Đại học Bách Khoa Hà Nội \\ % Your institution for the title page
 	\medskip
-	% 	\textit{john@smith.com} % Your email address
+	% 	\textit{john@smith.com} % YourHUST email address
 }
 \date{\today} % Date, can be changed to a custom date
 
+\AtBeginSection[]
+{
+	\begin{frame}
+	\frametitle{Table of Contents}
+	\tableofcontents[currentsection, hideothersubsections]
+	\end{frame}
+}
+
 \begin{document}
 	
-	\begin{frame}
-		\titlepage % Print the title page as the first slide
-	\end{frame}
+	\maketitle
 	
 	\begin{frame}
 		\frametitle{Nội dung} % Table of contents slide, comment this block out to remove it
-		\tableofcontents % Throughout your presentation, if you choose to use \section{} and\subsection{} commands, these will automatically be printed on this slide as an overview of your presentation
+		\tableofcontents[hidesubsections]
 	\end{frame}
 	
 	%----------------------------------------------------------------------------------------
@@ -119,56 +125,77 @@
 	
 	\begin{frame}
 		\frametitle{Giới thiệu bài toán}
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lectus nisl, ultricies in feugiat rutrum, porttitor sit amet augue. Aliquam ut tortor mauris. Sed volutpat ante purus, quis accumsan dolor.
+		Bài toán taxi vận chuyển người kết hợp hàng hóa:
+		\begin{itemize}
+			\item {
+				Có $N$ hành khách $(1,2,...,N)$ và $M$ gói hàng $(N+1,N+2,...,N+M)$:
+				\begin{itemize}
+					\item Hành khách (hoặc gói hàng) $i$ có điểm đón $i$ và điểm trả $i+N+M$ ($u=1,2,...,N+M$).
+					\item Gói hàng $i$ có khối lượng $q_i$ ($i=N+1,...,N+M$).
+				\end{itemize}
+			}
+			\item {
+				Có $K$ xe taxi $(1,2,...,K)$:
+				\begin{itemize}
+					\item Các taxi cùng xuất phát từ điểm $0$, thực hiện các yêu cầu chở khách và hàng, rồi quay về điểm $0$.
+					\item Xe taxi $k$ có thể vận chuyển cùng lúc $1$ hành khách và tối đa $Q_k$ khối lượng hàng ($k=1,2,...,K$).
+					\item Taxi đã đón hành khách thì phải đi đến điểm trả khách đó ngay lập tức.
+				\end{itemize}
+			}
+			\item $d_{ij}$ là khoảng cách từ điểm $i$ đến điểm $j$ ($i,j=0,...,2N+2M$).
+		\end{itemize}
+		\underline{Yêu cầu:} Tính toán phương án vận chuyển sao cho quãng đường di chuyển \textbf{dài nhất} của các xe là \textbf{ngắn nhất}.
 	\end{frame}
 
-	%------------------------------------------------
-	
 	\begin{frame}
 		\frametitle{Giới thiệu bài toán}
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lectus nisl, ultricies in feugiat rutrum, porttitor sit amet augue. Aliquam ut tortor mauris. Sed volutpat ante purus, quis accumsan dolor.
+		\begin{figure}
+			\centering
+			\caption{Lộ trình đón trả người kết hợp hàng hóa}
+			\includegraphics[width=0.8\textwidth]{../docs/taxi.png}
+		\end{figure}
 	\end{frame}
 	
 	%------------------------------------------------
 	
-	\section{Các hướng tiếp cận}
+%	\section{Các hướng tiếp cận}
+%	
+%	%------------------------------------------------
+%	
+%	\begin{frame}
+%		\frametitle{Các hướng tiếp cận}
+%		\begin{itemize}
+%			\item Sử dụng các giải thuật chính xác
+%			\item Sử dụng các giải thuật xấp xỉ
+%		\end{itemize}
+%	\end{frame}
+%	
+%	%------------------------------------------------
+%	
+%	\begin{frame}
+%		\frametitle{Các hướng tiếp cận}
+%		\begin{block}{Giải bài toán bằng thuật toán chính xác}
+%			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lectus nisl, ultricies in feugiat rutrum, porttitor sit amet augue. Aliquam ut tortor mauris. Sed volutpat ante purus, quis accumsan dolor.
+%		\end{block}
+%	\end{frame}
+%
+%	%------------------------------------------------
+%	
+%	\begin{frame}
+%		\frametitle{Các hướng tiếp cận}
+%		\begin{block}{Giải bài toán bằng thuật toán xấp xỉ}
+%			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lectus nisl, ultricies in feugiat rutrum, porttitor sit amet augue. Aliquam ut tortor mauris. Sed volutpat ante purus, quis accumsan dolor.
+%		\end{block}
+%	\end{frame}
+	
+	%------------------------------------------------
+	
+	\section{Mô hình bài toán}
 	
 	%------------------------------------------------
 	
 	\begin{frame}
-		\frametitle{Các hướng tiếp cận}
-		\begin{itemize}
-			\item Sử dụng các giải thuật chính xác
-			\item Sử dụng các giải thuật xấp xỉ
-		\end{itemize}
-	\end{frame}
-	
-	%------------------------------------------------
-	
-	\begin{frame}
-		\frametitle{Các hướng tiếp cận}
-		\begin{block}{Giải bài toán bằng thuật toán chính xác}
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lectus nisl, ultricies in feugiat rutrum, porttitor sit amet augue. Aliquam ut tortor mauris. Sed volutpat ante purus, quis accumsan dolor.
-		\end{block}
-	\end{frame}
-
-	%------------------------------------------------
-	
-	\begin{frame}
-		\frametitle{Các hướng tiếp cận}
-		\begin{block}{Giải bài toán bằng thuật toán xấp xỉ}
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lectus nisl, ultricies in feugiat rutrum, porttitor sit amet augue. Aliquam ut tortor mauris. Sed volutpat ante purus, quis accumsan dolor.
-		\end{block}
-	\end{frame}
-	
-	%------------------------------------------------
-	
-	\section{Mô hình hóa bài toán}
-	
-	%------------------------------------------------
-	
-	\begin{frame}
-		\frametitle{Mô hình ràng buộc}
+		\frametitle{Mô hình bài toán}
 		\textbf{\underline{Tham số}}
 		\begin{itemize}
 			\item Tập $2N+2M+2K$ điểm:
@@ -191,7 +218,7 @@
 		\end{itemize}
 	\end{frame}
 	\begin{frame}
-		\frametitle{Mô hình ràng buộc}
+		\frametitle{Mô hình bài toán}
 		\textbf{\underline{Biến quyết định}}
 		\begin{itemize}
 			\item $x_{ij}$: Biến nhị phân, xác định cung đi từ điểm $i$ đến điểm $j$ có xuất hiện trong lộ trình của 1 trong $k$ xe không ($i,j\in \{1,2,...,2N+2M+2K$)
@@ -210,7 +237,7 @@
 				\end{equation}
 				\item $l_i$: khoảng cách tích lũy của xe đi từ điểm $0$ đến điểm $i$ trong lộ trình
 				\begin{equation}
-					0\leq t_i\leq 2N+2M+1
+					0\leq l_i < \infty
 				\end{equation}
 				\item $c_i$: khối lượng hàng xe $k$ (đi qua điểm $i$) còn chịu được khi đi tới điểm $i$
 				\begin{equation}
@@ -221,7 +248,7 @@
 	\end{frame}
 
 	\begin{frame}
-		\frametitle{Mô hình ràng buộc}
+		\frametitle{Mô hình bài toán}
 		\textbf{\underline{Các ràng buộc}}
 		\begin{itemize}
 			\item Ràng buộc cân bằng luồng vào ra:
@@ -238,7 +265,7 @@
 		\end{itemize}
 	\end{frame}
 	\begin{frame}
-		\frametitle{Mô hình ràng buộc}
+		\frametitle{Mô hình bài toán}
 		\begin{itemize}
 			\item Xác định $l_i$:
 			\begin{align}
@@ -255,7 +282,7 @@
 		\end{itemize}
 	\end{frame}
 	\begin{frame}
-		\frametitle{Mô hình ràng buộc}
+		\frametitle{Mô hình bài toán}
 		\begin{itemize}
 			\item Điểm đón và trả của hành khách $i$ phải thuộc lộ trình của cùng một xe, tương tự với các gói hàng:
 			\begin{align}
@@ -273,7 +300,7 @@
 		\end{itemize}
 	\end{frame}
 	\begin{frame}
-		\frametitle{Mô hình ràng buộc}
+		\frametitle{Mô hình bài toán}
 		\begin{itemize}
 			\item $L$: Độ dài của lộ trình xe dài nhất trong $K$ lộ trình
 			\item Ràng buộc xác định lộ trình dài nhất:
@@ -287,29 +314,13 @@
 		\end{equation}
 	\end{frame}
 
-	\begin{frame}
-		\frametitle{Mô hình MIP}
-			\textbf{\underline{Tham số}}
-		\begin{itemize}
-			\item Tập $2N+2M+2K$ điểm:
-			\begin{itemize}
-				\item Hành khách $i$: điểm đón $i$ và điểm trả $i+N+M$ ($i=1,2,...,N$)
-				\item Gói hàng $j$: điểm lấy hàng $j$ và điểm trả $j+N+M$ ($j=N+1,N+2,...,N+M$)
-				\item $2K$ điểm logic $2N+2M+1, 2N+2M+2, ..., 2N+2M+2K$ tham chiếu tới điểm xuất phát vật lý $0$. Điểm $2N+2M+k$ tương ứng là điểm bắt đầu, $2N+2M+K+k$ là điểm kết thúc lộ trình xe thứ $k$ ($k=1,2,...,K$)
-			\end{itemize}
-			\item $d_{ij}$: Khoảng cách từ điểm $i$ tới điểm $j$ ($i,j\in \{1,2,...,2N+2M+2K\}$)
-			\item $w_i$: Sự thay đổi khối lượng hàng khi đi tới điểm $i$ ($i=1,2,...,2N+2M+2K$)
-			\begin{equation}
-			w_i =
-			\begin{cases}
-			q_i & \text{nếu } N+1\leq i\leq N+M\\
-			-q_{i-(N+M)} & \text{nếu } 2N+M+1\leq i\leq 2N+2M\\
-			0 & \text{ngược lại}
-			\end{cases} \notag
-			\end{equation}
-			\item $Q_k$: Khối lượng hàng tối đa xe thứ $k$ có thể chở ($k=1,2,...,K$)
-		\end{itemize}
-	\end{frame}
+	%------------------------------------------------
+	
+	\section{Giải thuật chính xác}
+	
+	%------------------------------------------------
+	
+	\subsection{Mô hình MIP}
 	\begin{frame}
 		\frametitle{Mô hình MIP}
 	\textbf{\underline{Biến quyết định}}
@@ -326,15 +337,15 @@
 		\begin{itemize}
 			\item $r_i$: chỉ số của xe đi qua điểm $i$ trong lộ trình
 			\begin{equation}
-			1\leq r_i\leq K
+				1\leq r_i\leq K
 			\end{equation}
 			\item $l_i$: khoảng cách tích lũy của xe đi từ điểm $0$ đến điểm $i$ trong lộ trình
 			\begin{equation}
-			0\leq t_i\leq 2N+2M+1
+				0\leq l_i < \infty
 			\end{equation}
 			\item $c_i$: khối lượng hàng xe $k$ (đi qua điểm $i$) còn chịu được khi đi tới điểm $i$
 			\begin{equation}
-			0\leq c_i\leq \max _{1\leq k\leq K} \{Q_k\}
+				0\leq c_i\leq \max _{1\leq k\leq K} \{Q_k\}
 			\end{equation}
 		\end{itemize}
 	\end{itemize}
@@ -394,20 +405,6 @@
 	\end{frame}
 	\begin{frame}
 		\frametitle{Mô hình MIP}
-		\textbf{\underline{Ràng buộc thừa}}
-		\begin{itemize}
-			\item Điểm đầu và điểm cuối tương ứng cùng nằm trên 1 lộ trình:
-			\begin{align}
-				r_i=r_{K+i},\quad & i=2N+2M+1,...,2N+2M+K
-			\end{align}
-			\item Một điểm không tự nối tới chính nó, trừ $K$ điểm logic tham chiếu tới $0$:
-			\begin{align}
-				x_{ii}=0,\quad & i=1,2,...,2N+2M
-			\end{align}
-		\end{itemize}
-	\end{frame}
-	\begin{frame}
-		\frametitle{Mô hình MIP}
 		\begin{itemize}
 			\item $L$: Độ dài của lộ trình xe dài nhất trong $K$ lộ trình
 			\item Ràng buộc xác định lộ trình dài nhất:
@@ -420,42 +417,163 @@
 		L \leftarrow min
 		\end{equation}
 	\end{frame}
-	
-	%------------------------------------------------
-	
-	\section{Cài đặt thuật toán}
-	
-	%------------------------------------------------
-	
+
+	\subsection{Thuật toán nhánh cận}
 	\begin{frame}
-		\frametitle{Cài đặt thuật toán}
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lectus nisl, ultricies in feugiat rutrum, porttitor sit amet augue. Aliquam ut tortor mauris. Sed volutpat ante purus, quis accumsan dolor.
+		\frametitle{Thuật toán nhánh cận}
+		\textbf{Phương pháp:}
+		\begin{itemize}
+			\item \underline{Khởi tạo:} Lời giải rỗng, lộ trình mỗi xe chỉ có điểm đầu $0$ và điểm cuối $0$.
+			\item \underline{Trạng thái nút:} Đang xét xe thứ $k$, đã xây xong lộ trình các xe trước.
+			\item {
+				\underline{Rẽ nhánh:} Thực hiện một trong các thao tác:
+				\begin{itemize}
+					\item Chọn 1 khách chưa được phục vụ, thêm liên tiếp điểm đón và điểm trả khách vào cuối lộ trình xe $k$
+					\item Chọn 1 gói hàng chưa có xe lấy, thêm điểm lấy hàng vào cuối lộ trình
+					\item Chọn 1 gói hàng mà xe $k$ đã lấy nhưng chưa giao, thêm điểm giao hàng vào cuối lộ trình
+					\item Kết thúc xây lộ trình xe $k$, chuyển sang xe $k+1$
+				\end{itemize}
+			}
+			\item \underline{Tỉa nhánh:} Các nút có lộ trình xe $k$ dài hơn lời giải tốt nhất hiện tại.
+		\end{itemize}
 	\end{frame}
 	
 	%------------------------------------------------
 	
+	\section{Giải thuật heuristics}
+	
+	%------------------------------------------------
+	
+	\subsection{Thuật toán tham lam}
 	\begin{frame}
-		\frametitle{Cài đặt thuật toán}
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lectus nisl, ultricies in feugiat rutrum, porttitor sit amet augue. Aliquam ut tortor mauris. Sed volutpat ante purus, quis accumsan dolor.
+		\frametitle{Thuật toán tham lam}
+		\textbf{Các bước thực hiện:}
+		\begin{itemize}
+			\item \underline{Bước 0:} Khởi tạo lời giải rỗng.
+			\item {
+				\underline{Bước 1:} Thêm các yêu cầu chuyển hàng:
+				\begin{itemize}
+					\item Duyệt qua các gói hàng chưa xử lý.
+					\item Duyệt tất cả các cặp vị trí (thuộc cùng 1 xe) có thể chèn điểm lấy và điểm giao hàng (mà không vi phạm ràng buộc).
+					\item Chọn một trong các cặp vị trí làm lộ trình được chèn có độ dài mới là nhỏ nhất.
+				\end{itemize}
+			}
+			\item {
+				\underline{Bước 2:} Thêm các yêu cầu chuyển người:
+				\begin{itemize}
+					\item Duyệt qua các yêu cầu chờ khách chưa xử lý.
+					\item Duyệt tất cả các vị trí để chèn cặp điểm đón và điểm trả người (mà không vi phạm ràng buộc).
+					\item Chọn một trong các vị trí làm lộ trình được chèn có độ dài mới là nhỏ nhất.
+				\end{itemize}
+			}
+		\end{itemize}
+		\textbf{Độ phức tạp:} $O(\max \{ M\times (2M+2N+K)^3, N\times (2M+2N+K)^2 \})$
 	\end{frame}
+	
+	%------------------------------------------------
+	
+	\subsection{Tìm kiếm cục bộ}
+	\begin{frame}
+		\frametitle{Tìm kiếm cục bộ}
+		\textbf{Các bước thực hiện:}
+		\begin{itemize}
+			\item \underline{Khởi tạo:} Sử dụng thuật toán tham lam đã trình bày.
+			\item {
+				\underline{Quá trình tìm kiếm:}
+				\begin{itemize}
+					\item Tìm một lời giải hàng xóm tốt hơn lời giải hiện tại.
+					\item Nếu không, tìm lời giải tốt nhất trong các hàng xóm, tạm thay lời giải hiện tại.
+					\item Nếu đã qua một số vòng lặp mà lời giải hiện tại không cải thiện, khởi tạo lại lời giải.
+					\item Cập nhật lời giải tốt nhất (nếu có thể).
+				\end{itemize}
+			}
+			\item Lặp lại quá trình trên tới khi chạm số vòng lặp hoặc thời gian chạy tối đa.
+		\end{itemize}
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Tìm kiếm cục bộ}
+		\textbf{Xây dựng tập lời giải hàng xóm:}
+		\begin{itemize}
+			\item {\underline{Move 1:} Dịch vị trí điểm lấy và giao hàng:
+				\begin{itemize}
+					\item $x_1,x_2$ là điểm lấy và giao cùng một gói hàng
+					\item Chọn 2 điểm $y_1, y_2$ thuộc cùng lộ trình
+					\item Bỏ $x_1, x_2$ khỏi lộ trình hiện tại, chèn $x_1$ sau $y_1$, $x_2$ sau $y_2$
+				\end{itemize}
+			}
+			\item {\underline{Move 2:} Dịch vị trí cặp điểm đón trả khách:
+				\begin{itemize}
+					\item $x_1,x_2$ là điểm đón và trả cùng một gói hàng
+					\item Chọn điểm $y$ bất kỳ trong các lộ trình
+					\item Bỏ $x_1, x_2$ khỏi lộ trình hiện tại, chèn $x_1,x_2$ liên tiếp sau $y$
+				\end{itemize}
+			}
+		\end{itemize}
+		
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Tìm kiếm cục bộ}
+		\begin{figure}
+			\centering
+			\caption{Move 1: Dịch vị trí gói hàng}
+			\includegraphics[width=0.6\textwidth]{images/cbls-good.png}
+		\end{figure}
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Tìm kiếm cục bộ}
+		\begin{figure}
+			\centering
+			\caption{Move 2: Dịch vị trí hành khách}
+			\includegraphics[width=0.6\textwidth]{images/cbls-people.png}
+		\end{figure}
+	\end{frame}
+
+	\subsection{Giải thuật di truyền}
+	\begin{frame}
+	\frametitle{Giải thuật di truyền}
+	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lectus nisl, ultricies in feugiat rutrum, porttitor sit amet augue. Aliquam ut tortor mauris. Sed volutpat ante purus, quis accumsan dolor.
+\end{frame}
 	
 	%------------------------------------------------
 	\section{Thực nghiệm và đánh giá}
 	
 	%------------------------------------------------
 	
+	\subsection{Bộ dữ liệu}
 	\begin{frame}
-		\frametitle{Thực nghiệm và đánh giá}
+		\frametitle{Bộ dữ liệu}
 		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lectus nisl, ultricies in feugiat rutrum, porttitor sit amet augue. Aliquam ut tortor mauris. Sed volutpat ante purus, quis accumsan dolor.
 	\end{frame}
 
 
 	%------------------------------------------------
 	
+	\subsection{Tham số thuật toán}
 	\begin{frame}
-	\frametitle{Thực nghiệm và đánh giá}
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lectus nisl, ultricies in feugiat rutrum, porttitor sit amet augue. Aliquam ut tortor mauris. Sed volutpat ante purus, quis accumsan dolor.
+	\frametitle{Tham số thuật toán}
+		\begin{itemize}
+			\item Số lần chạy heuristics / bộ dữ liệu: 10
+			\item {
+				Tìm kiếm cục bộ:
+				\begin{itemize}
+					\item Số vòng lặp: 100
+					\item Số bước cho phép lời giải tồi: 10
+				\end{itemize}
+			}
+			\item {
+				Giải thuật di truyền:liệu
+			}
+		\end{itemize}
 	\end{frame}
+
+	\subsection{Kết quả thực nghiệm}
+	\begin{frame}
+	\frametitle{Kết quả thực nghiệm}
+	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lectus nisl, ultricies in feugiat rutrum, porttitor sit amet augue. Aliquam ut tortor mauris. Sed volutpat ante purus, quis accumsan dolor.
+\end{frame}
 
 	%------------------------------------------------
 	

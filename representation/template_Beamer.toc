@@ -1,6 +1,14 @@
 \beamer@sectionintoc {1}{Gi\IeC {\'\ohorn }i thi\IeC {\d \ecircumflex }u b\IeC {\`a}i to\IeC {\'a}n}{3}{0}{1}
-\beamer@sectionintoc {2}{C\IeC {\'a}c h\IeC {\uhorn }\IeC {\'\ohorn }ng ti\IeC {\'\ecircumflex }p c\IeC {\d \acircumflex }n}{5}{0}{2}
-\beamer@sectionintoc {3}{M\IeC {\^o} h\IeC {\`\i }nh h\IeC {\'o}a b\IeC {\`a}i to\IeC {\'a}n}{8}{0}{3}
-\beamer@sectionintoc {4}{C\IeC {\`a}i \IeC {\dj }\IeC {\d \abreve }t thu\IeC {\d \acircumflex }t to\IeC {\'a}n}{21}{0}{4}
-\beamer@sectionintoc {5}{Th\IeC {\d \uhorn }c nghi\IeC {\d \ecircumflex }m v\IeC {\`a} \IeC {\dj }\IeC {\'a}nh gi\IeC {\'a}}{23}{0}{5}
-\beamer@sectionintoc {6}{K\IeC {\'\ecircumflex }t lu\IeC {\d \acircumflex }n}{25}{0}{6}
+\beamer@sectionintoc {2}{M\IeC {\^o} h\IeC {\`\i }nh b\IeC {\`a}i to\IeC {\'a}n}{6}{0}{2}
+\beamer@sectionintoc {3}{Gi\IeC {\h a}i thu\IeC {\d \acircumflex }t ch\IeC {\'\i }nh x\IeC {\'a}c}{13}{0}{3}
+\beamer@subsectionintoc {3}{1}{M\IeC {\^o} h\IeC {\`\i }nh MIP}{14}{0}{3}
+\beamer@subsectionintoc {3}{2}{Thu\IeC {\d \acircumflex }t to\IeC {\'a}n nh\IeC {\'a}nh c\IeC {\d \acircumflex }n}{19}{0}{3}
+\beamer@sectionintoc {4}{Gi\IeC {\h a}i thu\IeC {\d \acircumflex }t heuristics}{20}{0}{4}
+\beamer@subsectionintoc {4}{1}{Thu\IeC {\d \acircumflex }t to\IeC {\'a}n tham lam}{21}{0}{4}
+\beamer@subsectionintoc {4}{2}{T\IeC {\`\i }m ki\IeC {\'\ecircumflex }m c\IeC {\d u}c b\IeC {\d \ocircumflex }}{22}{0}{4}
+\beamer@subsectionintoc {4}{3}{Gi\IeC {\h a}i thu\IeC {\d \acircumflex }t di truy\IeC {\`\ecircumflex }n}{26}{0}{4}
+\beamer@sectionintoc {5}{Th\IeC {\d \uhorn }c nghi\IeC {\d \ecircumflex }m v\IeC {\`a} \IeC {\dj }\IeC {\'a}nh gi\IeC {\'a}}{27}{0}{5}
+\beamer@subsectionintoc {5}{1}{B\IeC {\d \ocircumflex } d\IeC {\~\uhorn } li\IeC {\d \ecircumflex }u}{28}{0}{5}
+\beamer@subsectionintoc {5}{2}{Tham s\IeC {\'\ocircumflex } thu\IeC {\d \acircumflex }t to\IeC {\'a}n}{29}{0}{5}
+\beamer@subsectionintoc {5}{3}{K\IeC {\'\ecircumflex }t qu\IeC {\h a} th\IeC {\d \uhorn }c nghi\IeC {\d \ecircumflex }m}{30}{0}{5}
+\beamer@sectionintoc {6}{K\IeC {\'\ecircumflex }t lu\IeC {\d \acircumflex }n}{31}{0}{6}
