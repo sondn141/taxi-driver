@@ -64,7 +64,15 @@ public class CommodityMoveMutation implements Mutation<MyGASolution> {
                 deliNewSlot = slot + 1;
             else
                 while(deliNewSlot < 0){
-                    deliNewSlot = RandomUtils.randInt(slot + 1, routes.get(shortest).size());
+                    try{
+                        deliNewSlot = RandomUtils.randInt(slot + 1, routes.get(shortest).size());
+                    } catch (Exception e){
+                        System.out.println();
+                    }
+                    if (deliNewSlot == routes.get(shortest).size()){
+                        deliNewSlot --;
+                        break;
+                    }
                     int t = inp.pointType(routes.get(shortest).get(deliNewSlot));
                     if(t != 1 && t != 3){
                         break;

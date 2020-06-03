@@ -18,6 +18,7 @@ public class Const {
 
     // WORKER
     public static final String WORKER_THREAD_POOL_SIZE = "WORKER_THREAD_POOL_SIZE";
+    public static final String WORKER_RUN_PER_SOLVER = "WORKER_RUN_PER_SOLVER";
 
     //
     //                              ALGORITHMS
