@@ -1,0 +1,8 @@
+---> edu.hust.soict.cbls.algorithm.mip.MIP Runtime: 760362
+0 5 4 9 1 6 10 0
+0 3 8 2 7 0
+2256.6494846335845
+---> edu.hust.soict.cbls.algorithm.backtrack.BackTracking Runtime: 14
+0 2 7 3 8 0
+0 5 4 9 1 6 10 0
+2256.649484633576

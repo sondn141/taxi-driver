@@ -7,4 +7,3 @@ test
 /.settings/
 /logs/
 lib/ortools
-result
