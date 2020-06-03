@@ -218,111 +218,7 @@
 		\end{itemize}
 	\end{frame}
 	\begin{frame}
-		\frametitle{Mô hình bài toán}
-		\textbf{\underline{Biến quyết định}}
-		\begin{itemize}
-			\item $x_{ij}$: Biến nhị phân, xác định cung đi từ điểm $i$ đến điểm $j$ có xuất hiện trong lộ trình của 1 trong $k$ xe không ($i,j\in \{1,2,...,2N+2M+2K$)
-			\begin{equation}
-				x_{ij} = 
-				\begin{cases}
-					1 & \text{nếu cung $(i,j)$ có trong lộ trình của 1 xe}\\
-					0 & \text{ngược lại}
-				\end{cases}
-			\end{equation}
-			\item Tại mỗi điểm $i$ ($i=1,2,...,2N+2M+2K$):
-			\begin{itemize}
-				\item $r_i$: chỉ số của xe đi qua điểm $i$ trong lộ trình
-				\begin{equation}
-					1\leq r_i\leq K
-				\end{equation}
-				\item $l_i$: khoảng cách tích lũy của xe đi từ điểm $0$ đến điểm $i$ trong lộ trình
-				\begin{equation}
-					0\leq l_i < \infty
-				\end{equation}
-				\item $c_i$: khối lượng hàng xe $k$ (đi qua điểm $i$) còn chịu được khi đi tới điểm $i$
-				\begin{equation}
-					0\leq c_i\leq \max _{1\leq k\leq K} \{Q_k\}
-				\end{equation}
-			\end{itemize}
-		\end{itemize}
-	\end{frame}
-
-	\begin{frame}
-		\frametitle{Mô hình bài toán}
-		\textbf{\underline{Các ràng buộc}}
-		\begin{itemize}
-			\item Ràng buộc cân bằng luồng vào ra:
-			\begin{align}
-				\sum_{j=1}^{2N+2M+2K} x_{ij} = 1,\quad & i=1,2,...,2N+2M+K \\
-				\sum_{i=1}^{2N+2M+2K} x_{ij} = 1,\quad & j=1,2,...,2N+2M;2N+2M+K+1,...,2N+2M+2K
-			\end{align}
-			\item Xác định $r_i$:
-			\begin{align}
-				r_{2N+2M+k} = k,\quad & k=1,2,...,K \\
-				x_{ij}=1\Rightarrow r_j=r_i,\quad & i=1,2,...,2N+2M+K, \\
-				& j=1,2,...,2N+2M;2N+2M+K+1,...,2N+2M+2K, i\ne j \notag
-			\end{align}
-		\end{itemize}
-	\end{frame}
-	\begin{frame}
-		\frametitle{Mô hình bài toán}
-		\begin{itemize}
-			\item Xác định $l_i$:
-			\begin{align}
-				l_{2N+2M+k} = 0,\quad & k=1,2,...,K \\
-				x_{ij}=1\Rightarrow l_j=l_i + d_{ij},\quad & i=1,2,...,2N+2M+K, \\
-				& j=1,2,...,2N+2M;2N+2M+K+1,...,2N+2M+2K,i\ne j \notag
-			\end{align}
-			\item Xác định $c_i$:
-			\begin{align}
-				c_{2N+2M+k} = Q_k,\quad & k=1,2,...,K \\
-				x_{ij}=1\Rightarrow c_j=c_i - w_j,\quad & i=1,2,...,2N+2M+K, \\
-				& j=1,2,...,2N+2M;2N+2M+K+1,...,2N+2M+2K,i\ne j \notag
-			\end{align}
-		\end{itemize}
-	\end{frame}
-	\begin{frame}
-		\frametitle{Mô hình bài toán}
-		\begin{itemize}
-			\item Điểm đón và trả của hành khách $i$ phải thuộc lộ trình của cùng một xe, tương tự với các gói hàng:
-			\begin{align}
-				r_i = r_{i+N+M},\quad & i=1,2,...,N+M
-			\end{align}
-			\item Điểm đón khách phải liền trước điểm trả khách:
-			\begin{align}
-				x_{i,(i+N+M)} = 1,\quad & i=1,2,...,N
-			\end{align}
-			\item Điểm lấy hàng phải ở trước điểm giao hàng:
-			\begin{align}
-				l_i < l_{i+N+M},\quad & i=N+1,N+2,...,N+M
-			\end{align}
-			\item Khối lượng còn lại của xe tại mọi thời điểm không âm (đã thỏa mãn).
-		\end{itemize}
-	\end{frame}
-	\begin{frame}
-		\frametitle{Mô hình bài toán}
-		\begin{itemize}
-			\item $L$: Độ dài của lộ trình xe dài nhất trong $K$ lộ trình
-			\item Ràng buộc xác định lộ trình dài nhất:
-			\begin{align}
-				l_i\leq L,\quad & i=2N+2M+K+1,...,2N+2M+2K
-			\end{align}
-		\end{itemize}
-		\textbf{\underline{Hàm mục tiêu}}
-		\begin{equation}
-			L \leftarrow min
-		\end{equation}
-	\end{frame}
-
-	%------------------------------------------------
-	
-	\section{Giải thuật chính xác}
-	
-	%------------------------------------------------
-	
-	\subsection{Mô hình MIP}
-	\begin{frame}
-		\frametitle{Mô hình MIP}
+	\frametitle{Mô hình bài toán}
 	\textbf{\underline{Biến quyết định}}
 	\begin{itemize}
 		\item $x_{ij}$: Biến nhị phân, xác định cung đi từ điểm $i$ đến điểm $j$ có xuất hiện trong lộ trình của 1 trong $k$ xe không ($i,j\in \{1,2,...,2N+2M+2K$)
@@ -337,85 +233,100 @@
 		\begin{itemize}
 			\item $r_i$: chỉ số của xe đi qua điểm $i$ trong lộ trình
 			\begin{equation}
-				1\leq r_i\leq K
+			1\leq r_i\leq K
 			\end{equation}
 			\item $l_i$: khoảng cách tích lũy của xe đi từ điểm $0$ đến điểm $i$ trong lộ trình
 			\begin{equation}
-				0\leq l_i < \infty
+			0\leq l_i < \infty
 			\end{equation}
 			\item $c_i$: khối lượng hàng xe $k$ (đi qua điểm $i$) còn chịu được khi đi tới điểm $i$
 			\begin{equation}
-				0\leq c_i\leq \max _{1\leq k\leq K} \{Q_k\}
+			0\leq c_i\leq \max _{1\leq k\leq K} \{Q_k\}
 			\end{equation}
 		\end{itemize}
 	\end{itemize}
-		
-	\end{frame}
+	
+\end{frame}
+\begin{frame}
+\frametitle{Mô hình bài toán}
+\textbf{\underline{Ràng buộc}}
+\begin{itemize}
+\item Ràng buộc cân bằng luồng vào ra:
+\begin{align}
+\sum_{j=1}^{2N+2M+2K} x_{ij} = 1,\quad & i=1,2,...,2N+2M+K \\
+\sum_{i=1}^{2N+2M+2K} x_{ij} = 1,\quad & j=1,2,...,2N+2M;2N+2M+K+1,...,2N+2M+2K
+\end{align}
+\item Xác định $r_i$:
+\begin{align}
+r_{2N+2M+k} = k,\quad & k=1,2,...,K \\
+r_j - r_i\leq \mu\times (1 - x_{ij}),\quad & i=1,2,...,2N+2M+2K, \\
+r_j - r_i\geq -\mu\times (1 -x_{ij}),\quad & j=1,2,...,2N+2M;2N+2M+K+1,...,2N+2M+2K, i\ne j \notag
+\end{align}
+\end{itemize}
+\end{frame}
+\begin{frame}
+\frametitle{Mô hình bài toán}
+\begin{itemize}
+\item Xác định $l_i$:
+\begin{align}
+l_{2N+2M+k} = 0,\quad & k=1,2,...,K \\
+l_j - l_i -d_{ij}\leq \mu\times (1 - x_{ij}),\quad & i=1,2,...,2N+2M+2K, \\
+l_j - l_i -d_{ij}\geq -\mu\times (1 - x_{ij}),\quad & j=1,2,...,2N+2M;2N+2M+K+1,...,2N+2M+2K, i\ne j \notag
+\end{align}
+\item Xác định $c_i$:
+\begin{align}
+c_{2N+2M+k} = Q_k,\quad & k=1,2,...,K \\
+c_j - c_i - w_j\leq \mu\times (1 - x_{ij}),\quad & i=1,2,...,2N+2M+2K, \\
+c_j - c_i - w_j\geq -\mu\times (1 - x_{ij}),\quad & j=1,2,...,2N+2M;2N+2M+K+1,...,2N+2M+2K, i\ne j \notag \notag
+\end{align}
+\end{itemize}
+\end{frame}
+\begin{frame}
+\frametitle{Mô hình bài toán}
+\begin{itemize}
+\item Điểm đón và trả của hành khách $i$ phải thuộc lộ trình của cùng một xe, tương tự với các gói hàng:
+\begin{align}
+r_i = r_{i+N+M},\quad & i=1,2,...,N+M
+\end{align}
+\item Điểm đón khách phải liền trước điểm trả khách:
+\begin{align}
+x_{i,(i+N+M)} = 1,\quad & i=1,2,...,N
+\end{align}
+\item Điểm lấy hàng phải ở trước điểm giao hàng:
+\begin{align}
+l_i \leq l_{i+N+M},\quad & i=N+1,N+2,...,N+M
+\end{align}
+\item Khối lượng còn lại của xe tại mọi thời điểm không âm (đã thỏa mãn).
+\end{itemize}
+\end{frame}
+\begin{frame}
+\frametitle{Mô hình bài toán}
+\begin{itemize}
+\item $L$: Độ dài của lộ trình xe dài nhất trong $K$ lộ trình
+\item Ràng buộc xác định lộ trình dài nhất:
+\begin{align}
+l_i\leq L,\quad & i=2N+2M+K+1,...,2N+2M+2K
+\end{align}
+\end{itemize}
+\textbf{\underline{Hàm mục tiêu}}
+\begin{equation}
+L \leftarrow min
+\end{equation}
+\end{frame}
+
+	%------------------------------------------------
+	
+	\section{Giải thuật chính xác}
+	
+	%------------------------------------------------
+	
+	\subsection{Mô hình MIP}
 	\begin{frame}
 		\frametitle{Mô hình MIP}
-		\textbf{\underline{Ràng buộc}}
 		\begin{itemize}
-			\item Ràng buộc cân bằng luồng vào ra:
-			\begin{align}
-					\sum_{j=1}^{2N+2M+2K} x_{ij} = 1,\quad & i=1,2,...,2N+2M+K \\
-				\sum_{i=1}^{2N+2M+2K} x_{ij} = 1,\quad & j=1,2,...,2N+2M;2N+2M+K+1,...,2N+2M+2K
-			\end{align}
-			\item Xác định $r_i$:
-			\begin{align}
-				r_{2N+2M+k} = k,\quad & k=1,2,...,K \\
-				r_j - r_i\leq \mu\times (1 - x_{ij}),\quad & i=1,2,...,2N+2M+2K, \\
-				r_j - r_i\geq -\mu\times (1 -x_{ij}),\quad & j=1,2,...,2N+2M;2N+2M+K+1,...,2N+2M+2K, i\ne j \notag
-			\end{align}
+			\item Mô hình MIP đã trình bày ở trên.
+			\item Sử dụng thư viện OR-Tools để triển khai.
 		\end{itemize}
-	\end{frame}
-	\begin{frame}
-		\frametitle{Mô hình MIP}
-		\begin{itemize}
-			\item Xác định $l_i$:
-			\begin{align}
-				l_{2N+2M+k} = 0,\quad & k=1,2,...,K \\
-				l_j - l_i -d_{ij}\leq \mu\times (1 - x_{ij}),\quad & i=1,2,...,2N+2M+2K, \\
-				l_j - l_i -d_{ij}\geq -\mu\times (1 - x_{ij}),\quad & j=1,2,...,2N+2M;2N+2M+K+1,...,2N+2M+2K, i\ne j \notag
-			\end{align}
-			\item Xác định $c_i$:
-			\begin{align}
-				c_{2N+2M+k} = Q_k,\quad & k=1,2,...,K \\
-				c_j - c_i - w_j\leq \mu\times (1 - x_{ij}),\quad & i=1,2,...,2N+2M+2K, \\
-				c_j - c_i - w_j\geq -\mu\times (1 - x_{ij}),\quad & j=1,2,...,2N+2M;2N+2M+K+1,...,2N+2M+2K, i\ne j \notag \notag
-			\end{align}
-		\end{itemize}
-	\end{frame}
-	\begin{frame}
-		\frametitle{Mô hình MIP}
-		\begin{itemize}
-			\item Điểm đón và trả của hành khách $i$ phải thuộc lộ trình của cùng một xe, tương tự với các gói hàng:
-			\begin{align}
-				r_i = r_{i+N+M},\quad & i=1,2,...,N+M
-			\end{align}
-			\item Điểm đón khách phải liền trước điểm trả khách:
-			\begin{align}
-				x_{i,(i+N+M)} = 1,\quad & i=1,2,...,N
-			\end{align}
-			\item Điểm lấy hàng phải ở trước điểm giao hàng:
-			\begin{align}
-				l_i \leq l_{i+N+M},\quad & i=N+1,N+2,...,N+M
-			\end{align}
-			\item Khối lượng còn lại của xe tại mọi thời điểm không âm (đã thỏa mãn).
-		\end{itemize}
-	\end{frame}
-	\begin{frame}
-		\frametitle{Mô hình MIP}
-		\begin{itemize}
-			\item $L$: Độ dài của lộ trình xe dài nhất trong $K$ lộ trình
-			\item Ràng buộc xác định lộ trình dài nhất:
-			\begin{align}
-			l_i\leq L,\quad & i=2N+2M+K+1,...,2N+2M+2K
-			\end{align}
-		\end{itemize}
-		\textbf{\underline{Hàm mục tiêu}}
-		\begin{equation}
-		L \leftarrow min
-		\end{equation}
 	\end{frame}
 
 	\subsection{Thuật toán nhánh cận}
@@ -443,6 +354,26 @@
 	\section{Giải thuật heuristics}
 	
 	%------------------------------------------------
+	
+	\subsection{Giải thuật di truyền}
+	
+	\begin{frame}
+		\frametitle{Giải thuật di truyền}
+		\begin{itemize}
+			\item Sử dụng giải thuật di truyền cho các bộ dữ liệu kích thước lớn
+			\item Tìm ra lời giải tối ưu cục bộ
+			\item Các toán tử lai ghép và đột biến được sử dụng để tạo ra lời giải mới bằng các thay đổi thứ tự của người và hàng hóa trong cùng hành trình của một xe hoặc trên nhiều xe
+		\end{itemize}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Giải thuật di truyền}
+		\begin{figure}
+			\centering
+			\caption{Sơ đồ giải thuật di truyền}
+			\includegraphics[width=0.5\textwidth]{images/ga-flow.png}
+		\end{figure}
+	\end{frame}
 	
 	\subsection{Thuật toán tham lam}
 	\begin{frame}
@@ -530,23 +461,11 @@
 			\includegraphics[width=0.6\textwidth]{images/cbls-people.png}
 		\end{figure}
 	\end{frame}
-
-	\subsection{Giải thuật di truyền}
-	\begin{frame}
-	\frametitle{Giải thuật di truyền}
-	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lectus nisl, ultricies in feugiat rutrum, porttitor sit amet augue. Aliquam ut tortor mauris. Sed volutpat ante purus, quis accumsan dolor.
-\end{frame}
 	
 	%------------------------------------------------
 	\section{Thực nghiệm và đánh giá}
 	
-	%------------------------------------------------
-	
-	\subsection{Bộ dữ liệu}
-	\begin{frame}
-		\frametitle{Bộ dữ liệu}
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lectus nisl, ultricies in feugiat rutrum, porttitor sit amet augue. Aliquam ut tortor mauris. Sed volutpat ante purus, quis accumsan dolor.
-	\end{frame}
+
 
 
 	%------------------------------------------------
@@ -564,16 +483,71 @@
 				\end{itemize}
 			}
 			\item {
-				Giải thuật di truyền:liệu
+				Giải thuật di truyền:
+				\begin{itemize}
+					\item Kích thước quần thế khởi tạo: 200
+					\item Số thế hệ: 500
+					\item Xác suất lai ghép: 0.5
+					\item Xác suất đột biến: 0.1
+				\end{itemize}
 			}
 		\end{itemize}
 	\end{frame}
 
 	\subsection{Kết quả thực nghiệm}
 	\begin{frame}
-	\frametitle{Kết quả thực nghiệm}
-	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lectus nisl, ultricies in feugiat rutrum, porttitor sit amet augue. Aliquam ut tortor mauris. Sed volutpat ante purus, quis accumsan dolor.
-\end{frame}
+		\frametitle{Kết quả thực nghiệm}
+		\begin{figure}
+			\centering
+			\caption{Thực nghiệm giải thuật chính xác}
+			\includegraphics[width=0.8\textwidth]{images/exac.png}
+		\end{figure}
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Kết quả thực nghiệm}
+		\begin{figure}
+			\centering
+			\caption{Thực nghiệm giảt thuật di truyền}
+			\includegraphics[width=0.6\textwidth]{../result/image/solution.png}
+		\end{figure}
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Kết quả thực nghiệm}
+		\begin{figure}
+			\centering
+			\caption{Thực nghiệm giảt thuật di truyền}
+			\includegraphics[width=0.8\textwidth]{images/ga.png}
+		\end{figure}
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Kết quả thực nghiệm}
+		\begin{figure}
+			\centering
+			\caption{Thực nghiệm giải thuật tham lam}
+			\includegraphics[width=0.8\textwidth]{images/greedy.png}
+		\end{figure}
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Kết quả thực nghiệm}
+		\begin{figure}
+			\centering
+			\caption{Thực nghiệm giải thuật tìm kiếm cục bộ}
+			\includegraphics[width=0.8\textwidth]{images/localsearch.png}
+		\end{figure}
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Kết quả thực nghiệm}
+		\begin{figure}
+			\centering
+			\caption{So sánh các giải thuật xấp xỉ}
+			\includegraphics[width=\textwidth]{../result/image/comparison.png}
+		\end{figure}
+	\end{frame}
 
 	%------------------------------------------------
 	
@@ -583,7 +557,10 @@
 	
 	\begin{frame}
 		\frametitle{Kết luận}
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lectus nisl, ultricies in feugiat rutrum, porttitor sit amet augue. Aliquam ut tortor mauris. Sed volutpat ante purus, quis accumsan dolor.
+		\begin{itemize}
+			\item Mô hình MIP đã đề xuất cho kết quả chính xác, tuy nhiên thời gian chạy lớn hơn rất nhiều so với giải thuật nhánh cận.
+			\item Đối với các bộ dữ liệu kích thước lớn, thuật toán tìm kiếm cục bộ cho hiệu quả tốt nhất
+		\end{itemize}
 	\end{frame}
 	
 \end{document} 
