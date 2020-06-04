@@ -180,6 +180,7 @@ public class LocalSearch extends Solver {
 		VRPPDSearch se = new VRPPDSearch(mgr, S, costRoute,
 				pickup2DeliveryOfPeople,
 				pickup2DeliveryOfGood);
+		se.adaptNeighborhood = false;
 		se.setNeighborhoodExplorer(NE);
 		se.setObjectiveFunction(F);
 		se.setMaxStable(maxStable);

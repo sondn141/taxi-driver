@@ -44,12 +44,18 @@ public class MultiInputMultiSolverViz implements Visualizer {
 
     @Override
     public void drawAndSave() {
+        CategoryDataset ds = createDataset();
         JFreeChart lineChart = ChartFactory.createLineChart(
                 props.getProperty(Const.VISUALIZATION_CHART_TITLE),
                 "Files","Objective",
-                createDataset(),
+                ds,
                 PlotOrientation.VERTICAL,
                 true,true,false);
+
+        for(int i = 0 ; i < ds.getRowCount() ; i ++){
+            lineChart.getCategoryPlot().getRenderer()
+                    .setSeriesPaint(i, Const.COLORS[i]);
+        }
 
         try {
             ChartUtilities.saveChartAsPNG(new File(

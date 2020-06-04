@@ -18,6 +18,7 @@ public class Const {
 
     // WORKER
     public static final String WORKER_THREAD_POOL_SIZE = "WORKER_THREAD_POOL_SIZE";
+    public static final String WORKER_RUN_PER_SOLVER = "WORKER_RUN_PER_SOLVER";
 
     //
     //                              ALGORITHMS
@@ -75,8 +76,8 @@ public class Const {
     public static final Color[] COLORS = new Color[]{
             new Color(0, 0, 0),
             new Color(255,0,0),
-            new Color(0, 255, 0),
             new Color(0, 0, 255),
+            new Color(0, 255, 0),
             new Color(255, 255, 0),
             new Color(0, 255, 255),
             new Color(255, 0, 255),

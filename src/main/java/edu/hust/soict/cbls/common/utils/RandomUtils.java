@@ -35,6 +35,8 @@ public class RandomUtils {
     public static int randInt(int min, int max){
         if(min > max)
             throw new IllegalArgumentException("Min value can not be greater than max value");
+        if(min == max)
+            return min;
         return min + rd.nextInt(max - min);
     }
 

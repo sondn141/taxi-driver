@@ -63,26 +63,29 @@ public class RecursiveWorker {
                 solvers.add(Reflects.newInstance(clazz, new Class[]{Properties.class}, props));
             }
 
-            ExecutorService executor = Executors.newFixedThreadPool(props.getIntProperty(Const.WORKER_THREAD_POOL_SIZE, 5));
+//            ExecutorService executor = Executors.newFixedThreadPool(props.getIntProperty(Const.WORKER_THREAD_POOL_SIZE, 5));
             for(Solver solver : solvers){
                 solver.setInput(inpFile);
-                executor.submit(() -> {
-                    try{
-                        long s = System.currentTimeMillis();
-                        Solution solution = solver.solve();
-                        long runtime = System.currentTimeMillis() - s;
-                        Writer.write(solution, outFile, solver.getClass(), runtime, true);
-                    } catch (Exception e){
-                        logger.error("Error while solving problem", e);
-                    }
-                });
+//                executor.submit(() -> {
+                    for(int i = 0 ; i < props.getIntProperty(Const.WORKER_RUN_PER_SOLVER, 10) ; i ++)
+                        try{
+                            logger.info(solver.getClass() + " is executing");
+                            long s = System.currentTimeMillis();
+                            Solution solution = solver.solve();
+                            long runtime = System.currentTimeMillis() - s;
+                            Writer.write(solution, outFile, solver.getClass(), runtime, true);
+                            logger.info(solver.getClass() + " has done");
+                        } catch (Exception e){
+                            logger.error("Error while solving problem", e);
+                        }
+//                });
             }
 
-            executor.shutdown();
-            while(!executor.awaitTermination(10000, TimeUnit.MILLISECONDS)){
+//            executor.shutdown();
+//            while(!executor.awaitTermination(10000, TimeUnit.MILLISECONDS)){
                 // waiting
-                logger.info("Executor is running on processing file: " + inpFile);
-            }
+//                logger.info("Executor is running on processing file: " + inpFile);
+//            }
         }
     }
 
