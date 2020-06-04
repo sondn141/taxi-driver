@@ -1,15 +1,11 @@
-<<<<<<< HEAD
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.4.23)  4 JUN 2020 15:39
-=======
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.5.28)  4 JUN 2020 16:15
->>>>>>> 47ef9d18315ffd704dbda1f391a873b196e6ef5d
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.4.23)  4 JUN 2020 23:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **template_Beamer.tex
 (./template_Beamer.tex
 LaTeX2e <2017-04-15>
-Babel <3.18> and hyphenation patterns for 84 language(s) loaded.
+Babel <3.18> and hyphenation patterns for 31 language(s) loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamer.cls
 Document Class: beamer 2018/02/20 v3.50 A class for typesetting presentations
 (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasemodes.sty
@@ -1494,96 +1490,15 @@ Overfull \vbox (0.58925pt too high) detected at line 220
 
 ] [8
 
-]
-! Missing $ inserted.
-<inserted text> 
-                $
-l.288 	\end{frame}
-                  
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.288 	\end{frame}
-                  
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Display math should end with $$.
-<to be read again> 
-                   \@@par 
-l.288 	\end{frame}
-                  
-The `$' that I just saw supposedly matches a previous `$$'.
-So I shall assume that you typed `$$' both times.
-
-! Extra }, or forgotten \endgroup.
-\par ...m \@noitemerr {\@@par }\fi \else {\@@par }
-                                                  \fi 
-l.288 	\end{frame}
-                  
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-
-! LaTeX Error: Bad math environment delimiter.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.288 	\end{frame}
-                  
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-! You can't use `\eqno' in internal vertical mode.
-\endmathdisplay@a ...\df@tag \@empty \else \veqno 
-                                                  \alt@tag \df@tag \fi \ifx ...
-l.288 	\end{frame}
-                  
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.288 	\end{frame}
-                  
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Display math should end with $$.
-<to be read again> 
-                   \endgroup 
-l.288 	\end{frame}
-                  
-The `$' that I just saw supposedly matches a previous `$$'.
-So I shall assume that you typed `$$' both times.
-
-[9
+] [9
 
 ]
-Overfull \hbox (127.80403pt too wide) detected at line 306
+Overfull \hbox (10.18224pt too wide) detected at line 304
 []
  []
 
 
-Overfull \hbox (132.10185pt too wide) detected at line 306
+Overfull \hbox (14.48006pt too wide) detected at line 304
 []
  []
 
@@ -1596,16 +1511,16 @@ Overfull \hbox (132.10185pt too wide) detected at line 306
 ]
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\h' on input line 344.
+(hyperref)                removing `\h' on input line 342.
 
 
 Package hyperref Warning: Composite letter `\textdotbelow+\acircumflex'
 (hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textdotbelow' on input line 344.
+(hyperref)                removing `\textdotbelow' on input line 342.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\acircumflex' on input line 344.
+(hyperref)                removing `\acircumflex' on input line 342.
 
 (./template_Beamer.toc) [13
 
@@ -1615,61 +1530,61 @@ Package hyperref Warning: Glyph not defined in PD1 encoding,
 
 Package hyperref Warning: Composite letter `\textdotbelow+\acircumflex'
 (hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textdotbelow' on input line 357.
+(hyperref)                removing `\textdotbelow' on input line 355.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\acircumflex' on input line 357.
+(hyperref)                removing `\acircumflex' on input line 355.
 
 
 Package hyperref Warning: Composite letter `\textdotbelow+\acircumflex'
 (hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textdotbelow' on input line 357.
+(hyperref)                removing `\textdotbelow' on input line 355.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\acircumflex' on input line 357.
+(hyperref)                removing `\acircumflex' on input line 355.
 
 [15
 
 ]
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\h' on input line 379.
+(hyperref)                removing `\h' on input line 377.
 
 
 Package hyperref Warning: Composite letter `\textdotbelow+\acircumflex'
 (hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textdotbelow' on input line 379.
+(hyperref)                removing `\textdotbelow' on input line 377.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\acircumflex' on input line 379.
+(hyperref)                removing `\acircumflex' on input line 377.
 
 (./template_Beamer.toc) [16
 
 ]
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\h' on input line 383.
+(hyperref)                removing `\h' on input line 381.
 
 
 Package hyperref Warning: Composite letter `\textdotbelow+\acircumflex'
 (hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textdotbelow' on input line 383.
+(hyperref)                removing `\textdotbelow' on input line 381.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\acircumflex' on input line 383.
+(hyperref)                removing `\acircumflex' on input line 381.
 
 
 Package hyperref Warning: Composite letter `\textasciigrave+\ecircumflex'
 (hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textasciigrave' on input line 383.
+(hyperref)                removing `\textasciigrave' on input line 381.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\ecircumflex' on input line 383.
+(hyperref)                removing `\ecircumflex' on input line 381.
 
 [17
 
@@ -1677,7 +1592,7 @@ Package hyperref Warning: Glyph not defined in PD1 encoding,
 <images/ga-flow.png, id=590, 356.83313pt x 386.19281pt>
 File: images/ga-flow.png Graphic file (type png)
 <use images/ga-flow.png>
-Package pdftex.def Info: images/ga-flow.png  used on input line 401.
+Package pdftex.def Info: images/ga-flow.png  used on input line 399.
 (pdftex.def)             Requested size: 171.14764pt x 185.229pt.
  [18
 
@@ -1689,19 +1604,11 @@ Package pdftex.def Info: images/ga-flow.png  used on input line 401.
 
 Package hyperref Warning: Composite letter `\textdotbelow+\acircumflex'
 (hyperref)                not defined in PD1 encoding,
-<<<<<<< HEAD
-(hyperref)                removing `\textdotbelow' on input line 403.
+(hyperref)                removing `\textdotbelow' on input line 424.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\acircumflex' on input line 403.
-=======
-(hyperref)                removing `\textdotbelow' on input line 400.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\acircumflex' on input line 400.
->>>>>>> 47ef9d18315ffd704dbda1f391a873b196e6ef5d
+(hyperref)                removing `\acircumflex' on input line 424.
 
 [21
 
@@ -1709,45 +1616,25 @@ Package hyperref Warning: Glyph not defined in PD1 encoding,
 
 Package hyperref Warning: Composite letter `\textacute+\ecircumflex'
 (hyperref)                not defined in PD1 encoding,
-<<<<<<< HEAD
-(hyperref)                removing `\textacute' on input line 431.
+(hyperref)                removing `\textacute' on input line 452.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\ecircumflex' on input line 431.
-=======
-(hyperref)                removing `\textacute' on input line 428.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\ecircumflex' on input line 428.
->>>>>>> 47ef9d18315ffd704dbda1f391a873b196e6ef5d
+(hyperref)                removing `\ecircumflex' on input line 452.
 
 
 Package hyperref Warning: Composite letter `\textdotbelow+u'
 (hyperref)                not defined in PD1 encoding,
-<<<<<<< HEAD
-(hyperref)                removing `\textdotbelow' on input line 431.
-=======
-(hyperref)                removing `\textdotbelow' on input line 428.
->>>>>>> 47ef9d18315ffd704dbda1f391a873b196e6ef5d
+(hyperref)                removing `\textdotbelow' on input line 452.
 
 
 Package hyperref Warning: Composite letter `\textdotbelow+\ocircumflex'
 (hyperref)                not defined in PD1 encoding,
-<<<<<<< HEAD
-(hyperref)                removing `\textdotbelow' on input line 431.
+(hyperref)                removing `\textdotbelow' on input line 452.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\ocircumflex' on input line 431.
-=======
-(hyperref)                removing `\textdotbelow' on input line 428.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\ocircumflex' on input line 428.
->>>>>>> 47ef9d18315ffd704dbda1f391a873b196e6ef5d
+(hyperref)                removing `\ocircumflex' on input line 452.
 
 [22
 
@@ -1757,11 +1644,7 @@ Package hyperref Warning: Glyph not defined in PD1 encoding,
 <images/cbls-good.png, id=747, 568.1225pt x 494.84875pt>
 File: images/cbls-good.png Graphic file (type png)
 <use images/cbls-good.png>
-<<<<<<< HEAD
-Package pdftex.def Info: images/cbls-good.png  used on input line 479.
-=======
-Package pdftex.def Info: images/cbls-good.png  used on input line 476.
->>>>>>> 47ef9d18315ffd704dbda1f391a873b196e6ef5d
+Package pdftex.def Info: images/cbls-good.png  used on input line 500.
 (pdftex.def)             Requested size: 205.37926pt x 178.89294pt.
  [24
 
@@ -1769,11 +1652,7 @@ Package pdftex.def Info: images/cbls-good.png  used on input line 476.
 <images/cbls-people.png, id=774, 568.1225pt x 514.92375pt>
 File: images/cbls-people.png Graphic file (type png)
 <use images/cbls-people.png>
-<<<<<<< HEAD
-Package pdftex.def Info: images/cbls-people.png  used on input line 488.
-=======
-Package pdftex.def Info: images/cbls-people.png  used on input line 485.
->>>>>>> 47ef9d18315ffd704dbda1f391a873b196e6ef5d
+Package pdftex.def Info: images/cbls-people.png  used on input line 509.
 (pdftex.def)             Requested size: 205.37926pt x 186.15025pt.
  [25
 
@@ -1781,44 +1660,24 @@ Package pdftex.def Info: images/cbls-people.png  used on input line 485.
 
 Package hyperref Warning: Composite letter `\textdotbelow+\uhorn'
 (hyperref)                not defined in PD1 encoding,
-<<<<<<< HEAD
-(hyperref)                removing `\textdotbelow' on input line 491.
+(hyperref)                removing `\textdotbelow' on input line 512.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\uhorn' on input line 491.
-=======
-(hyperref)                removing `\textdotbelow' on input line 488.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\uhorn' on input line 488.
->>>>>>> 47ef9d18315ffd704dbda1f391a873b196e6ef5d
+(hyperref)                removing `\uhorn' on input line 512.
 
 
 Package hyperref Warning: Composite letter `\textdotbelow+\ecircumflex'
 (hyperref)                not defined in PD1 encoding,
-<<<<<<< HEAD
-(hyperref)                removing `\textdotbelow' on input line 491.
+(hyperref)                removing `\textdotbelow' on input line 512.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\ecircumflex' on input line 491.
+(hyperref)                removing `\ecircumflex' on input line 512.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\dj' on input line 491.
-=======
-(hyperref)                removing `\textdotbelow' on input line 488.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\ecircumflex' on input line 488.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\dj' on input line 488.
->>>>>>> 47ef9d18315ffd704dbda1f391a873b196e6ef5d
+(hyperref)                removing `\dj' on input line 512.
 
 (./template_Beamer.toc) [26
 
@@ -1826,36 +1685,20 @@ Package hyperref Warning: Glyph not defined in PD1 encoding,
 
 Package hyperref Warning: Composite letter `\textacute+\ocircumflex'
 (hyperref)                not defined in PD1 encoding,
-<<<<<<< HEAD
-(hyperref)                removing `\textacute' on input line 498.
+(hyperref)                removing `\textacute' on input line 519.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\ocircumflex' on input line 498.
-=======
-(hyperref)                removing `\textacute' on input line 495.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\ocircumflex' on input line 495.
->>>>>>> 47ef9d18315ffd704dbda1f391a873b196e6ef5d
+(hyperref)                removing `\ocircumflex' on input line 519.
 
 
 Package hyperref Warning: Composite letter `\textdotbelow+\acircumflex'
 (hyperref)                not defined in PD1 encoding,
-<<<<<<< HEAD
-(hyperref)                removing `\textdotbelow' on input line 498.
+(hyperref)                removing `\textdotbelow' on input line 519.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\acircumflex' on input line 498.
-=======
-(hyperref)                removing `\textdotbelow' on input line 495.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\acircumflex' on input line 495.
->>>>>>> 47ef9d18315ffd704dbda1f391a873b196e6ef5d
+(hyperref)                removing `\acircumflex' on input line 519.
 
 [27
 
@@ -1863,70 +1706,38 @@ Package hyperref Warning: Glyph not defined in PD1 encoding,
 
 Package hyperref Warning: Composite letter `\textacute+\ecircumflex'
 (hyperref)                not defined in PD1 encoding,
-<<<<<<< HEAD
-(hyperref)                removing `\textacute' on input line 522.
+(hyperref)                removing `\textacute' on input line 543.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\ecircumflex' on input line 522.
+(hyperref)                removing `\ecircumflex' on input line 543.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\h' on input line 522.
-=======
-(hyperref)                removing `\textacute' on input line 519.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\ecircumflex' on input line 519.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\h' on input line 519.
->>>>>>> 47ef9d18315ffd704dbda1f391a873b196e6ef5d
+(hyperref)                removing `\h' on input line 543.
 
 
 Package hyperref Warning: Composite letter `\textdotbelow+\uhorn'
 (hyperref)                not defined in PD1 encoding,
-<<<<<<< HEAD
-(hyperref)                removing `\textdotbelow' on input line 522.
+(hyperref)                removing `\textdotbelow' on input line 543.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\uhorn' on input line 522.
-=======
-(hyperref)                removing `\textdotbelow' on input line 519.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\uhorn' on input line 519.
->>>>>>> 47ef9d18315ffd704dbda1f391a873b196e6ef5d
+(hyperref)                removing `\uhorn' on input line 543.
 
 
 Package hyperref Warning: Composite letter `\textdotbelow+\ecircumflex'
 (hyperref)                not defined in PD1 encoding,
-<<<<<<< HEAD
-(hyperref)                removing `\textdotbelow' on input line 522.
+(hyperref)                removing `\textdotbelow' on input line 543.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\ecircumflex' on input line 522.
-=======
-(hyperref)                removing `\textdotbelow' on input line 519.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\ecircumflex' on input line 519.
->>>>>>> 47ef9d18315ffd704dbda1f391a873b196e6ef5d
+(hyperref)                removing `\ecircumflex' on input line 543.
 
 <images/exac.png, id=864, 756.8275pt x 410.53375pt>
 File: images/exac.png Graphic file (type png)
 <use images/exac.png>
-<<<<<<< HEAD
-Package pdftex.def Info: images/exac.png  used on input line 530.
-=======
-Package pdftex.def Info: images/exac.png  used on input line 527.
->>>>>>> 47ef9d18315ffd704dbda1f391a873b196e6ef5d
+Package pdftex.def Info: images/exac.png  used on input line 551.
 (pdftex.def)             Requested size: 273.83728pt x 148.53748pt.
 [28
 
@@ -1934,11 +1745,7 @@ Package pdftex.def Info: images/exac.png  used on input line 527.
 <../result/image/solution.png, id=892, 1138.2525pt x 1004.75375pt>
 File: ../result/image/solution.png Graphic file (type png)
 <use ../result/image/solution.png>
-<<<<<<< HEAD
-Package pdftex.def Info: ../result/image/solution.png  used on input line 539.
-=======
-Package pdftex.def Info: ../result/image/solution.png  used on input line 536.
->>>>>>> 47ef9d18315ffd704dbda1f391a873b196e6ef5d
+Package pdftex.def Info: ../result/image/solution.png  used on input line 560.
 (pdftex.def)             Requested size: 205.37926pt x 181.29248pt.
  [29
 
@@ -1946,11 +1753,7 @@ Package pdftex.def Info: ../result/image/solution.png  used on input line 536.
 <images/ga.png, id=921, 861.2175pt x 563.10374pt>
 File: images/ga.png Graphic file (type png)
 <use images/ga.png>
-<<<<<<< HEAD
-Package pdftex.def Info: images/ga.png  used on input line 548.
-=======
-Package pdftex.def Info: images/ga.png  used on input line 545.
->>>>>>> 47ef9d18315ffd704dbda1f391a873b196e6ef5d
+Package pdftex.def Info: images/ga.png  used on input line 569.
 (pdftex.def)             Requested size: 273.83728pt x 179.04552pt.
  [30
 
@@ -1958,11 +1761,7 @@ Package pdftex.def Info: images/ga.png  used on input line 545.
 <images/greedy.png, id=949, 861.2175pt x 562.1pt>
 File: images/greedy.png Graphic file (type png)
 <use images/greedy.png>
-<<<<<<< HEAD
-Package pdftex.def Info: images/greedy.png  used on input line 557.
-=======
-Package pdftex.def Info: images/greedy.png  used on input line 554.
->>>>>>> 47ef9d18315ffd704dbda1f391a873b196e6ef5d
+Package pdftex.def Info: images/greedy.png  used on input line 578.
 (pdftex.def)             Requested size: 273.83728pt x 178.72636pt.
  [31
 
@@ -1970,11 +1769,7 @@ Package pdftex.def Info: images/greedy.png  used on input line 554.
 <images/localsearch.png, id=978, 861.2175pt x 561.09625pt>
 File: images/localsearch.png Graphic file (type png)
 <use images/localsearch.png>
-<<<<<<< HEAD
-Package pdftex.def Info: images/localsearch.png  used on input line 566.
-=======
-Package pdftex.def Info: images/localsearch.png  used on input line 563.
->>>>>>> 47ef9d18315ffd704dbda1f391a873b196e6ef5d
+Package pdftex.def Info: images/localsearch.png  used on input line 587.
 (pdftex.def)             Requested size: 273.83728pt x 178.40721pt.
  [32
 
@@ -1982,19 +1777,11 @@ Package pdftex.def Info: images/localsearch.png  used on input line 563.
 <../result/image/comparison.png, id=1005, 1907.125pt x 1084.05pt>
 File: ../result/image/comparison.png Graphic file (type png)
 <use ../result/image/comparison.png>
-<<<<<<< HEAD
-Package pdftex.def Info: ../result/image/comparison.png  used on input line 575
+Package pdftex.def Info: ../result/image/comparison.png  used on input line 596
 .
 (pdftex.def)             Requested size: 342.2953pt x 194.55818pt.
 
-Overfull \vbox (7.03192pt too high) detected at line 575
-=======
-Package pdftex.def Info: ../result/image/comparison.png  used on input line 572
-.
-(pdftex.def)             Requested size: 342.2953pt x 194.55818pt.
-
-Overfull \vbox (7.03192pt too high) detected at line 572
->>>>>>> 47ef9d18315ffd704dbda1f391a873b196e6ef5d
+Overfull \vbox (7.03192pt too high) detected at line 596
  []
 
 [33
@@ -2003,36 +1790,20 @@ Overfull \vbox (7.03192pt too high) detected at line 572
 
 Package hyperref Warning: Composite letter `\textacute+\ecircumflex'
 (hyperref)                not defined in PD1 encoding,
-<<<<<<< HEAD
-(hyperref)                removing `\textacute' on input line 579.
+(hyperref)                removing `\textacute' on input line 600.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\ecircumflex' on input line 579.
-=======
-(hyperref)                removing `\textacute' on input line 576.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\ecircumflex' on input line 576.
->>>>>>> 47ef9d18315ffd704dbda1f391a873b196e6ef5d
+(hyperref)                removing `\ecircumflex' on input line 600.
 
 
 Package hyperref Warning: Composite letter `\textdotbelow+\acircumflex'
 (hyperref)                not defined in PD1 encoding,
-<<<<<<< HEAD
-(hyperref)                removing `\textdotbelow' on input line 579.
+(hyperref)                removing `\textdotbelow' on input line 600.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\acircumflex' on input line 579.
-=======
-(hyperref)                removing `\textdotbelow' on input line 576.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\acircumflex' on input line 576.
->>>>>>> 47ef9d18315ffd704dbda1f391a873b196e6ef5d
+(hyperref)                removing `\acircumflex' on input line 600.
 
 (./template_Beamer.toc) [34
 
@@ -2048,29 +1819,21 @@ Package hyperref Warning: Glyph not defined in PD1 encoding,
 \tf@snm=\write8
 \openout8 = `template_Beamer.snm'.
 
-<<<<<<< HEAD
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 591.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 591.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 612.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 612.
  (./template_Beamer.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 591.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 591.
-=======
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 588.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 588.
- (./template_Beamer.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 588.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 588.
->>>>>>> 47ef9d18315ffd704dbda1f391a873b196e6ef5d
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 612.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 612.
 Package rerunfilecheck Info: File `template_Beamer.out' has not changed.
 (rerunfilecheck)             Checksum: EC8DEE59B8C50499102A96F29A47E73A;826.
  ) 
 Here is how much of TeX's memory you used:
- 18294 strings out of 492982
- 338938 string characters out of 6134896
- 405938 words of memory out of 5000000
- 21328 multiletter control sequences out of 15000+600000
+ 18294 strings out of 494319
+ 338938 string characters out of 6167607
+ 402726 words of memory out of 5000000
+ 21242 multiletter control sequences out of 15000+600000
  25656 words of font info for 59 fonts, out of 8000000 for 9000
- 1141 hyphenation exceptions out of 8191
+ 309 hyphenation exceptions out of 8191
  48i,15n,64p,782b,630s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/shar
@@ -2085,11 +1848,7 @@ nr/vnss10.pfb></usr/share/texlive/texmf-dist/fonts/type1/vntex/vnr/vnss12.pfb><
 ve/texmf-dist/fonts/type1/vntex/vnr/vnssbx10.pfb></usr/share/texlive/texmf-dist
 /fonts/type1/vntex/vnr/vnssi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/v
 ntex/vnr/vnssi8.pfb>
-<<<<<<< HEAD
-Output written on template_Beamer.pdf (33 pages, 659489 bytes).
-=======
-Output written on template_Beamer.pdf (35 pages, 663309 bytes).
->>>>>>> 47ef9d18315ffd704dbda1f391a873b196e6ef5d
+Output written on template_Beamer.pdf (35 pages, 663811 bytes).
 PDF statistics:
  1155 PDF objects out of 1200 (max. 8388607)
  1059 compressed objects within 11 object streams

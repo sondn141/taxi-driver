@@ -223,7 +223,7 @@
 		\frametitle{Mô hình bài toán}
 		\textbf{\underline{Biến quyết định}}
 		\begin{itemize}
-			\item $x_{ij}$: Biến nhị phân, xác định cung đi từ điểm $i$ đến điểm $j$ có xuất hiện trong lộ trình của 1 trong $k$ xe không ($i,j\in \{1,2,...,2N+2M+2K$)
+			\item $x_{ij}$: Biến nhị phân, xác định cung đi từ điểm $i$ đến điểm $j$ có xuất hiện trong lộ trình của 1 trong $k$ xe không ($i,j\in [1..(2N+2M+2K)]$)
 			\begin{equation}
 				x_{ij} = 
 				\begin{cases}
@@ -231,7 +231,7 @@
 				0 & \text{ngược lại}
 				\end{cases}
 			\end{equation}
-			\item Tại mỗi điểm $i$ ($i=1,2,...,2N+2M+2K$):
+			\item Tại mỗi điểm $i$ ($i\in [1..(2N+2M+2K)]$):
 			\begin{itemize}
 				\item $r_i$: chỉ số của xe đi qua điểm $i$ trong lộ trình
 					\begin{equation}
@@ -259,26 +259,21 @@
 				\sum_{i=1}^{2N+2M+2K} x_{ij} = 1,\quad & \forall j\in [1..P]\cup [(P+K+1)..(P+2K)]
 				\end{align}
 			\item Xác định $r_i$:
+%			\begin{align}
+%			f(x)=\begin{cases}
+%			1, & i\in 1.\\
+%			0, & \text{otherwise}.
+%			\end{cases}
+%			\end{align}
+				\begin{equation}
+					r_{2N+2M+k} = k,\quad \forall k=1,2,...,K
+				\end{equation}
 				\begin{align}
-				r_{2N+2M+k} = k, &\forall& k=1,2,...,K \\
 				\begin{cases}
-				$r_j - r_i\leq \mu\times (1 - x_{ij}), & x\forall j\in [1...P]\cup [(P+K+1)...(P+2K)],\\ 
-				r_j - r_i\geq -\mu\times (1 -x_{ij}), & xi\in [1...(P+2K)], i\ne j$
+				r_j - r_i\leq \mu\times (1 - x_{ij}), &\forall j\in [1...P]\cup [(P+K+1)...(P+2K)],\\ 
+				r_j - r_i\geq -\mu\times (1 - x_{ij}) &i\in [1...(P+2K)], i\ne j
 				\end{cases}
-				
 				\end{align}
-				\begin{align*}
-				&r_{2N+2M+k} = k, &\forall& k=1,2,...,K \\
-				\begin{split}
-				r_j - r_i\leq \mu\times (1 - x_{ij}) \\ 
-				r_j - r_i\geq -\mu\times (1 -x_{ij})
-				\end{split}
-				,\quad&
-				\begin{split}
-				\forall &j=1,2,...,2N+2M;2N+2M+K+1,...,2N+2M+2K,\\
-				&i=1,2,...,2N+2M+2K, i\ne j
-				\end{split}
-				\end{align*}
 		\end{itemize}
 	\end{frame}
 
@@ -286,16 +281,24 @@
 		\frametitle{Mô hình bài toán}
 		\begin{itemize}
 			\item Xác định $l_i$:
+				\begin{equation}
+					l_{2N+2M+k} = 0,\quad k\in [1..K]
+				\end{equation}
 				\begin{align}
-				l_{2N+2M+k} = 0,\quad & k=1,2,...,K \\
-				l_j - l_i -d_{ij}\leq \mu\times (1 - x_{ij}),\quad & i=1,2,...,2N+2M+2K, \\
-				l_j - l_i -d_{ij}\geq -\mu\times (1 - x_{ij}),\quad & j=1,2,...,2N+2M;2N+2M+K+1,...,2N+2M+2K, i\ne j \notag
+				\begin{cases}
+				l_j - l_i -d_{ij}\leq \mu\times (1 - x_{ij}), & \forall j\in [1..P]\cup [(P+K+1)..(P+2K)], \\
+				l_j - l_i -d_{ij}\geq -\mu\times (1 - x_{ij}) & i\in [1..(P+2K)], i\ne j
+				\end{cases}
 				\end{align}
 			\item Xác định $c_i$:
+				\begin{equation}
+				c_{2N+2M+k} = Q_k,\quad k\in [1..K]
+				\end{equation}
 				\begin{align}
-				c_{2N+2M+k} = Q_k,\quad & k=1,2,...,K \\
-				c_j - c_i - w_j\leq \mu\times (1 - x_{ij}),\quad & i=1,2,...,2N+2M+2K, \\
-				c_j - c_i - w_j\geq -\mu\times (1 - x_{ij}),\quad & j=1,2,...,2N+2M;2N+2M+K+1,...,2N+2M+2K, i\ne j \notag \notag
+				\begin{cases}
+				c_j - c_i - w_j\leq \mu\times (1 - x_{ij}), & \forall j\in [1..P]\cup [(P+K+1)..(P+2K)], \\
+				c_j - c_i - w_j\geq -\mu\times (1 - x_{ij}) & i\in [1..(P+2K)], i\ne j
+				\end{cases}
 				\end{align}
 		\end{itemize}
 	\end{frame}
@@ -305,15 +308,15 @@
 		\begin{itemize}
 			\item Điểm đón và trả của hành khách $i$ phải thuộc lộ trình của cùng một xe, tương tự với các gói hàng:
 				\begin{align}
-				r_i = r_{i+N+M},\quad & i=1,2,...,N+M
+				r_i = r_{i+N+M},\quad & \forall i\in [1..(N+M)]
 				\end{align}
 			\item Điểm đón khách phải liền trước điểm trả khách:
 				\begin{align}
-				x_{i,(i+N+M)} = 1,\quad & i=1,2,...,N
+				x_{i,(i+N+M)} = 1,\quad & \forall i\in [1..N]
 				\end{align}
 			\item Điểm lấy hàng phải ở trước điểm giao hàng:
 				\begin{align}
-				l_i \leq l_{i+N+M},\quad & i=N+1,N+2,...,N+M
+				l_i \leq l_{i+N+M},\quad & \forall i\in [(N+1)..(N+M)]
 				\end{align}
 			\item Khối lượng còn lại của xe tại mọi thời điểm không âm (đã thỏa mãn).
 		\end{itemize}
@@ -325,7 +328,7 @@
 			\item $L$: Độ dài của lộ trình xe dài nhất trong $K$ lộ trình
 			\item Ràng buộc xác định lộ trình dài nhất:
 				\begin{align}
-				l_i\leq L,\quad & i=2N+2M+K+1,...,2N+2M+2K
+				l_i\leq L,\quad & \forall i\in [(P+K+1)..(P+2K)]
 				\end{align}
 		\end{itemize}
 		\textbf{\underline{Hàm mục tiêu}}
@@ -396,8 +399,8 @@
 	\end{frame}
 
 	\begin{frame}
-		\frametitle{Toán tử lai ghép}
-		Phép lai ghép làm đổi lại thứ tự của các hành khách trong hành trình
+		\frametitle{Giải thuật di truyền}
+		\textbf{Toán tử lai ghép:} Phép lai ghép làm đổi lại thứ tự của các hành khách trong hành trình
 		\begin{itemize}
 			\item Chọn ra tập cha mẹ bằng phương pháp tournament
 			\item Đối với từng cặp lời giải, xác suất xảy ra lai ghép là $P_c$
@@ -410,7 +413,8 @@
 	\end{frame}
 
 	\begin{frame}
-		\frametitle{Toán tử đột biến}
+		\frametitle{Giải thuật di truyền}
+		\textbf{Toán tử đột biến:}
 		\begin{itemize}
 			\item Di chuyển một món hàng hóa từ route có độ dài lớn nhất sang route có độ dài nhỏ nhất
 			\item Di chuyển Hoán đổi khách hàng giữa 2 route bất kì
@@ -550,7 +554,7 @@
 		\frametitle{Kết quả thực nghiệm}
 		\begin{figure}
 			\centering
-			\caption{Thực nghiệm giảt thuật di truyền}
+			\caption{Minh họa kết quả giải thuật chính xác}
 			\includegraphics[width=0.6\textwidth]{../result/image/solution.png}
 		\end{figure}
 	\end{frame}
