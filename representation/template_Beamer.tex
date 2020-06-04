@@ -100,7 +100,7 @@
 \AtBeginSection[]
 {
 	\begin{frame}
-	\frametitle{Table of Contents}
+	\frametitle{Nội dung}
 	\tableofcontents[currentsection, hideothersubsections]
 	\end{frame}
 }
@@ -393,6 +393,28 @@
 			\caption{Sơ đồ giải thuật di truyền}
 			\includegraphics[width=0.5\textwidth]{images/ga-flow.png}
 		\end{figure}
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Toán tử lai ghép}
+		Phép lai ghép làm đổi lại thứ tự của các hành khách trong hành trình
+		\begin{itemize}
+			\item Chọn ra tập cha mẹ bằng phương pháp tournament
+			\item Đối với từng cặp lời giải, xác suất xảy ra lai ghép là $P_c$
+			\item Xét cặp lời giải bất kì trong tập cha mẹ gồm lời giải $S_p$ và $S_q$:
+				\begin{itemize}
+					\item Gọi cặp hành trình $r_i$ và $r_j$ ($r_i \in S_p$ và $r_j \in S_q$) là cặp hành trình tương đồng nếu có số hành khách trùng nhau là lớn nhất
+					\item Sắp xếp lại thứ tự đón các hành khách chung của $r_i$ và $r_j$ trong $r_i$ theo $r_j$ ta được lời giải mới
+				\end{itemize}
+		\end{itemize}
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Toán tử đột biến}
+		\begin{itemize}
+			\item Di chuyển một món hàng hóa từ route có độ dài lớn nhất sang route có độ dài nhỏ nhất
+			\item Di chuyển Hoán đổi khách hàng giữa 2 route bất kì
+		\end{itemize}
 	\end{frame}
 	
 	\subsection{Thuật toán tham lam}
