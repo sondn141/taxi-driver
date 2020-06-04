@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.5.28)  4 JUN 2020 15:48
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.5.28)  4 JUN 2020 16:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1473,7 +1473,7 @@ LaTeX Font Warning: Font shape `T5/cmss/m/it' in size <5> not available
 [4
 
 ]
-<../docs/taxi.png, id=217, 1420.30624pt x 863.225pt>
+<../docs/taxi.png, id=213, 1420.30624pt x 863.225pt>
 File: ../docs/taxi.png Graphic file (type png)
 <use ../docs/taxi.png>
 Package pdftex.def Info: ../docs/taxi.png  used on input line 157.
@@ -1496,19 +1496,19 @@ Overfull \hbox (49.68497pt too wide) detected at line 266
  []
 
 
-Overfull \hbox (73.34311pt too wide) detected at line 266
+Overfull \hbox (105.49106pt too wide) detected at line 266
 []
  []
 
 [9
 
 ]
-Overfull \hbox (95.65608pt too wide) detected at line 283
+Overfull \hbox (127.80403pt too wide) detected at line 283
 []
  []
 
 
-Overfull \hbox (99.9539pt too wide) detected at line 283
+Overfull \hbox (132.10185pt too wide) detected at line 283
 []
  []
 
@@ -1537,79 +1537,88 @@ Package hyperref Warning: Glyph not defined in PD1 encoding,
 ] [14
 
 ]
-Overfull \hbox (49.68497pt too wide) detected at line 370
-[]
- []
+
+Package hyperref Warning: Composite letter `\textdotbelow+\acircumflex'
+(hyperref)                not defined in PD1 encoding,
+(hyperref)                removing `\textdotbelow' on input line 332.
 
 
-Overfull \hbox (105.49106pt too wide) detected at line 370
-[]
- []
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\acircumflex' on input line 332.
+
+
+Package hyperref Warning: Composite letter `\textdotbelow+\acircumflex'
+(hyperref)                not defined in PD1 encoding,
+(hyperref)                removing `\textdotbelow' on input line 332.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\acircumflex' on input line 332.
 
 [15
 
 ]
-Overfull \hbox (127.80403pt too wide) detected at line 387
-[]
- []
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\h' on input line 354.
 
 
-Overfull \hbox (132.10185pt too wide) detected at line 387
-[]
- []
+Package hyperref Warning: Composite letter `\textdotbelow+\acircumflex'
+(hyperref)                not defined in PD1 encoding,
+(hyperref)                removing `\textdotbelow' on input line 354.
 
-[16
 
-] [17
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\acircumflex' on input line 354.
 
-] [18
+(./template_Beamer.toc) [16
+
+]
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\h' on input line 358.
+
+
+Package hyperref Warning: Composite letter `\textdotbelow+\acircumflex'
+(hyperref)                not defined in PD1 encoding,
+(hyperref)                removing `\textdotbelow' on input line 358.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\acircumflex' on input line 358.
+
+
+Package hyperref Warning: Composite letter `\textasciigrave+\ecircumflex'
+(hyperref)                not defined in PD1 encoding,
+(hyperref)                removing `\textasciigrave' on input line 358.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\ecircumflex' on input line 358.
+
+[17
+
+]
+<images/ga-flow.png, id=590, 356.83313pt x 386.19281pt>
+File: images/ga-flow.png Graphic file (type png)
+<use images/ga-flow.png>
+Package pdftex.def Info: images/ga-flow.png  used on input line 376.
+(pdftex.def)             Requested size: 171.14764pt x 185.229pt.
+ [18
+
+ <./images/ga-flow.png>] [19
+
+] [20
 
 ]
 
 Package hyperref Warning: Composite letter `\textdotbelow+\acircumflex'
 (hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textdotbelow' on input line 421.
+(hyperref)                removing `\textdotbelow' on input line 400.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\acircumflex' on input line 421.
-
-
-Package hyperref Warning: Composite letter `\textdotbelow+\acircumflex'
-(hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textdotbelow' on input line 421.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\acircumflex' on input line 421.
-
-[19
-
-]
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\h' on input line 443.
-
-
-Package hyperref Warning: Composite letter `\textdotbelow+\acircumflex'
-(hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textdotbelow' on input line 443.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\acircumflex' on input line 443.
-
-(./template_Beamer.toc) [20
-
-]
-
-Package hyperref Warning: Composite letter `\textdotbelow+\acircumflex'
-(hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textdotbelow' on input line 447.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\acircumflex' on input line 447.
+(hyperref)                removing `\acircumflex' on input line 400.
 
 [21
 
@@ -1617,203 +1626,198 @@ Package hyperref Warning: Glyph not defined in PD1 encoding,
 
 Package hyperref Warning: Composite letter `\textacute+\ecircumflex'
 (hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textacute' on input line 475.
+(hyperref)                removing `\textacute' on input line 428.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\ecircumflex' on input line 475.
+(hyperref)                removing `\ecircumflex' on input line 428.
 
 
 Package hyperref Warning: Composite letter `\textdotbelow+u'
 (hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textdotbelow' on input line 475.
+(hyperref)                removing `\textdotbelow' on input line 428.
 
 
 Package hyperref Warning: Composite letter `\textdotbelow+\ocircumflex'
 (hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textdotbelow' on input line 475.
+(hyperref)                removing `\textdotbelow' on input line 428.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\ocircumflex' on input line 475.
+(hyperref)                removing `\ocircumflex' on input line 428.
 
 [22
 
 ] [23
 
 ]
-<images/cbls-good.png, id=750, 568.1225pt x 494.84875pt>
+<images/cbls-good.png, id=747, 568.1225pt x 494.84875pt>
 File: images/cbls-good.png Graphic file (type png)
 <use images/cbls-good.png>
-Package pdftex.def Info: images/cbls-good.png  used on input line 523.
+Package pdftex.def Info: images/cbls-good.png  used on input line 476.
 (pdftex.def)             Requested size: 205.37926pt x 178.89294pt.
  [24
 
  <./images/cbls-good.png>]
-<images/cbls-people.png, id=777, 568.1225pt x 514.92375pt>
+<images/cbls-people.png, id=774, 568.1225pt x 514.92375pt>
 File: images/cbls-people.png Graphic file (type png)
 <use images/cbls-people.png>
-Package pdftex.def Info: images/cbls-people.png  used on input line 532.
+Package pdftex.def Info: images/cbls-people.png  used on input line 485.
 (pdftex.def)             Requested size: 205.37926pt x 186.15025pt.
  [25
 
  <./images/cbls-people.png>]
 
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\h' on input line 534.
-
-
-Package hyperref Warning: Composite letter `\textdotbelow+\acircumflex'
-(hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textdotbelow' on input line 534.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\acircumflex' on input line 534.
-
-
-Package hyperref Warning: Composite letter `\textasciigrave+\ecircumflex'
-(hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textasciigrave' on input line 534.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\ecircumflex' on input line 534.
-
-[26
-
-]
-
 Package hyperref Warning: Composite letter `\textdotbelow+\uhorn'
 (hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textdotbelow' on input line 541.
+(hyperref)                removing `\textdotbelow' on input line 488.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\uhorn' on input line 541.
+(hyperref)                removing `\uhorn' on input line 488.
 
 
 Package hyperref Warning: Composite letter `\textdotbelow+\ecircumflex'
 (hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textdotbelow' on input line 541.
+(hyperref)                removing `\textdotbelow' on input line 488.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\ecircumflex' on input line 541.
+(hyperref)                removing `\ecircumflex' on input line 488.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\dj' on input line 541.
+(hyperref)                removing `\dj' on input line 488.
 
-(./template_Beamer.toc) [27
-
-]
-
-Package hyperref Warning: Composite letter `\textdotbelow+\ocircumflex'
-(hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textdotbelow' on input line 545.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\ocircumflex' on input line 545.
-
-
-Package hyperref Warning: Composite letter `\texttilde+\uhorn'
-(hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\texttilde' on input line 545.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\uhorn' on input line 545.
-
-
-Package hyperref Warning: Composite letter `\textdotbelow+\ecircumflex'
-(hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textdotbelow' on input line 545.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\ecircumflex' on input line 545.
-
-[28
+(./template_Beamer.toc) [26
 
 ]
 
 Package hyperref Warning: Composite letter `\textacute+\ocircumflex'
 (hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textacute' on input line 554.
+(hyperref)                removing `\textacute' on input line 495.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\ocircumflex' on input line 554.
+(hyperref)                removing `\ocircumflex' on input line 495.
 
 
 Package hyperref Warning: Composite letter `\textdotbelow+\acircumflex'
 (hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textdotbelow' on input line 554.
+(hyperref)                removing `\textdotbelow' on input line 495.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\acircumflex' on input line 554.
+(hyperref)                removing `\acircumflex' on input line 495.
 
-[29
+[27
 
 ]
 
 Package hyperref Warning: Composite letter `\textacute+\ecircumflex'
 (hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textacute' on input line 572.
+(hyperref)                removing `\textacute' on input line 519.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\ecircumflex' on input line 572.
+(hyperref)                removing `\ecircumflex' on input line 519.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\h' on input line 572.
+(hyperref)                removing `\h' on input line 519.
 
 
 Package hyperref Warning: Composite letter `\textdotbelow+\uhorn'
 (hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textdotbelow' on input line 572.
+(hyperref)                removing `\textdotbelow' on input line 519.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\uhorn' on input line 572.
+(hyperref)                removing `\uhorn' on input line 519.
 
 
 Package hyperref Warning: Composite letter `\textdotbelow+\ecircumflex'
 (hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textdotbelow' on input line 572.
+(hyperref)                removing `\textdotbelow' on input line 519.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\ecircumflex' on input line 572.
+(hyperref)                removing `\ecircumflex' on input line 519.
 
-[30
+<images/exac.png, id=864, 756.8275pt x 410.53375pt>
+File: images/exac.png Graphic file (type png)
+<use images/exac.png>
+Package pdftex.def Info: images/exac.png  used on input line 527.
+(pdftex.def)             Requested size: 273.83728pt x 148.53748pt.
+[28
 
-]
+ <./images/exac.png>]
+<../result/image/solution.png, id=892, 1138.2525pt x 1004.75375pt>
+File: ../result/image/solution.png Graphic file (type png)
+<use ../result/image/solution.png>
+Package pdftex.def Info: ../result/image/solution.png  used on input line 536.
+(pdftex.def)             Requested size: 205.37926pt x 181.29248pt.
+ [29
+
+ <../result/image/solution.png>]
+<images/ga.png, id=921, 861.2175pt x 563.10374pt>
+File: images/ga.png Graphic file (type png)
+<use images/ga.png>
+Package pdftex.def Info: images/ga.png  used on input line 545.
+(pdftex.def)             Requested size: 273.83728pt x 179.04552pt.
+ [30
+
+ <./images/ga.png>]
+<images/greedy.png, id=949, 861.2175pt x 562.1pt>
+File: images/greedy.png Graphic file (type png)
+<use images/greedy.png>
+Package pdftex.def Info: images/greedy.png  used on input line 554.
+(pdftex.def)             Requested size: 273.83728pt x 178.72636pt.
+ [31
+
+ <./images/greedy.png>]
+<images/localsearch.png, id=978, 861.2175pt x 561.09625pt>
+File: images/localsearch.png Graphic file (type png)
+<use images/localsearch.png>
+Package pdftex.def Info: images/localsearch.png  used on input line 563.
+(pdftex.def)             Requested size: 273.83728pt x 178.40721pt.
+ [32
+
+ <./images/localsearch.png>]
+<../result/image/comparison.png, id=1005, 1907.125pt x 1084.05pt>
+File: ../result/image/comparison.png Graphic file (type png)
+<use ../result/image/comparison.png>
+Package pdftex.def Info: ../result/image/comparison.png  used on input line 572
+.
+(pdftex.def)             Requested size: 342.2953pt x 194.55818pt.
+
+Overfull \vbox (7.03192pt too high) detected at line 572
+ []
+
+[33
+
+ <../result/image/comparison.png>]
 
 Package hyperref Warning: Composite letter `\textacute+\ecircumflex'
 (hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textacute' on input line 580.
+(hyperref)                removing `\textacute' on input line 576.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\ecircumflex' on input line 580.
+(hyperref)                removing `\ecircumflex' on input line 576.
 
 
 Package hyperref Warning: Composite letter `\textdotbelow+\acircumflex'
 (hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textdotbelow' on input line 580.
+(hyperref)                removing `\textdotbelow' on input line 576.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\acircumflex' on input line 580.
+(hyperref)                removing `\acircumflex' on input line 576.
 
-(./template_Beamer.toc) [31
+(./template_Beamer.toc) [34
 
-] [32
+] [35
 
 ]
 \tf@nav=\write6
@@ -1825,19 +1829,19 @@ Package hyperref Warning: Glyph not defined in PD1 encoding,
 \tf@snm=\write8
 \openout8 = `template_Beamer.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 589.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 589.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 588.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 588.
  (./template_Beamer.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 589.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 589.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 588.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 588.
 Package rerunfilecheck Info: File `template_Beamer.out' has not changed.
-(rerunfilecheck)             Checksum: 74DC56833499370DC50AA0CAE7E3D1D0;884.
+(rerunfilecheck)             Checksum: EC8DEE59B8C50499102A96F29A47E73A;826.
  ) 
 Here is how much of TeX's memory you used:
- 18252 strings out of 492982
- 338101 string characters out of 6134896
- 405711 words of memory out of 5000000
- 21298 multiletter control sequences out of 15000+600000
+ 18294 strings out of 492982
+ 338938 string characters out of 6134896
+ 405938 words of memory out of 5000000
+ 21328 multiletter control sequences out of 15000+600000
  25656 words of font info for 59 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  48i,15n,64p,782b,630s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1854,10 +1858,10 @@ nr/vnss10.pfb></usr/share/texlive/texmf-dist/fonts/type1/vntex/vnr/vnss12.pfb><
 ve/texmf-dist/fonts/type1/vntex/vnr/vnssbx10.pfb></usr/share/texlive/texmf-dist
 /fonts/type1/vntex/vnr/vnssi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/v
 ntex/vnr/vnssi8.pfb>
-Output written on template_Beamer.pdf (32 pages, 289536 bytes).
+Output written on template_Beamer.pdf (35 pages, 663309 bytes).
 PDF statistics:
- 1067 PDF objects out of 1200 (max. 8388607)
- 989 compressed objects within 10 object streams
- 79 named destinations out of 1000 (max. 500000)
- 212 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1155 PDF objects out of 1200 (max. 8388607)
+ 1059 compressed objects within 11 object streams
+ 84 named destinations out of 1000 (max. 500000)
+ 239 words of extra memory for PDF output out of 10000 (max. 10000000)
 
