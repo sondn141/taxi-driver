@@ -107,7 +107,6 @@ public class LocalSearch extends Solver {
 		for (Point p: info.goodPickupPoints()) {
 			AccumulatedNodeWeightsOnPathVR anwopvp = new AccumulatedNodeWeightsOnPathVR(awn, p);
 			S.post(new Leq(0, anwopvp));
-//			anwopvp.get
 		}
 		
 		// create route length constraints

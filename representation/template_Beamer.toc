@@ -5,9 +5,9 @@
 \beamer@subsectionintoc {3}{2}{Thu\IeC {\d \acircumflex }t to\IeC {\'a}n nh\IeC {\'a}nh c\IeC {\d \acircumflex }n}{15}{0}{3}
 \beamer@sectionintoc {4}{Gi\IeC {\h a}i thu\IeC {\d \acircumflex }t heuristics}{16}{0}{4}
 \beamer@subsectionintoc {4}{1}{Gi\IeC {\h a}i thu\IeC {\d \acircumflex }t di truy\IeC {\`\ecircumflex }n}{17}{0}{4}
-\beamer@subsectionintoc {4}{2}{Thu\IeC {\d \acircumflex }t to\IeC {\'a}n tham lam}{21}{0}{4}
-\beamer@subsectionintoc {4}{3}{T\IeC {\`\i }m ki\IeC {\'\ecircumflex }m c\IeC {\d u}c b\IeC {\d \ocircumflex }}{22}{0}{4}
-\beamer@sectionintoc {5}{Th\IeC {\d \uhorn }c nghi\IeC {\d \ecircumflex }m v\IeC {\`a} \IeC {\dj }\IeC {\'a}nh gi\IeC {\'a}}{26}{0}{5}
-\beamer@subsectionintoc {5}{1}{Tham s\IeC {\'\ocircumflex } thu\IeC {\d \acircumflex }t to\IeC {\'a}n}{27}{0}{5}
-\beamer@subsectionintoc {5}{2}{K\IeC {\'\ecircumflex }t qu\IeC {\h a} th\IeC {\d \uhorn }c nghi\IeC {\d \ecircumflex }m}{28}{0}{5}
-\beamer@sectionintoc {6}{K\IeC {\'\ecircumflex }t lu\IeC {\d \acircumflex }n}{34}{0}{6}
+\beamer@subsectionintoc {4}{2}{Thu\IeC {\d \acircumflex }t to\IeC {\'a}n tham lam}{19}{0}{4}
+\beamer@subsectionintoc {4}{3}{T\IeC {\`\i }m ki\IeC {\'\ecircumflex }m c\IeC {\d u}c b\IeC {\d \ocircumflex }}{21}{0}{4}
+\beamer@sectionintoc {5}{Th\IeC {\d \uhorn }c nghi\IeC {\d \ecircumflex }m}{25}{0}{5}
+\beamer@subsectionintoc {5}{1}{Tham s\IeC {\'\ocircumflex } thu\IeC {\d \acircumflex }t to\IeC {\'a}n}{26}{0}{5}
+\beamer@subsectionintoc {5}{2}{K\IeC {\'\ecircumflex }t qu\IeC {\h a} th\IeC {\d \uhorn }c nghi\IeC {\d \ecircumflex }m}{27}{0}{5}
+\beamer@sectionintoc {6}{K\IeC {\'\ecircumflex }t lu\IeC {\d \acircumflex }n v\IeC {\`a} ph\IeC {\^a}n c\IeC {\^o}ng c\IeC {\^o}ng vi\IeC {\d \ecircumflex }c}{34}{0}{6}

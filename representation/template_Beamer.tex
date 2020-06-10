@@ -80,6 +80,8 @@
 \usepackage{graphicx} % Allows including images
 \usepackage[utf8]{vietnam}
 \usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
+\usepackage[ruled,vlined]{algorithm2e}
+\usepackage{algorithmic}
 
 %----------------------------------------------------------------------------------------
 %	TITLE PAGE
@@ -145,7 +147,7 @@
 			}
 			\item $d_{ij}$ là khoảng cách từ điểm $i$ đến điểm $j$ ($i,j=0,...,2N+2M$).
 		\end{itemize}
-		\underline{Yêu cầu:} Tính toán phương án vận chuyển sao cho quãng đường di chuyển \textbf{dài nhất} của các xe là \textbf{ngắn nhất}.
+		\textbf{\underline{Yêu cầu:}} Tính toán phương án vận chuyển sao cho quãng đường di chuyển \underline{dài nhất} của các xe là \underline{ngắn nhất}.
 	\end{frame}
 
 	\begin{frame}
@@ -348,7 +350,7 @@
 		\frametitle{Mô hình MIP}
 		\begin{itemize}
 			\item Mô hình MIP đã trình bày ở trên.
-			\item Sử dụng thư viện OR-Tools để triển khai.
+			\item Sử dụng thư viện OR-Tools (Java) để triển khai.
 		\end{itemize}
 	\end{frame}
 
@@ -385,16 +387,11 @@
 		\begin{itemize}
 			\item Sử dụng giải thuật di truyền cho các bộ dữ liệu kích thước lớn
 			\item Tìm ra lời giải tối ưu cục bộ
-			\item Các toán tử lai ghép và đột biến được sử dụng để tạo ra lời giải mới bằng các thay đổi thứ tự của người và hàng hóa trong cùng hành trình của một xe hoặc trên nhiều xe
 		\end{itemize}
-	\end{frame}
-	
-	\begin{frame}
-		\frametitle{Giải thuật di truyền}
 		\begin{figure}
 			\centering
 			\caption{Sơ đồ giải thuật di truyền}
-			\includegraphics[width=0.5\textwidth]{images/ga-flow.png}
+			\includegraphics[width=0.4\textwidth]{images/ga-flow.png}
 		\end{figure}
 	\end{frame}
 
@@ -410,10 +407,7 @@
 					\item Sắp xếp lại thứ tự đón các hành khách chung của $r_i$ và $r_j$ trong $r_i$ theo $r_j$ ta được lời giải mới
 				\end{itemize}
 		\end{itemize}
-	\end{frame}
-
-	\begin{frame}
-		\frametitle{Giải thuật di truyền}
+	
 		\textbf{Toán tử đột biến:}
 		\begin{itemize}
 			\item Di chuyển một món hàng hóa từ route có độ dài lớn nhất sang route có độ dài nhỏ nhất
@@ -445,6 +439,54 @@
 			}
 		\end{itemize}
 		\textbf{Độ phức tạp:} $O(\max \{ M\times (2M+2N+K)^3, N\times (2M+2N+K)^2 \})$
+	\end{frame}
+
+	\renewcommand\AlCapFnt{\scriptsize}
+	\renewcommand\AlCapNameFnt{\scriptsize}
+	\begin{frame}
+		\frametitle{Thuật toán tham lam}
+		\begin{algorithm}[H]
+			\fontsize{7pt}{7pt}\selectfont
+			
+			\KwIn{
+				$S$: The station of $K$ taxis; \\
+				$Taxis$: List of $K$ taxis; \\
+				$People$: List of $N$ passenger transport requests; \\
+				$Goods$: List of $M$ commodity delivery requests;
+			}
+			\KwOut{$K$ routes which balance the traveling distances of $K$ taxis}
+			
+			\BlankLine
+			$mgr\leftarrow$ Vehicle routing manager for $K$ taxis\;
+			  
+			\ForEach{$g \in Goods$} {
+				$(x_1,x_2)\leftarrow$ pickup and delivery points of $g$\;
+				
+				\ForEach{Route $r_k \in mgr$} {
+					\ForEach{Pair $(y_1,y_2) \in r_k$}{
+						$mgr\rightarrow$ evaluate inserting $x_1$ behind $y_1$, $x_2$ behind $y_2$\;
+						$\Rightarrow l_{y_1y_2}$: The new length of route $r_k$\;
+					}
+				}
+				Find pair $(y_1,y_2)$ with no violation and $l_{y_1y_2}\leftarrow min$\;
+				$mgr\rightarrow$ insert $x_1$ behind $y_1$, $x_2$ behind $y_2$\;
+			}
+		
+			\ForEach{$p \in People$} {
+				$(x_1,x_2)\leftarrow$ pickup and delivery points of $p$\;
+				
+				\ForEach{Route $r_k \in mgr$} {
+					\ForEach{$y \in r_k$}{
+						$mgr\rightarrow$ evaluate inserting $(x_1,x_2)$ behind $y$\;
+						$\Rightarrow l_y$: The new length of route $r_k$\;
+					}
+				}
+				Find point $y$ with no violation and $l_y\leftarrow min$\;
+				$mgr\rightarrow$ insert $(x_1,x_2)$ behind $y$\;
+			}
+		
+			\caption{Greedy algorithm}
+		\end{algorithm}
 	\end{frame}
 	
 	%------------------------------------------------
@@ -509,7 +551,7 @@
 	\end{frame}
 	
 	%------------------------------------------------
-	\section{Thực nghiệm và đánh giá}
+	\section{Thực nghiệm}
 	
 
 
@@ -526,6 +568,7 @@
 				\begin{itemize}
 					\item Số vòng lặp: 100
 					\item Số bước cho phép lời giải tồi: 10
+					\item Giới hạn thời gian: 5 phút
 				\end{itemize}
 			}
 			\item {
@@ -594,10 +637,18 @@
 			\includegraphics[width=\textwidth]{../result/image/comparison.png}
 		\end{figure}
 	\end{frame}
+	\begin{frame}
+		\frametitle{Kết quả thực nghiệm}
+		\begin{figure}
+			\centering
+			\caption{So sánh tất cả giải thuật trên bộ exac}
+			\includegraphics[width=\textwidth]{../result/image/comp.png}
+		\end{figure}
+	\end{frame}
 
 	%------------------------------------------------
 	
-	\section{Kết luận}
+	\section{Kết luận và phân công công việc}
 	
 	%------------------------------------------------
 	
@@ -606,6 +657,42 @@
 		\begin{itemize}
 			\item Mô hình MIP đã đề xuất cho kết quả chính xác, tuy nhiên thời gian chạy lớn hơn rất nhiều so với giải thuật nhánh cận.
 			\item Đối với các bộ dữ liệu kích thước lớn, thuật toán tìm kiếm cục bộ cho hiệu quả tốt nhất
+		\end{itemize}
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Phân công công việc}
+		\begin{itemize}
+			\item {Trần Huy Hùng - 20164777
+				\begin{itemize}
+					\item Mô hình MIP
+					\item {Triển khai:
+						\begin{itemize}
+							\item Thuật toán nhánh cận
+							\item Thuật toán tham lam
+							\item Tìm kiếm cục bộ
+						\end{itemize}
+					}
+					\item Slide
+				\end{itemize}
+			}
+			\item {Đỗ Ngọc Sơn - 20163506
+				\begin{itemize}
+					\item Mô hình MIP
+					\item {Triển khai:
+						\begin{itemize}
+							\item Giải thuật di truyền
+						\end{itemize}
+					}
+					\item {Thực nghiệm:
+						\begin{itemize}
+							\item Sinh dữ liệu
+							\item Thống kê và visualize kết quả
+						\end{itemize}
+					}
+					\item Slide
+				\end{itemize}
+			}
 		\end{itemize}
 	\end{frame}
 	

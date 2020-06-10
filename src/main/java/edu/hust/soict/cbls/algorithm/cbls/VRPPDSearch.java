@@ -49,33 +49,33 @@ public class VRPPDSearch extends GenericLocalSearch{
 		greedyInit();
 	}
 	
-	private void randomInit() {
-		List<Point> peoplePickup = new ArrayList<>(pickup2DeliveryOfPeople.keySet());
-		Collections.shuffle(peoplePickup);
-		for (Point pickup: peoplePickup) {
-			Point delivery = pickup2DeliveryOfPeople.get(pickup);
-			Point pos = XR.startPoint(r.nextInt(XR.getNbRoutes()) + 1);
-			mgr.performAddTwoPoints(pickup, pos, delivery, pos);
-		}
-		
-		List<Point> goodsPickup = new ArrayList<>(pickup2DeliveryOfGood.keySet());
-		Collections.shuffle(goodsPickup);
-		for (Point pickup: goodsPickup) {
-			Point delivery = pickup2DeliveryOfGood.get(pickup);
-			
-			ArrayList<Pair<Point, Point>> positions = new ArrayList<>();
-			for (int k=1; k<=XR.getNbRoutes(); k++)
-				for (Point p = XR.startPoint(k); p != XR.endPoint(k); p = XR.next(p)) {
-					if (S.evaluateAddTwoPoints(pickup, p, delivery, p) > 0)
-						break;
-					for (Point q = p; q != XR.endPoint(k); q = XR.next(q))
-						if (S.evaluateAddTwoPoints(pickup, p, delivery, q) <= 0)
-							positions.add(new Pair<>(p, q));
-				}
-			Pair<Point, Point> pos = positions.get(r.nextInt(positions.size()));
-			mgr.performAddTwoPoints(pickup, pos.getK(), delivery, pos.getV());
-		}
-	}
+//	private void randomInit() {
+//		List<Point> peoplePickup = new ArrayList<>(pickup2DeliveryOfPeople.keySet());
+//		Collections.shuffle(peoplePickup);
+//		for (Point pickup: peoplePickup) {
+//			Point delivery = pickup2DeliveryOfPeople.get(pickup);
+//			Point pos = XR.startPoint(r.nextInt(XR.getNbRoutes()) + 1);
+//			mgr.performAddTwoPoints(pickup, pos, delivery, pos);
+//		}
+//		
+//		List<Point> goodsPickup = new ArrayList<>(pickup2DeliveryOfGood.keySet());
+//		Collections.shuffle(goodsPickup);
+//		for (Point pickup: goodsPickup) {
+//			Point delivery = pickup2DeliveryOfGood.get(pickup);
+//			
+//			ArrayList<Pair<Point, Point>> positions = new ArrayList<>();
+//			for (int k=1; k<=XR.getNbRoutes(); k++)
+//				for (Point p = XR.startPoint(k); p != XR.endPoint(k); p = XR.next(p)) {
+//					if (S.evaluateAddTwoPoints(pickup, p, delivery, p) > 0)
+//						break;
+//					for (Point q = p; q != XR.endPoint(k); q = XR.next(q))
+//						if (S.evaluateAddTwoPoints(pickup, p, delivery, q) <= 0)
+//							positions.add(new Pair<>(p, q));
+//				}
+//			Pair<Point, Point> pos = positions.get(r.nextInt(positions.size()));
+//			mgr.performAddTwoPoints(pickup, pos.getK(), delivery, pos.getV());
+//		}
+//	}
 	
 	private void greedyInit() {
 		for (Point x1: goodKey) {
@@ -137,20 +137,6 @@ public class VRPPDSearch extends GenericLocalSearch{
 	public void perturb(int nbSteps){
 		ArrayList<Point> P = XR.getClientPoints();
 		for(int k = 1; k <= nbSteps; k++){
-//			ArrayList<Point> P = XR.collectClientPointsOnRoutes();
-//			if(P.size() >= 2){
-//				for(int i = 1; i <= 10; i++){
-//					Point x = P.get(R.nextInt(P.size()));
-//					
-//					Point y = P.get(R.nextInt(P.size()));
-//					
-//					if(x != y && XR.checkPerformOnePointMove(x, y)){
-//						mgr.performOnePointMove(x, y);
-//						break;
-//					}
-//					
-//				}
-//			}
 			if (r.nextDouble() < 0.5) {
 				for (int i=1; i<=10; i++) {
 					Point x1 = peopleKey.get(r.nextInt(peopleKey.size()));

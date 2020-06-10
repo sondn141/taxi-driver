@@ -1,0 +1,20 @@
+---> edu.hust.soict.cbls.algorithm.cbls.LocalSearch Runtime: 559
+0 5 10 0
+0 2 7 4 9 0
+0 1 6 3 8 0
+2564.6383342217428
+---> edu.hust.soict.cbls.algorithm.cbls.Greedy Runtime: 2
+0 2 7 4 9 0
+0 5 10 0
+0 1 6 3 8 0
+2564.6383342217428
+---> edu.hust.soict.cbls.algorithm.ga.GASolver Runtime: 699
+0 2 7 4 9 0
+0 1 6 3 8 0
+0 5 10 0
+2564.6383342217428
+---> edu.hust.soict.cbls.algorithm.backtrack.BackTracking Runtime: 11
+0 2 7 4 9 0
+0 5 10 0
+0 1 6 3 8 0
+2564.638334221737

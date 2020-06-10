@@ -1,7 +1,3 @@
----> edu.hust.soict.cbls.algorithm.mip.MIP Runtime: 760362
-0 5 4 9 1 6 10 0
-0 3 8 2 7 0
-2256.6494846335845
 ---> edu.hust.soict.cbls.algorithm.backtrack.BackTracking Runtime: 14
 0 2 7 3 8 0
 0 5 4 9 1 6 10 0
@@ -10,78 +6,6 @@
 0 5 4 9 1 6 10 0
 0 3 8 2 7 0
 2256.649484633574
----> edu.hust.soict.cbls.algorithm.cbls.LocalSearch Runtime: 98
-0 5 4 9 1 6 10 0
-0 2 7 3 8 0
-2256.649484633574
----> edu.hust.soict.cbls.algorithm.cbls.LocalSearch Runtime: 116
-0 5 4 9 1 6 10 0
-0 2 7 3 8 0
-2256.649484633574
----> edu.hust.soict.cbls.algorithm.cbls.LocalSearch Runtime: 76
-0 4 9 1 6 2 7 0
-0 5 10 3 8 0
-2260.588721178477
----> edu.hust.soict.cbls.algorithm.cbls.LocalSearch Runtime: 83
-0 2 7 3 8 0
-0 5 4 9 1 6 10 0
-2256.649484633574
----> edu.hust.soict.cbls.algorithm.cbls.LocalSearch Runtime: 88
-0 5 4 9 1 6 10 0
-0 2 7 3 8 0
-2256.649484633574
----> edu.hust.soict.cbls.algorithm.cbls.LocalSearch Runtime: 77
-0 2 7 3 8 0
-0 5 4 9 1 6 10 0
-2256.649484633574
----> edu.hust.soict.cbls.algorithm.cbls.LocalSearch Runtime: 83
-0 5 4 9 1 6 10 0
-0 3 8 2 7 0
-2256.649484633574
----> edu.hust.soict.cbls.algorithm.cbls.LocalSearch Runtime: 90
-0 5 4 9 1 6 10 0
-0 2 7 3 8 0
-2256.649484633574
----> edu.hust.soict.cbls.algorithm.cbls.LocalSearch Runtime: 97
-0 5 4 9 1 6 10 0
-0 3 8 2 7 0
-2256.649484633574
----> edu.hust.soict.cbls.algorithm.cbls.Greedy Runtime: 1
-0 4 9 5 1 6 10 0
-0 2 7 3 8 0
-2436.8964660734337
----> edu.hust.soict.cbls.algorithm.cbls.Greedy Runtime: 1
-0 2 7 3 8 0
-0 4 9 5 1 6 10 0
-2436.8964660734337
----> edu.hust.soict.cbls.algorithm.cbls.Greedy Runtime: 0
-0 2 7 3 8 0
-0 4 9 5 1 6 10 0
-2436.8964660734337
----> edu.hust.soict.cbls.algorithm.cbls.Greedy Runtime: 1
-0 4 9 5 1 6 10 0
-0 2 7 3 8 0
-2436.8964660734337
----> edu.hust.soict.cbls.algorithm.cbls.Greedy Runtime: 0
-0 2 7 3 8 0
-0 4 9 5 1 6 10 0
-2436.8964660734337
----> edu.hust.soict.cbls.algorithm.cbls.Greedy Runtime: 0
-0 2 7 3 8 0
-0 4 9 5 1 6 10 0
-2436.8964660734337
----> edu.hust.soict.cbls.algorithm.cbls.Greedy Runtime: 1
-0 4 9 5 1 6 10 0
-0 2 7 3 8 0
-2436.8964660734337
----> edu.hust.soict.cbls.algorithm.cbls.Greedy Runtime: 0
-0 2 7 3 8 0
-0 4 9 5 1 6 10 0
-2436.8964660734337
----> edu.hust.soict.cbls.algorithm.cbls.Greedy Runtime: 1
-0 4 9 5 1 6 10 0
-0 2 7 3 8 0
-2436.8964660734337
 ---> edu.hust.soict.cbls.algorithm.cbls.Greedy Runtime: 1
 0 4 9 5 1 6 10 0
 0 2 7 3 8 0
@@ -89,40 +13,4 @@
 ---> edu.hust.soict.cbls.algorithm.ga.GASolver Runtime: 181
 0 1 6 3 8 0
 0 4 5 9 10 2 7 0
-2381.536006301725
----> edu.hust.soict.cbls.algorithm.ga.GASolver Runtime: 125
-0 4 5 9 10 2 7 0
-0 1 6 3 8 0
-2381.536006301725
----> edu.hust.soict.cbls.algorithm.ga.GASolver Runtime: 174
-0 4 5 9 10 2 7 0
-0 1 6 3 8 0
-2381.536006301725
----> edu.hust.soict.cbls.algorithm.ga.GASolver Runtime: 134
-0 4 5 9 10 2 7 0
-0 1 6 3 8 0
-2381.536006301725
----> edu.hust.soict.cbls.algorithm.ga.GASolver Runtime: 120
-0 4 5 9 10 2 7 0
-0 1 6 3 8 0
-2381.536006301725
----> edu.hust.soict.cbls.algorithm.ga.GASolver Runtime: 119
-0 4 5 9 10 2 7 0
-0 1 6 3 8 0
-2381.536006301725
----> edu.hust.soict.cbls.algorithm.ga.GASolver Runtime: 128
-0 4 5 9 1 6 10 0
-0 2 7 3 8 0
-2456.3554673471153
----> edu.hust.soict.cbls.algorithm.ga.GASolver Runtime: 101
-0 1 6 3 8 0
-0 4 5 9 10 2 7 0
-2381.536006301725
----> edu.hust.soict.cbls.algorithm.ga.GASolver Runtime: 105
-0 4 5 9 10 2 7 0
-0 1 6 3 8 0
-2381.536006301725
----> edu.hust.soict.cbls.algorithm.ga.GASolver Runtime: 106
-0 4 5 9 10 2 7 0
-0 1 6 3 8 0
 2381.536006301725
